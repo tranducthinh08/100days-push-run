@@ -8,7 +8,7 @@ export function BreathingCueBanner() {
         <Wind className="w-4 h-4" />
       </div>
       <p className="leading-tight text-[11px] font-medium">
-        <strong className="text-[#FF8A00] font-bold">Nhịp thở chuẩn:</strong> Hít sâu bằng mũi khi hạ người xuống &bull; Thở mạnh dứt khoát bằng miệng khi đẩy thẳng người lên.
+        <strong className="text-[#FF8A00] font-bold">Kỹ thuật chuẩn:</strong> Khép khuỷu 45° (hình mũi tên ^) &bull; Khóa mông bụng như tấm ván &bull; Hít vào khi hạ, thở mạnh khi đẩy lên.
       </p>
     </div>
   );

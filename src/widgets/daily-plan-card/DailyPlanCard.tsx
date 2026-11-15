@@ -6,6 +6,7 @@ import { resolveExercise } from '@/entities/exercise/model';
 import { Exercise } from '@/entities/exercise/types';
 import { DailyPlanBlocks } from './components/DailyPlanBlocks';
 import { DailyTargetArcCard } from './components/DailyTargetArcCard';
+import { TechniqueTipsCard } from './components/TechniqueTipsCard';
 import { WarmupGuideModal } from './components/WarmupGuideModal';
 import { ExerciseDetailModal } from '@/pages/exercise-library/components/ExerciseDetailModal';
 
@@ -15,7 +16,7 @@ interface DailyPlanCardProps {
 }
 
 export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps) {
-  const { equipmentMode, completedDays, markDayCompleted } = useUserProgress();
+  const { equipmentMode, completedDays, markDayCompleted, unmarkDayCompleted } = useUserProgress();
   const [isWarmupModalOpen, setIsWarmupModalOpen] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
 
@@ -32,12 +33,16 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
     : 38;
 
   const handleQuickToggleComplete = () => {
-    markDayCompleted({
-      dayNumber: programDay.dayNumber,
-      completedAt: new Date().toISOString(),
-      type: programDay.type,
-      equipmentMode,
-    });
+    if (isCompleted) {
+      unmarkDayCompleted(programDay.dayNumber);
+    } else {
+      markDayCompleted({
+        dayNumber: programDay.dayNumber,
+        completedAt: new Date().toISOString(),
+        type: programDay.type,
+        equipmentMode,
+      });
+    }
   };
 
   return (
@@ -97,6 +102,9 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
         isRun={isRun}
         totalTargetReps={totalTargetReps}
       />
+
+      {/* 3 Golden Technique Rules & Day 1 Max Test Guide */}
+      <TechniqueTipsCard dayNumber={programDay.dayNumber} />
 
       {/* 3 Step Visual Workout Sequence */}
       <DailyPlanBlocks

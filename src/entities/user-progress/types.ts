@@ -21,5 +21,6 @@ export interface UserProgressState {
   maxPushupsRecord: number;
   streak: number;
   lastActiveDate: string;
+  startDate?: string; // YYYY-MM-DD challenge start date
   customExerciseVideos?: Record<string, string>;
 }

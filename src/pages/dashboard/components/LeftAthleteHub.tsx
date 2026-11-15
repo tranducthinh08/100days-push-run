@@ -1,14 +1,33 @@
 import React from 'react';
 import { Flame, Shield, Sparkles, Layers, Dumbbell, User, ExternalLink, Lock } from 'lucide-react';
 import { useUserProgress } from '@/entities/user-progress/useUserProgress';
-import { ProgramPhase } from '@/entities/program/types';
-import { DayProgram } from '@/entities/program/types';
+import { ProgramPhase, DayProgram } from '@/entities/program/types';
+import { DisciplineCommitmentCard } from './DisciplineCommitmentCard';
 
 interface LeftAthleteHubProps {
   programDay: DayProgram;
   onOpenStravaModal: () => void;
   activePhase: ProgramPhase;
   onSelectPhase: (phase: ProgramPhase) => void;
+}
+
+const PHASES = [
+  { id: 1 as ProgramPhase, title: 'GIAI ĐOẠN 1 (NGÀY 1 - 30)', sub: 'Nền tảng & Chuẩn hóa form • Đích: 25-30 cái, chạy 2.5-3km' },
+  { id: 2 as ProgramPhase, title: 'GIAI ĐOẠN 2 (NGÀY 31 - 70)', sub: 'Tăng Volume & Nghỉ 45s • Đích: 60-65 cái, chạm mốc 5km' },
+  { id: 3 as ProgramPhase, title: 'GIAI ĐOẠN 3 (NGÀY 71 - 100)', sub: 'AMRAP & Bứt phá • Bùng nổ 100 cái hít đất + 5km' },
+];
+
+function getCoachAdvice(day: DayProgram): string {
+  if (day.dayNumber === 1) {
+    return 'Dành 5 phút khởi động kỹ. Khép khuỷu tay 45 độ, siết bụng hollow body khóa người như tấm ván.';
+  }
+  if (day.type === 'push') {
+    return 'Tập trung khép khuỷu tay 45 độ, siết mông bụng không để võng hông. Nghỉ đúng thời gian đếm ngược giữa hiệp.';
+  }
+  if (day.type === 'run') {
+    return 'Giữ nhịp thở đều 3 bước hít - 3 bước thở. Chạy ở tốc độ đàm thoại Zone 2 để tích lũy sức bền dẻo dai.';
+  }
+  return 'Phục hồi chủ động: Thả lỏng toàn bộ cơ bắp, uống đủ nước và ngủ đủ giấc để cơ thể phục hồi tối đa.';
 }
 
 export function LeftAthleteHub({
@@ -20,12 +39,6 @@ export function LeftAthleteHub({
   const { streak, equipmentMode, setEquipmentMode } = useUserProgress();
   const isDumbbell = equipmentMode === 'dumbbell';
 
-  const phases = [
-    { id: 1 as ProgramPhase, title: 'GIAI ĐOẠN 1: NỀN TẢNG', sub: 'Tuần 1 - 4 • Thích nghi & Volume 8-18 Reps', progress: '100%' },
-    { id: 2 as ProgramPhase, title: 'GIAI ĐOẠN 2: BỨT PHÁ', sub: 'Tuần 5 - 9 • Kim tự tháp & Sức bền Zone 2', progress: '50%' },
-    { id: 3 as ProgramPhase, title: 'GIAI ĐOẠN 3: MASTER 100', sub: 'Tuần 10 - 14 • Chinh phục 100 Reps', progress: '0%' },
-  ];
-
   return (
     <aside className="space-y-5" data-purpose="left-athlete-hub">
       {/* Athlete Profile & Mission Card */}
@@ -35,13 +48,9 @@ export function LeftAthleteHub({
         <div className="flex items-center gap-3.5 mb-4 relative z-10">
           <div className="relative">
             <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#1B2233] to-[#2B354E] border border-white/20 p-0.5 flex items-center justify-center text-white font-black text-xl font-display shadow-lg">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FF8A00]">
-                VN
-              </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FF8A00]">VN</span>
             </div>
-            <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#00E676] ring-2 ring-[#0B0E14] flex items-center justify-center text-[8px] text-black font-bold">
-              ✓
-            </span>
+            <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#00E676] ring-2 ring-[#0B0E14] flex items-center justify-center text-[8px] text-black font-bold">✓</span>
           </div>
           <div>
             <div className="flex items-center gap-1.5">
@@ -56,6 +65,9 @@ export function LeftAthleteHub({
             </span>
           </div>
         </div>
+
+        {/* Commitment Date Selector Card */}
+        <DisciplineCommitmentCard />
 
         {/* Discipline Flame Streak Counter (Hero Widget) */}
         <div className="p-4 rounded-2xl bg-gradient-to-b from-[#1C161D] to-[#12141F] border border-[#FF5500]/30 shadow-neon-orange/40 relative overflow-hidden mb-4">
@@ -88,9 +100,7 @@ export function LeftAthleteHub({
             <button
               onClick={() => setEquipmentMode('bodyweight')}
               className={`py-2 rounded-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                !isDumbbell
-                  ? 'bg-[#FF5500] text-white shadow-xs'
-                  : 'text-slate-400 hover:text-white'
+                !isDumbbell ? 'bg-[#FF5500] text-white shadow-xs' : 'text-slate-400 hover:text-white'
               }`}
               type="button"
             >
@@ -99,9 +109,7 @@ export function LeftAthleteHub({
             <button
               onClick={() => setEquipmentMode('dumbbell')}
               className={`py-2 rounded-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                isDumbbell
-                  ? 'bg-[#FF5500] text-white shadow-xs'
-                  : 'text-slate-400 hover:text-white'
+                isDumbbell ? 'bg-[#FF5500] text-white shadow-xs' : 'text-slate-400 hover:text-white'
               }`}
               type="button"
             >
@@ -117,21 +125,15 @@ export function LeftAthleteHub({
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-[#FC5200] text-white flex items-center justify-center font-black text-xs shadow-md shadow-[#FC5200]/30">
-                STR
-              </div>
+              <div className="w-8 h-8 rounded-xl bg-[#FC5200] text-white flex items-center justify-center font-black text-xs shadow-md shadow-[#FC5200]/30">STR</div>
               <div>
                 <p className="text-xs font-extrabold text-white flex items-center gap-1">
-                  STRAVA SYNC
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  STRAVA SYNC <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 </p>
                 <p className="text-[10px] text-slate-400 font-mono">Tự động nhận km chạy bộ</p>
               </div>
             </div>
-            <button
-              className="px-2.5 py-1 text-[11px] font-bold text-white bg-[#FC5200] hover:bg-[#E04800] rounded-lg transition-all flex items-center gap-1"
-              type="button"
-            >
+            <button className="px-2.5 py-1 text-[11px] font-bold text-white bg-[#FC5200] hover:bg-[#E04800] rounded-lg transition-all flex items-center gap-1" type="button">
               Kết nối <ExternalLink className="w-2.5 h-2.5" />
             </button>
           </div>
@@ -148,7 +150,7 @@ export function LeftAthleteHub({
         </div>
 
         <div className="space-y-2.5">
-          {phases.map((ph) => {
+          {PHASES.map((ph) => {
             const isActive = activePhase === ph.id;
             return (
               <div
@@ -164,13 +166,9 @@ export function LeftAthleteHub({
                   <div>
                     <div className="flex items-center gap-2">
                       {isActive && (
-                        <span className="px-1.5 py-0.5 rounded text-[9px] font-black uppercase bg-[#FF5500] text-white">
-                          Đang chọn
-                        </span>
+                        <span className="px-1.5 py-0.5 rounded text-[9px] font-black uppercase bg-[#FF5500] text-white">Đang chọn</span>
                       )}
-                      <span className={`text-xs font-extrabold ${isActive ? 'text-white' : 'text-slate-300'}`}>
-                        {ph.title}
-                      </span>
+                      <span className={`text-xs font-extrabold ${isActive ? 'text-white' : 'text-slate-300'}`}>{ph.title}</span>
                     </div>
                     <p className="text-[11px] text-slate-400 mt-1">{ph.sub}</p>
                   </div>
@@ -189,11 +187,7 @@ export function LeftAthleteHub({
           <span>LỜI KHUYÊN HÔM NAY (NGÀY {programDay.dayNumber})</span>
         </div>
         <p className="text-[11px] text-slate-300 leading-relaxed">
-          {programDay.type === 'push'
-            ? 'Đừng vội bung hết sức ở hiệp đầu. Tập trung khóa chặt xương bả vai, siết cơ bụng hollow body và chạm ngực gần sát sàn.'
-            : programDay.type === 'run'
-            ? 'Chạy giữ nhịp thở đều 3-3 hoặc 2-2. Nhịp tim Zone 2 là nhịp tim có thể nói chuyện thành câu trọn vẹn.'
-            : 'Hãy hít thở sâu, giãn cơ ngực, vai và gân kheo để cơ bắp phục hồi sẵn sàng cho buổi tập kế tiếp.'}
+          {getCoachAdvice(programDay)}
         </p>
       </div>
     </aside>

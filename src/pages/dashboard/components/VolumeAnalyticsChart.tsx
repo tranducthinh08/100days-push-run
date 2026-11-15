@@ -1,6 +1,7 @@
 import React from 'react';
-import { BarChart3, Flame } from 'lucide-react';
+import { BarChart3 } from 'lucide-react';
 import { DayProgram } from '@/entities/program/types';
+import { PROGRAM_DAYS } from '@/entities/program/model';
 
 interface VolumeAnalyticsChartProps {
   programDay: DayProgram;
@@ -9,15 +10,30 @@ interface VolumeAnalyticsChartProps {
 export function VolumeAnalyticsChart({ programDay }: VolumeAnalyticsChartProps) {
   const isPush = programDay.type === 'push';
 
-  const weeklySchedule = [
-    { day: 'T2', type: 'push', value: '38', height: 'h-[45%]', label: '38' },
-    { day: 'T3', type: 'run', value: '4km', height: 'h-[60%]', label: '4km' },
-    { day: 'T4', type: 'push', value: '42', height: 'h-[50%]', label: '42' },
-    { day: 'T5', type: 'run', value: '5km', height: 'h-[65%]', label: '5km' },
-    { day: 'T6', type: 'push', value: '45', height: 'h-[55%]', label: '45' },
-    { day: 'T7', type: 'run', value: '5km', height: 'h-[65%]', label: '5km' },
-    { day: 'CN', type: 'rest', value: 'Zen', height: 'h-[25%]', label: 'Zen' },
-  ];
+  const currentWeekDays = PROGRAM_DAYS.filter((d) => d.weekNumber === programDay.weekNumber);
+  const weekdayShort = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+  const weekList = currentWeekDays.length === 7 ? currentWeekDays : PROGRAM_DAYS.slice(0, 7);
+
+  const weeklySchedule = weekList.map((d, idx) => {
+    let label = 'Zen';
+    let height = 'h-[30%]';
+    if (d.type === 'push') {
+      const reps = d.pushupTargetRepsPerSet?.reduce((a, b) => a + b, 0) || 45;
+      label = `${reps}`;
+      height = reps >= 80 ? 'h-[90%]' : reps >= 60 ? 'h-[75%]' : reps >= 40 ? 'h-[55%]' : 'h-[40%]';
+    } else if (d.type === 'run') {
+      const km = d.runDetails?.distanceKmTarget || 2.5;
+      label = `${km}km`;
+      height = km >= 5 ? 'h-[85%]' : km >= 3 ? 'h-[65%]' : 'h-[50%]';
+    }
+    return {
+      day: weekdayShort[idx] || d.dayOfWeekVi,
+      dayNumber: d.dayNumber,
+      type: d.type,
+      label,
+      height,
+    };
+  });
 
   return (
     <div className="rounded-3xl p-6 bg-[#111622]/90 backdrop-blur-xl border border-white/[0.08] shadow-glass-hud">
@@ -41,13 +57,7 @@ export function VolumeAnalyticsChart({ programDay }: VolumeAnalyticsChartProps) 
       {/* Volume Bar Trend Chart */}
       <div className="grid grid-cols-7 gap-2.5 items-end h-28 pt-4 pb-2 px-2 bg-black/40 rounded-2xl border border-white/[0.04] mb-4">
         {weeklySchedule.map((item, idx) => {
-          const isToday = (idx === 0 && programDay.dayOfWeekVi === 'Thứ 2') ||
-                          (idx === 1 && programDay.dayOfWeekVi === 'Thứ 3') ||
-                          (idx === 2 && programDay.dayOfWeekVi === 'Thứ 4') ||
-                          (idx === 3 && programDay.dayOfWeekVi === 'Thứ 5') ||
-                          (idx === 4 && programDay.dayOfWeekVi === 'Thứ 6') ||
-                          (idx === 5 && programDay.dayOfWeekVi === 'Thứ 7') ||
-                          (idx === 6 && programDay.dayOfWeekVi === 'Chủ nhật');
+          const isToday = item.dayNumber === programDay.dayNumber;
 
           return (
             <div key={idx} className="flex flex-col items-center gap-1.5 h-full justify-end group">
