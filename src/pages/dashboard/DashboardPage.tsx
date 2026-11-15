@@ -64,11 +64,11 @@ export function DashboardPage({ onStartSession }: DashboardPageProps) {
         {/* Top Header */}
         <div className="flex items-center justify-between pt-2">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-orange-600 font-condensed">
-              Thử thách 100 Ngày
+            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#FF8A00]">
+              THỬ THÁCH 100 NGÀY
             </span>
-            <h1 className="text-xl font-black text-slate-900 tracking-tight font-condensed">
-              100Days Push & Run
+            <h1 className="text-xl font-black text-white tracking-tight font-display">
+              100DAYS ATHLETE PRO
             </h1>
           </div>
 
@@ -76,20 +76,20 @@ export function DashboardPage({ onStartSession }: DashboardPageProps) {
             <button
               onClick={() => setIsHistoryModalOpen(true)}
               title="Lịch sử buổi tập"
-              className="w-9 h-9 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 flex items-center justify-center transition-colors shadow-xs"
+              className="w-9 h-9 rounded-xl bg-[#111622] border border-white/10 hover:bg-white/10 text-slate-300 flex items-center justify-center transition-colors shadow-xs"
             >
               <History className="w-4 h-4" />
             </button>
             <button
               onClick={handleExport}
               title="Sao lưu tiến độ (Export JSON)"
-              className="w-9 h-9 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 flex items-center justify-center transition-colors shadow-xs"
+              className="w-9 h-9 rounded-xl bg-[#111622] border border-white/10 hover:bg-white/10 text-slate-300 flex items-center justify-center transition-colors shadow-xs"
             >
               <Download className="w-4 h-4" />
             </button>
             <label
               title="Khôi phục tiến độ (Import JSON)"
-              className="w-9 h-9 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 flex items-center justify-center transition-colors cursor-pointer shadow-xs"
+              className="w-9 h-9 rounded-xl bg-[#111622] border border-white/10 hover:bg-white/10 text-slate-300 flex items-center justify-center transition-colors cursor-pointer shadow-xs"
             >
               <Upload className="w-4 h-4" />
               <input type="file" accept=".json" onChange={handleImport} className="hidden" />
@@ -98,7 +98,7 @@ export function DashboardPage({ onStartSession }: DashboardPageProps) {
         </div>
 
         {importStatus && (
-          <div className="bg-orange-50 text-orange-700 text-xs px-3 py-2 rounded-xl text-center border border-orange-200 font-semibold">
+          <div className="bg-[#FF5500]/15 text-[#FF8A00] text-xs px-3 py-2 rounded-xl text-center border border-[#FF5500]/30 font-semibold font-mono">
             {importStatus}
           </div>
         )}
@@ -109,11 +109,11 @@ export function DashboardPage({ onStartSession }: DashboardPageProps) {
         {/* Global Equipment Switcher */}
         <EquipmentToggle />
 
-        {/* Quick Stats Summary */}
-        <StatSummaryCard />
-
         {/* Today's Workout Card with 3 Blocks */}
         <DailyPlanCard programDay={programDay} onStartSession={onStartSession} />
+
+        {/* Quick Stats Summary */}
+        <StatSummaryCard />
       </div>
 
       {/* Shared Modals */}

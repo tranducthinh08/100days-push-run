@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DailyPlanCard } from '@/widgets/daily-plan-card/DailyPlanCard';
 import { StatSummaryCard } from './StatSummaryCard';
 import { DesktopRoadmapGrid } from './DesktopRoadmapGrid';
-import { DesktopActivityFeed } from './DesktopActivityFeed';
-import { DesktopStravaQuickCard } from './DesktopStravaQuickCard';
-import { DayProgram } from '@/entities/program/types';
+import { LeftAthleteHub } from './LeftAthleteHub';
+import { VolumeAnalyticsChart } from './VolumeAnalyticsChart';
+import { StravaConnectModal } from '@/features/strava-sync/StravaConnectModal';
+import { useStravaSync } from '@/features/strava-sync/useStravaSync';
+import { DayProgram, ProgramPhase } from '@/entities/program/types';
 
 interface DesktopDashboardViewProps {
   programDay: DayProgram;
@@ -15,22 +17,46 @@ interface DesktopDashboardViewProps {
 export function DesktopDashboardView({
   programDay,
   onStartSession,
-  onOpenHistory,
 }: DesktopDashboardViewProps) {
+  const [isStravaModalOpen, setIsStravaModalOpen] = useState(false);
+  const [activePhase, setActivePhase] = useState<ProgramPhase>(
+    programDay.phase || 1
+  );
+  const { isConnected, connectWithToken, disconnect, error } = useStravaSync();
+
   return (
-    <div className="hidden md:grid grid-cols-12 gap-6 items-start pb-16">
-      {/* Left Column: Today's Mission & Active Training (7 Cols) */}
-      <div className="col-span-12 lg:col-span-7 flex flex-col gap-6">
-        <DailyPlanCard programDay={programDay} onStartSession={onStartSession} />
-        <StatSummaryCard />
-        <DesktopActivityFeed onOpenFullHistory={onOpenHistory} />
+    <div className="hidden md:grid grid-cols-1 lg:grid-cols-12 gap-6 items-start pb-16">
+      {/* COLUMN 1: LEFT SIDEBAR / ATHLETE DAILY HUB (3 Cols) */}
+      <div className="lg:col-span-3">
+        <LeftAthleteHub
+          programDay={programDay}
+          onOpenStravaModal={() => setIsStravaModalOpen(true)}
+          activePhase={activePhase}
+          onSelectPhase={setActivePhase}
+        />
       </div>
 
-      {/* Right Column: Roadmap & Intelligence (5 Cols) */}
-      <div className="col-span-12 lg:col-span-5 flex flex-col gap-6">
-        <DesktopRoadmapGrid />
-        <DesktopStravaQuickCard />
+      {/* COLUMN 2: CENTER STAGE - WORKOUT HUD HERO (6 Cols) */}
+      <div className="lg:col-span-6 space-y-6">
+        <DailyPlanCard programDay={programDay} onStartSession={onStartSession} />
+        <VolumeAnalyticsChart programDay={programDay} />
       </div>
+
+      {/* COLUMN 3: RIGHT RAIL - 100-DAY MATRIX & TROPHY (3 Cols) */}
+      <div className="lg:col-span-3 space-y-6">
+        <DesktopRoadmapGrid activePhase={activePhase} onPhaseChange={setActivePhase} />
+        <StatSummaryCard />
+      </div>
+
+      {/* Strava Connect Modal */}
+      <StravaConnectModal
+        isOpen={isStravaModalOpen}
+        isConnected={isConnected}
+        onClose={() => setIsStravaModalOpen(false)}
+        onConnect={connectWithToken}
+        onDisconnect={disconnect}
+        error={error}
+      />
     </div>
   );
 }

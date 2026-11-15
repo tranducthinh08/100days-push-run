@@ -39,7 +39,7 @@ export function ExerciseDetailModal({ exercise, isOpen, onClose }: ExerciseDetai
             </Badge>
             <Badge variant="slate" size="sm">{exercise.category}</Badge>
           </div>
-          <h2 className="text-base font-bold text-slate-900">{exercise.name}</h2>
+          <h2 className="text-base font-bold text-white font-display">{exercise.name}</h2>
         </div>
 
         {/* Video & Loop Animation Player */}
@@ -47,12 +47,12 @@ export function ExerciseDetailModal({ exercise, isOpen, onClose }: ExerciseDetai
 
         {/* Fallback Notice */}
         {fallback && (
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-3 flex flex-col gap-1 text-amber-900 shadow-sm">
-            <span className="font-semibold flex items-center gap-1.5 text-amber-800 text-xs">
-              <ShieldCheck className="w-4 h-4 text-amber-600" />
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-3 flex flex-col gap-1 text-amber-300 shadow-sm">
+            <span className="font-semibold flex items-center gap-1.5 text-amber-400 text-xs font-mono">
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
               Bài tập thay thế khi không có tạ đơn:
             </span>
-            <span className="text-slate-800 font-medium text-xs">
+            <span className="text-white font-medium text-xs">
               👉 {fallback.name}
             </span>
           </div>
@@ -60,12 +60,12 @@ export function ExerciseDetailModal({ exercise, isOpen, onClose }: ExerciseDetai
 
         {/* Target Muscles */}
         <div className="flex flex-col gap-1.5">
-          <span className="font-bold text-slate-700">Nhóm cơ tác động:</span>
+          <span className="font-bold text-slate-300 font-mono">Nhóm cơ tác động:</span>
           <div className="flex flex-wrap gap-1.5">
             {exercise.targetMuscles.map((muscle, idx) => (
               <span
                 key={idx}
-                className="bg-slate-100 border border-slate-200 text-slate-700 px-2.5 py-1 rounded-xl text-[11px] font-medium"
+                className="bg-white/[0.06] border border-white/10 text-slate-300 px-2.5 py-1 rounded-xl text-[11px] font-medium"
               >
                 {muscle}
               </span>
@@ -74,15 +74,15 @@ export function ExerciseDetailModal({ exercise, isOpen, onClose }: ExerciseDetai
         </div>
 
         {/* Technique & Breathing Cues */}
-        <div className="flex flex-col gap-2 pt-2 border-t border-slate-100">
-          <span className="font-bold text-slate-800 flex items-center gap-1.5">
-            <Wind className="w-4 h-4 text-orange-500" />
+        <div className="flex flex-col gap-2 pt-2 border-t border-white/[0.08]">
+          <span className="font-bold text-white flex items-center gap-1.5 font-display">
+            <Wind className="w-4 h-4 text-[#FF8A00]" />
             Kỹ thuật thực hiện & Nhịp thở:
           </span>
           <div className="flex flex-col gap-2">
             {exercise.cues.map((cue, idx) => (
-              <div key={idx} className="flex items-start gap-2 text-slate-600">
-                <span className="w-5 h-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-[10px] shrink-0 mt-0.5 font-bold">
+              <div key={idx} className="flex items-start gap-2 text-slate-300">
+                <span className="w-5 h-5 rounded-full bg-[#FF5500]/20 text-[#FF8A00] flex items-center justify-center text-[10px] shrink-0 mt-0.5 font-bold font-mono">
                   {idx + 1}
                 </span>
                 <p className="leading-relaxed text-[11px]">{cue}</p>

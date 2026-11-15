@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Play, CheckCircle2, RotateCcw, Footprints, Dumbbell, Sparkles, HeartPulse } from 'lucide-react';
+import { RotateCcw, Footprints, Dumbbell, HeartPulse, Gauge, Target, CheckCircle2 } from 'lucide-react';
 import { DayProgram } from '@/entities/program/types';
 import { useUserProgress } from '@/entities/user-progress/useUserProgress';
 import { resolveExercise } from '@/entities/exercise/model';
 import { Exercise } from '@/entities/exercise/types';
-import { Button } from '@/shared/ui/Button';
-import { Badge } from '@/shared/ui/Badge';
 import { DailyPlanBlocks } from './components/DailyPlanBlocks';
+import { DailyTargetArcCard } from './components/DailyTargetArcCard';
 import { WarmupGuideModal } from './components/WarmupGuideModal';
 import { ExerciseDetailModal } from '@/pages/exercise-library/components/ExerciseDetailModal';
 
@@ -28,6 +27,10 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
   const mainResolved = programDay.mainBlock.map((i) => resolveExercise(i, equipmentMode));
   const accessoryResolved = programDay.accessoryBlock.map((i) => resolveExercise(i, equipmentMode));
 
+  const totalTargetReps = programDay.pushupTargetRepsPerSet
+    ? programDay.pushupTargetRepsPerSet.reduce((a, b) => a + b, 0)
+    : 38;
+
   const handleQuickToggleComplete = () => {
     markDayCompleted({
       dayNumber: programDay.dayNumber,
@@ -38,59 +41,64 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
   };
 
   return (
-    <div className="relative overflow-hidden bg-white border border-slate-200/90 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-200/50 flex flex-col gap-5 animate-fade-in-up">
-      {/* Dynamic ambient color splash based on workout type */}
+    <article className="rounded-3xl p-6 lg:p-7 bg-[#111622]/90 backdrop-blur-2xl border border-white/[0.1] shadow-glass-hud relative overflow-hidden animate-fade-in-up">
+      {/* Laser Top Border Line */}
       <div
-        className={`absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none ${
-          isPush ? 'bg-orange-400/10' : isRun ? 'bg-blue-400/10' : 'bg-emerald-400/10'
+        className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent ${
+          isPush ? 'via-[#FF5500]' : isRun ? 'via-[#00E5FF]' : 'via-[#00E676]'
+        } to-transparent`}
+      />
+      <div
+        className={`absolute -right-24 -top-24 w-80 h-80 rounded-full blur-3xl pointer-events-none ${
+          isPush ? 'bg-[#FF5500]/15' : isRun ? 'bg-[#00E5FF]/15' : 'bg-[#00E676]/15'
         }`}
       />
 
-      {/* Top Header */}
-      <div className="flex items-center justify-between gap-3 relative z-10 flex-wrap">
+      {/* Top Banner Day Header */}
+      <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-2">
-          <span
-            className={`text-xs font-black uppercase tracking-widest font-condensed px-2.5 py-1 rounded-lg border ${
-              isPush
-                ? 'text-orange-600 bg-orange-100/70 border-orange-200'
-                : isRun
-                ? 'text-blue-600 bg-blue-100/70 border-blue-200'
-                : 'text-emerald-600 bg-emerald-100/70 border-emerald-200'
-            }`}
-          >
-            {programDay.dayOfWeekVi} &bull; NGÀY {programDay.dayNumber}
+          <span className="px-3 py-1 rounded-xl bg-[#FF5500] text-white text-xs font-black tracking-widest uppercase shadow-neon-orange flex items-center gap-1.5 font-display">
+            <span className="w-2 h-2 rounded-full bg-white animate-ping" />
+            NGÀY {programDay.dayNumber} / 100
           </span>
-          <Badge
-            variant={isPush ? 'orange' : isRun ? 'blue' : 'emerald'}
-            size="sm"
-          >
-            {isPush ? 'Hít đất Sức mạnh' : isRun ? 'Chạy bộ Sức bền' : 'Active Recovery'}
-          </Badge>
-          {programDay.isTestDay && (
-            <Badge variant="amber" size="sm">
-              <Sparkles className="w-3 h-3 mr-0.5" /> TEST MAX
-            </Badge>
+          <span className="px-3 py-1 rounded-xl bg-white/[0.06] border border-white/10 text-slate-300 text-xs font-mono font-bold">
+            {programDay.dayOfWeekVi} &bull; {isPush ? 'PUSH DAY' : isRun ? 'RUN DAY' : 'RECOVERY DAY'}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-mono font-bold text-[#00E5FF] bg-[#00E5FF]/10 border border-[#00E5FF]/30 px-3 py-1 rounded-xl flex items-center gap-1.5">
+            <Gauge className="w-3.5 h-3.5" />
+            CƯỜNG ĐỘ: NỀN TẢNG
+          </span>
+          {isCompleted && (
+            <span className="flex items-center gap-1.5 text-xs font-bold text-[#00E676] bg-[#00E676]/15 border border-[#00E676]/30 px-3 py-1 rounded-xl font-mono">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#00E676]" /> ĐÃ XONG
+            </span>
           )}
         </div>
-
-        {isCompleted && (
-          <span className="flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Đã xong
-          </span>
-        )}
       </div>
 
-      {/* Title & Focus */}
-      <div className="relative z-10">
-        <h2 className="font-condensed text-2xl md:text-3xl font-black text-slate-900 tracking-wide uppercase leading-tight">
+      {/* Hero Headline */}
+      <div className="relative z-10 mb-6">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight font-display uppercase leading-tight">
           {programDay.title}
-        </h2>
-        <p className="text-xs text-slate-500 mt-1 max-w-xl leading-relaxed font-medium">
-          {programDay.focus}
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-400 mt-1.5 flex items-center gap-2">
+          <Target className="w-3.5 h-3.5 text-[#FF5500] shrink-0" />
+          <span>{programDay.focus}</span>
         </p>
       </div>
 
-      {/* 3 Training Blocks Grid */}
+      {/* Daily Target HUD Arc & Metric Showcase */}
+      <DailyTargetArcCard
+        programDay={programDay}
+        isCompleted={isCompleted}
+        isPush={isPush}
+        isRun={isRun}
+        totalTargetReps={totalTargetReps}
+      />
+
+      {/* 3 Step Visual Workout Sequence */}
       <DailyPlanBlocks
         programDay={programDay}
         warmupResolved={warmupResolved}
@@ -100,40 +108,45 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
         onSelectExercise={(ex) => setSelectedExercise(ex)}
       />
 
-      {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row items-center gap-3 pt-2 relative z-10">
-        <Button
-          variant={isPush ? 'primary' : isRun ? 'blue' : 'emerald'}
-          size="lg"
-          fullWidth
+      {/* Action CTA Buttons */}
+      <div className="flex flex-col sm:flex-row items-center gap-3 pt-5 mt-5 border-t border-white/[0.08] relative z-10">
+        <button
           onClick={() => onStartSession(programDay.type)}
-          leftIcon={
-            isPush ? (
+          className={`flex-1 w-full py-4 px-6 rounded-2xl font-black text-sm uppercase tracking-wider flex items-center justify-center gap-3 transition-all cursor-pointer font-display ${
+            isPush
+              ? 'bg-[#FF5500] hover:bg-[#E54D00] text-white shadow-neon-orange hover:shadow-orange-500/80 hover:scale-[1.01]'
+              : isRun
+              ? 'bg-[#00E5FF] hover:bg-[#00D0E8] text-black shadow-neon-cyan hover:scale-[1.01]'
+              : 'bg-[#00E676] hover:bg-[#00D06B] text-black shadow-neon-green hover:scale-[1.01]'
+          }`}
+          type="button"
+        >
+          {isPush ? (
+            <>
               <Dumbbell className="w-5 h-5" />
-            ) : isRun ? (
+              <span>BẮT ĐẦU BUỔI TẬP (TOUCH-TO-COUNT) [CHẾ ĐỘ SÀN]</span>
+            </>
+          ) : isRun ? (
+            <>
               <Footprints className="w-5 h-5" />
-            ) : (
-              <HeartPulse className="w-5 h-5 fill-white" />
-            )
-          }
-          className="h-13 font-black text-sm uppercase tracking-wider"
-        >
-          {isPush
-            ? 'Bắt đầu Hít đất (Touch-to-Count)'
-            : isRun
-            ? 'Bắt đầu Chạy bộ & Strava'
-            : 'Bắt đầu buổi Giãn cơ phục hồi'}
-        </Button>
+              <span>BẮT ĐẦU BUỔI CHẠY (GPS / INTERVAL)</span>
+            </>
+          ) : (
+            <>
+              <HeartPulse className="w-5 h-5" />
+              <span>BẮT ĐẦU GIÃN CƠ & THẢ LỎNG KHỚP</span>
+            </>
+          )}
+        </button>
 
-        <Button
-          variant="outline"
-          size="lg"
+        <button
           onClick={handleQuickToggleComplete}
-          leftIcon={<RotateCcw className="w-4 h-4" />}
-          className="shrink-0 text-xs px-5 h-13"
+          className="shrink-0 px-5 py-4 rounded-2xl bg-white/[0.07] hover:bg-[#00E676]/20 border border-white/10 hover:border-[#00E676]/40 text-slate-200 hover:text-[#00E676] font-bold text-xs transition-all flex items-center gap-2 cursor-pointer font-mono"
+          type="button"
         >
-          {isCompleted ? 'Hủy hoàn thành' : 'Đánh dấu đã xong'}
-        </Button>
+          <RotateCcw className="w-4 h-4" />
+          <span>{isCompleted ? 'Hủy hoàn thành' : 'Đánh dấu đã xong'}</span>
+        </button>
       </div>
 
       {/* Warmup Modal */}
@@ -151,7 +164,7 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
         isOpen={!!selectedExercise}
         onClose={() => setSelectedExercise(null)}
       />
-    </div>
+    </article>
   );
 }
 export default DailyPlanCard;

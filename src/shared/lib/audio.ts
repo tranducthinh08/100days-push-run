@@ -72,6 +72,10 @@ export function playTimerEndSound(): void {
   }
 }
 
+export function playWhistleSound(): void {
+  playBeep(1200, 0.15, 'triangle');
+}
+
 export function playIntervalPhaseSound(phase: 'work' | 'recovery'): void {
   if (phase === 'work') {
     // High alert beep

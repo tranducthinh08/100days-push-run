@@ -33,19 +33,19 @@ export function Button({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-orange-500 via-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-black shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5',
+      'bg-gradient-to-r from-[#FF5500] via-[#FF6D00] to-[#FF8A00] hover:from-[#E54D00] hover:to-[#FF7A00] text-white font-black shadow-neon-orange hover:-translate-y-0.5',
     blue:
-      'bg-gradient-to-r from-blue-600 via-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white font-black shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5',
+      'bg-gradient-to-r from-[#00E5FF] to-[#0070F3] hover:from-[#00CBE5] hover:to-[#005EDB] text-black font-black shadow-neon-cyan hover:-translate-y-0.5',
     emerald:
-      'bg-gradient-to-r from-emerald-600 via-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white font-black shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5',
+      'bg-gradient-to-r from-[#00E676] to-[#00B159] hover:from-[#00C865] hover:to-[#00964A] text-black font-black shadow-neon-green hover:-translate-y-0.5',
     secondary:
-      'bg-orange-50 border border-orange-200 text-orange-600 hover:bg-orange-100/80 font-bold shadow-sm',
+      'bg-[#FF5500]/15 hover:bg-[#FF5500]/25 text-[#FF8A00] border border-[#FF5500]/30 font-bold',
     outline:
-      'border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 hover:border-slate-300 shadow-sm',
+      'border border-white/10 bg-white/[0.05] hover:bg-white/[0.1] text-slate-200 hover:text-white',
     ghost:
-      'text-slate-600 hover:text-orange-600 hover:bg-orange-50/80',
+      'text-slate-400 hover:text-white hover:bg-white/[0.06]',
     danger:
-      'bg-rose-500 hover:bg-rose-600 text-white shadow-lg shadow-rose-500/20',
+      'bg-rose-600 hover:bg-rose-700 text-white shadow-lg shadow-rose-600/30',
   };
 
   return (

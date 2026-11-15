@@ -35,27 +35,30 @@ export function Modal({
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity"
         onClick={onClose}
       />
 
       {/* Modal Dialog Content */}
       <div
-        className={`relative z-10 w-full max-w-lg bg-white border border-slate-200 rounded-t-3xl sm:rounded-3xl flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 ${maxHeight}`}
+        className={`relative z-10 w-full max-w-lg bg-[#111622] border border-white/15 text-slate-100 rounded-t-3xl sm:rounded-3xl flex flex-col shadow-glass-hud overflow-hidden animate-in fade-in zoom-in-95 duration-200 ${maxHeight}`}
       >
+        {/* Laser Top Line */}
+        <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#FF5500] to-transparent pointer-events-none" />
+
         {/* Header */}
-        <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-slate-100">
-          <h3 className="font-condensed text-lg font-black text-slate-900 uppercase tracking-wider">{title}</h3>
+        <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-white/[0.08]">
+          <h3 className="font-display text-lg font-black text-white uppercase tracking-wider">{title}</h3>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors"
+            className="w-8 h-8 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-slate-400 hover:text-white flex items-center justify-center transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Body */}
-        <div className="p-6 overflow-y-auto overscroll-contain flex-1">
+        <div className="p-6 overflow-y-auto overscroll-contain flex-1 text-slate-200">
           {children}
         </div>
       </div>

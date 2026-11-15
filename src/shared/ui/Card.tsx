@@ -15,11 +15,11 @@ export function Card({
   const baseStyles = 'rounded-3xl border transition-all duration-200';
 
   const variantStyles = {
-    default: 'bg-white/95 backdrop-blur-md border-slate-200/90 text-slate-900 shadow-sm p-5 md:p-6',
-    elevated: 'bg-white border-slate-200/90 shadow-xl shadow-slate-900/5 text-slate-900 p-5 md:p-6',
-    glass: 'bg-white/80 backdrop-blur-xl border-white/60 text-slate-900 shadow-md p-5 md:p-6',
+    default: 'bg-[#111622]/90 backdrop-blur-xl border-white/[0.08] text-slate-100 shadow-glass-hud p-5 md:p-6',
+    elevated: 'bg-[#151922] border-white/10 shadow-2xl text-slate-100 p-5 md:p-6',
+    glass: 'bg-[#151C2C]/70 backdrop-blur-2xl border-white/[0.08] text-slate-100 shadow-glass-hud p-5 md:p-6',
     interactive:
-      'bg-white/95 border-slate-200/90 text-slate-900 p-5 md:p-6 hover:border-orange-300 hover:shadow-lg hover:shadow-orange-500/5 hover:-translate-y-0.5 active:scale-[0.99] cursor-pointer',
+      'bg-[#111622]/90 backdrop-blur-xl border-white/[0.08] text-slate-100 p-5 md:p-6 hover:border-[#FF5500]/40 hover:shadow-neon-orange/20 hover:-translate-y-0.5 active:scale-[0.99] cursor-pointer',
   };
 
   return (

@@ -113,7 +113,7 @@ export function WorkoutSessionPage({ onBackToDashboard }: WorkoutSessionPageProp
       <div className="flex items-center justify-between">
         <button
           onClick={onBackToDashboard}
-          className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors font-medium"
+          className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors font-medium cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" /> Thoát buổi tập
         </button>
@@ -122,16 +122,16 @@ export function WorkoutSessionPage({ onBackToDashboard }: WorkoutSessionPageProp
           {mainExercise && (
             <button
               onClick={() => setIsVideoModalOpen(true)}
-              className="flex items-center gap-1.5 text-xs font-bold text-orange-600 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-3 py-1 rounded-xl transition-colors"
+              className="flex items-center gap-1.5 text-xs font-bold text-[#FF8A00] bg-[#FF5500]/15 hover:bg-[#FF5500]/25 border border-[#FF5500]/30 px-3 py-1 rounded-xl transition-colors cursor-pointer"
             >
-              <Video className="w-3.5 h-3.5 text-orange-500" />
+              <Video className="w-3.5 h-3.5 text-[#FF5500]" />
               <span>Xem video kỹ thuật</span>
             </button>
           )}
-          <span className="hidden md:flex items-center gap-1.5 text-[11px] text-orange-700 bg-orange-50 border border-orange-200 px-3 py-1 rounded-xl font-medium">
-            <Keyboard className="w-3.5 h-3.5 text-orange-600" /> Space: đếm rep
+          <span className="hidden md:flex items-center gap-1.5 text-[11px] text-[#FF8A00] bg-[#FF5500]/10 border border-[#FF5500]/20 px-3 py-1 rounded-xl font-medium font-mono">
+            <Keyboard className="w-3.5 h-3.5 text-[#FF5500]" /> Space: đếm rep
           </span>
-          <span className="text-xs font-bold text-orange-600 font-condensed tracking-wide">
+          <span className="text-xs font-bold text-[#FF8A00] font-mono tracking-wide">
             Ngày {currentDay} &bull; {programDay.title}
           </span>
         </div>
@@ -151,8 +151,8 @@ export function WorkoutSessionPage({ onBackToDashboard }: WorkoutSessionPageProp
             />
           )}
 
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-4 flex flex-col gap-2.5 shadow-sm">
-            <span className="text-xs font-bold text-slate-800">Tiến độ từng hiệp hôm nay:</span>
+          <div className="bg-[#111622]/90 border border-white/[0.08] rounded-3xl p-4 flex flex-col gap-2.5 shadow-glass-hud">
+            <span className="text-xs font-bold text-white font-mono">Tiến độ từng hiệp hôm nay:</span>
             <SetProgressTracker sets={rawSets} completedSets={completedSets} currentSetIndex={currentSetIndex} />
           </div>
 

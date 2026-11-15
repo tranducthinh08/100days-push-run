@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 export interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement> {
   value: number; // 0 to 100
-  color?: 'emerald' | 'orange' | 'gradient';
+  color?: 'emerald' | 'orange' | 'cyan' | 'gradient';
   height?: 'sm' | 'md' | 'lg';
 }
 
@@ -24,15 +24,16 @@ export function ProgressBar({
   };
 
   const fillColors = {
-    orange: 'bg-gradient-to-r from-orange-500 to-amber-500 shadow-sm shadow-orange-500/30',
-    emerald: 'bg-gradient-to-r from-emerald-500 to-teal-500 shadow-sm shadow-emerald-500/30',
-    gradient: 'bg-gradient-to-r from-orange-500 via-amber-400 to-emerald-500',
+    orange: 'bg-[#FF5500] shadow-neon-orange',
+    cyan: 'bg-[#00E5FF] shadow-neon-cyan',
+    emerald: 'bg-[#00E676] shadow-neon-green',
+    gradient: 'bg-gradient-to-r from-[#FF5500] via-[#FF8A00] to-[#00E676]',
   };
 
   return (
     <div
       className={twMerge(
-        'w-full bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200/80',
+        'w-full bg-white/10 rounded-full overflow-hidden p-0.5 border border-white/[0.06]',
         heightStyles[height],
         className
       )}

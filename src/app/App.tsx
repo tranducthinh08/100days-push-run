@@ -25,7 +25,12 @@ export function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent text-slate-900 flex flex-col antialiased selection:bg-orange-500 selection:text-white">
+    <div className="min-h-screen bg-[#0B0E14] text-slate-100 flex flex-col antialiased selection:bg-[#FF5500] selection:text-white relative overflow-x-hidden">
+      {/* Ambient Background Spotlights */}
+      <div className="fixed top-0 left-1/4 w-[750px] h-[550px] flame-radial rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="fixed top-1/3 right-10 w-[600px] h-[500px] cyan-radial rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-t from-emerald-500/10 to-transparent rounded-full blur-[160px] pointer-events-none -z-10" />
+
       {/* Desktop Navigation Top Bar (>= 768px) */}
       <DesktopHeader
         activeTab={activeTab}
@@ -34,8 +39,8 @@ export function AppContent() {
         onOpenDaySelector={() => setIsDaySelectorOpen(true)}
       />
 
-      {/* Main Content Area: Responsive container (max-w-7xl on desktop, max-w-md on mobile) */}
-      <main className="flex-1 w-full max-w-md md:max-w-7xl mx-auto px-4 md:px-8">
+      {/* Main Content Area: High-Performance 1880px Responsive Container */}
+      <main className="flex-1 w-full max-w-[1880px] mx-auto px-4 lg:px-6 py-4 hud-pattern">
         {activeTab === 'dashboard' && (
           <DashboardPage onStartSession={handleStartSession} />
         )}
