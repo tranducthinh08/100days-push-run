@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>100 DAYS PUSH &amp; RUN CHALLENGE - Pro Athlete Station</title>
+<!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, Space Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;600;700;800&amp;family=Space+Mono:ital,wght@0,400;0,700;1,700&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome 6 Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              DEFAULT: '#0B0E14',
+              surface: '#111622',
+              card: 'rgba(17, 22, 34, 0.78)',
+              glass: 'rgba(21, 28, 44, 0.55)',
+              border: 'rgba(255, 255, 255, 0.08)'
+            },
+            flame: {
+              DEFAULT: '#FF5500',
+              glow: '#FF6D00',
+              accent: '#FF8A00'
+            },
+            cyan: {
+              DEFAULT: '#00E5FF',
+              dark: '#0099b8'
+            },
+            emerald: {
+              DEFAULT: '#00E676',
+              mint: '#10B981'
+            }
+          },
+          boxShadow: {
+            'neon-orange': '0 0 25px -4px rgba(255, 85, 0, 0.55), 0 0 10px -2px rgba(255, 85, 0, 0.35)',
+            'neon-cyan': '0 0 25px -4px rgba(0, 229, 255, 0.45), 0 0 10px -2px rgba(0, 229, 255, 0.3)',
+            'neon-green': '0 0 25px -4px rgba(0, 230, 118, 0.45)',
+            'glass-hud': '0 20px 50px -10px rgba(0,0,0,0.8), inset 0 1px 1px 0 rgba(255,255,255,0.12)'
+          }
+        }
+      }
+    }
+</script>
+<style>
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #0B0E14; }
+  ::-webkit-scrollbar-thumb { background: #1B2233; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #FF5500; }
+  
+  .flame-radial {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 85, 0, 0.22) 0%, rgba(255, 85, 0, 0) 70%);
+  }
+  .cyan-radial {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.16) 0%, rgba(0, 229, 255, 0) 70%);
+  }
+
+  /* Scanline HUD effect */
+  .hud-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.06); filter: drop-shadow(0 0 18px rgba(255,85,0,0.85)); }
+  }
+  .flame-pulse {
+    animation: pulseGlow 2.5s infinite ease-in-out;
+  }
+</style>
+</head>
+<body class="bg-[#0B0E14] text-slate-100 font-sans antialiased min-h-screen selection:bg-[#FF5500] selection:text-white relative overflow-x-hidden">
+<!-- Ambient Background Spotlights -->
+<div class="fixed top-0 left-1/4 w-[750px] h-[550px] flame-radial rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="fixed top-1/3 right-10 w-[600px] h-[500px] cyan-radial rounded-full blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-t from-emerald-500/5 to-transparent rounded-full blur-[160px] pointer-events-none -z-10"></div>
+<!-- Top Tactical Navigation Chrome -->
+<header class="sticky top-0 z-40 bg-[#0B0E14]/90 backdrop-blur-2xl border-b border-white/[0.08]" data-purpose="top-hud-bar">
+<div class="max-w-[1880px] mx-auto px-4 lg:px-6 h-18 flex items-center justify-between gap-4 py-3">
+<!-- Brand Athlete Logo -->
+<div class="flex items-center gap-3.5 shrink-0">
+<div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#FF6D00] to-[#E53900] flex items-center justify-center text-white shadow-neon-orange ring-1 ring-white/25">
+<i class="fa-solid fa-fire text-xl"></i>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-extrabold text-xl tracking-tight text-white font-display">100DAYS</span>
+<span class="px-2 py-0.5 text-[10px] font-black tracking-widest uppercase bg-[#FF5500] text-white rounded shadow-sm">ATHLETE PRO</span>
+<span class="hidden sm:inline-block px-1.5 py-0.5 text-[9px] font-bold tracking-widest uppercase bg-white/10 text-cyan-300 rounded border border-cyan-500/30">V3.2 HUD</span>
+</div>
+<p class="text-[11px] font-mono font-medium text-slate-400 tracking-wider">PUSH &amp; RUN HIGH PERFORMANCE HUB</p>
+</div>
+</div>
+<!-- Live Fast Status Indicator -->
+<div class="hidden lg:flex items-center gap-6 px-4 py-1.5 rounded-full bg-[#111622]/90 border border-white/[0.08]">
+<div class="flex items-center gap-2 font-mono text-xs">
+<span class="w-2 h-2 rounded-full bg-[#00E676] animate-ping"></span>
+<span class="text-slate-400">TRẠNG THÁI:</span>
+<span class="font-bold text-[#00E676]">SẴN SÀNG TẬP LUYỆN</span>
+</div>
+<div class="h-3 w-px bg-white/10"></div>
+<div class="flex items-center gap-2 font-mono text-xs text-slate-300">
+<i class="fa-solid fa-satellite-dish text-[#00E5FF]"></i>
+<span>STRAVA ENGINE: <strong class="text-white">STANDBY</strong></span>
+</div>
+</div>
+<!-- Right Controls -->
+<div class="flex items-center gap-3">
+<!-- Quick Countdown Timer Badge -->
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs font-mono">
+<i class="fa-regular fa-clock text-[#FF8A00]"></i>
+<span class="text-slate-400">Target hôm nay:</span>
+<span class="text-white font-bold">40 Phút</span>
+</div>
+<!-- Mode Toggle -->
+<button class="px-3.5 py-2 rounded-xl bg-white/[0.06] hover:bg-white/10 border border-white/[0.1] text-xs font-bold text-slate-200 transition-all flex items-center gap-2" type="button">
+<i class="fa-solid fa-sliders text-[#FF5500]"></i>
+<span class="hidden sm:inline">Tuỳ chỉnh</span>
+</button>
+<!-- Sound Coach -->
+<button class="w-10 h-10 rounded-xl bg-[#111622] hover:bg-[#FF5500]/20 border border-white/[0.08] hover:border-[#FF5500]/40 text-slate-300 hover:text-white flex items-center justify-center transition-all" title="Bật âm thanh HLV hướng dẫn">
+<i class="fa-solid fa-volume-high text-xs"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN 3-COLUMN ASYMMETRICAL WORKOUT STATION LAYOUT -->
+<div class="max-w-[1880px] mx-auto px-4 lg:px-6 py-6 hud-pattern">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- ======================================================== -->
+<!-- COLUMN 1: LEFT SIDEBAR / ATHLETE DAILY HUB (24% WIDTH)    -->
+<!-- ======================================================== -->
+<aside class="lg:col-span-3 space-y-5" data-purpose="left-athlete-hub">
+<!-- Athlete Profile & Mission Card -->
+<div class="rounded-3xl p-5 bg-[#111622]/85 backdrop-blur-xl border border-white/[0.08] shadow-glass-hud relative overflow-hidden">
+<div class="absolute -top-12 -left-12 w-32 h-32 rounded-full bg-[#FF5500]/20 blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-3.5 mb-4 relative z-10">
+<div class="relative">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#1B2233] to-[#2B354E] border border-white/20 p-0.5 flex items-center justify-center text-white font-black text-xl font-display shadow-lg">
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FF8A00]">VN</span>
+</div>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#00E676] ring-2 ring-[#0B0E14] flex items-center justify-center text-[8px] text-black font-bold">
+              ✓
+            </span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-extrabold text-base text-white font-display">Chiến Binh #100</h3>
+<i class="fa-solid fa-shield-halved text-[#00E5FF] text-xs"></i>
+</div>
+<p class="text-xs text-slate-400 font-medium">Hạng mục: <span class="text-slate-200 font-bold">Iron Discipline</span></p>
+<span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#FF5500]/15 text-[#FF8A00] border border-[#FF5500]/30">
+              LEVEL 1: KHỞI TỰ THÂN
+            </span>
+</div>
+</div>
+<!-- Discipline Flame Streak Counter (Hero Widget) -->
+<div class="p-4 rounded-2xl bg-gradient-to-b from-[#1C161D] to-[#12141F] border border-[#FF5500]/30 shadow-neon-orange/40 relative overflow-hidden mb-4">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-[#FF8A00]">LỬA KỶ LUẬT (STREAK)</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="text-4xl font-black text-white font-mono tracking-tight">0</span>
+<span class="text-xs font-bold text-slate-400 uppercase">NGÀY LIÊN TIẾP</span>
+</div>
+</div>
+<div class="w-14 h-14 rounded-2xl bg-[#FF5500]/15 border border-[#FF5500]/40 flex items-center justify-center flame-pulse text-3xl text-[#FF5500]">
+<i class="fa-solid fa-fire"></i>
+</div>
+</div>
+<p class="text-[11px] text-slate-400 mt-2 font-medium flex items-center gap-1.5">
+<i class="fa-solid fa-sparkles text-[#FF8A00]"></i>
+            Hoàn thành hôm nay để kích hoạt ngọn lửa Ngày 1!
+          </p>
+</div>
+<!-- Workout Style Segmented Switcher -->
+<div class="space-y-1.5 mb-4">
+<label class="text-[11px] font-bold text-slate-400 tracking-wider uppercase font-mono">Chế độ trang bị:</label>
+<div class="grid grid-cols-2 p-1 rounded-xl bg-black/50 border border-white/[0.08] text-xs font-bold">
+<button class="py-2 rounded-lg bg-[#FF5500] text-white shadow-sm flex items-center justify-center gap-1.5 transition-all" type="button">
+<i class="fa-solid fa-person text-sm"></i>
+              Bodyweight
+            </button>
+<button class="py-2 rounded-lg text-slate-400 hover:text-white flex items-center justify-center gap-1.5 transition-all" type="button">
+<i class="fa-solid fa-dumbbell text-xs"></i>
+              Tạ Đơn
+            </button>
+</div>
+</div>
+<!-- Strava Live Sync Micro Chip -->
+<div class="p-3.5 rounded-2xl bg-[#0B0E14] border border-[#FC5200]/30 hover:border-[#FC5200] transition-colors group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-[#FC5200] text-white flex items-center justify-center font-black text-xs shadow-md shadow-[#FC5200]/30">
+                STR
+              </div>
+<div>
+<p class="text-xs font-extrabold text-white flex items-center gap-1">
+                  STRAVA LIVE SYNC
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+</p>
+<p class="text-[10px] text-slate-400 font-mono">Chờ kết nối dữ liệu GPS</p>
+</div>
+</div>
+<button class="px-2.5 py-1 text-[11px] font-bold text-white bg-[#FC5200] hover:bg-[#E04800] rounded-lg transition-all" type="button">
+              Ghép nối
+            </button>
+</div>
+</div>
+</div>
+<!-- Stage Selector Navigation (Giai đoạn 1 - 2 - 3) -->
+<div class="rounded-3xl p-5 bg-[#111622]/85 backdrop-blur-xl border border-white/[0.08] shadow-glass-hud">
+<div class="flex items-center justify-between mb-3 pb-2 border-b border-white/[0.08]">
+<span class="text-xs font-bold text-white uppercase tracking-wider font-display flex items-center gap-2">
+<i class="fa-solid fa-layer-group text-[#FF5500]"></i>
+            Lựa chọn giai đoạn
+          </span>
+<span class="text-[10px] font-mono text-[#00E5FF] font-bold">14 TUẦN TẬP</span>
+</div>
+<div class="space-y-2.5">
+<!-- GD 1: Active -->
+<div class="p-3.5 rounded-2xl bg-gradient-to-r from-[#FF5500]/15 to-transparent border-l-4 border-l-[#FF5500] border-y border-r border-white/[0.08] relative group cursor-pointer">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded text-[9px] font-black uppercase bg-[#FF5500] text-white">Đang thực hiện</span>
+<span class="text-xs font-extrabold text-white">GIAI ĐOẠN 1: NỀN TẢNG</span>
+</div>
+<p class="text-[11px] text-slate-400 mt-1">Tuần 1 - 4 • Thích nghi &amp; Volume 8-18 Reps</p>
+</div>
+<div class="text-right">
+<span class="text-sm font-mono font-bold text-[#FF8A00]">1%</span>
+</div>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-[#FF5500] h-full w-[3%]"></div>
+</div>
+</div>
+<!-- GD 2 -->
+<div class="p-3.5 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06] relative group cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-xs font-bold text-slate-300">GIAI ĐOẠN 2: BỨT PHÁ KHỐI LƯỢNG</span>
+<p class="text-[11px] text-slate-400 mt-0.5">Tuần 5 - 9 • Kim tự tháp &amp; Tăng sức bền Zone 2</p>
+</div>
+<i class="fa-solid fa-lock text-slate-600 text-xs"></i>
+</div>
+</div>
+<!-- GD 3 -->
+<div class="p-3.5 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06] relative group cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-xs font-bold text-slate-300">GIAI ĐOẠN 3: MASTER 100 PUSH-UPS</span>
+<p class="text-[11px] text-slate-400 mt-0.5">Tuần 10 - 14 • Chạm mốc 100 Reps liên tục</p>
+</div>
+<i class="fa-solid fa-lock text-slate-600 text-xs"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Coach Notes -->
+<div class="p-4 rounded-3xl bg-[#00E5FF]/5 border border-[#00E5FF]/20 text-slate-300 text-xs space-y-2">
+<div class="flex items-center gap-2 font-bold text-[#00E5FF]">
+<i class="fa-solid fa-lightbulb"></i>
+<span>LỜI KHUYÊN HÔM NAY (NGÀY 1)</span>
+</div>
+<p class="text-[11px] text-slate-300 leading-relaxed">
+          Đừng vội bung hết sức ở hiệp đầu. Tập trung khóa chặt xương bả vai, siết cơ bụng và chạm ngực gần sát sàn (khoảng 3cm).
+        </p>
+</div>
+</aside>
+<!-- ======================================================== -->
+<!-- COLUMN 2: CENTER STAGE - WORKOUT HUD HERO (48% WIDTH)    -->
+<!-- ======================================================== -->
+<main class="lg:col-span-6 space-y-6" data-purpose="center-stage-workout">
+<!-- Primary Workout Target HUD Card -->
+<article class="rounded-3xl p-6 lg:p-7 bg-[#111622]/90 backdrop-blur-2xl border border-white/[0.1] shadow-glass-hud relative overflow-hidden">
+<!-- Laser Top Border Line -->
+<div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#FF5500] to-transparent"></div>
+<div class="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-[#FF5500]/15 blur-3xl pointer-events-none"></div>
+<!-- Banner Day Header -->
+<div class="relative z-10 flex flex-wrap items-center justify-between gap-3 mb-4">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-xl bg-[#FF5500] text-white text-xs font-black tracking-widest uppercase shadow-neon-orange flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+              NGÀY 1 / 100
+            </span>
+<span class="px-3 py-1 rounded-xl bg-white/[0.06] border border-white/10 text-slate-300 text-xs font-mono font-bold">
+              THỨ 2 • PUSH DAY
+            </span>
+</div>
+<span class="text-xs font-mono font-bold text-[#00E5FF] bg-[#00E5FF]/10 border border-[#00E5FF]/30 px-3 py-1 rounded-xl flex items-center gap-1.5">
+<i class="fa-solid fa-gauge-high"></i>
+            CƯỜNG ĐỘ: NỀN TẢNG
+          </span>
+</div>
+<!-- Hero Headline -->
+<div class="relative z-10 mb-6">
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight font-display uppercase leading-tight">
+            KÍCH HOẠT SỨC MẠNH HÍT ĐẤT
+          </h1>
+<p class="text-xs sm:text-sm text-slate-400 mt-1.5 flex items-center gap-2">
+<i class="fa-solid fa-bullseye text-[#FF5500]"></i>
+            Khởi tạo Volume 5 Hiệp • Khóa khớp tay sau • Gồng bụng Hollow Body
+          </p>
+</div>
+<!-- Daily Target HUD Arc & Metric Showcase -->
+<div class="p-5 rounded-2xl bg-gradient-to-br from-[#161C2C] to-[#0D111A] border border-white/[0.08] relative mb-6">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+<!-- Circular Target Arc Progress -->
+<div class="flex items-center gap-4 sm:col-span-2">
+<div class="relative w-20 h-20 shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background Track -->
+<path class="text-white/10" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<!-- Value Arc (0% at start) -->
+<path class="text-[#FF5500]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="1, 100" stroke-linecap="round" stroke-width="3.8"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-sm font-black font-mono text-white">0%</span>
+<span class="text-[8px] text-slate-400 uppercase font-mono">ĐẠT</span>
+</div>
+</div>
+<div>
+<div class="text-[11px] uppercase font-bold text-slate-400 font-mono">MỤC TIÊU SỐ REPS HÔM NAY</div>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="text-3xl lg:text-4xl font-black text-white font-mono">38</span>
+<span class="text-sm font-bold text-[#FF8A00] font-mono">REPS / 5 HIỆP</span>
+</div>
+<p class="text-[11px] text-slate-400 mt-1">Phân bổ nhịp độ: <span class="text-white font-semibold">2 giây xuống - 1 giây đẩy bốc</span></p>
+</div>
+</div>
+<!-- Time and Rest stats -->
+<div class="grid grid-cols-2 sm:grid-cols-1 gap-2 pt-3 sm:pt-0 sm:border-l sm:border-white/10 sm:pl-4">
+<div>
+<span class="text-[10px] text-slate-400 font-mono uppercase block">Thời lượng:</span>
+<span class="text-base font-bold text-white font-mono">35 - 40 Phút</span>
+</div>
+<div>
+<span class="text-[10px] text-[#00E5FF] font-mono uppercase block">Nghỉ giữa hiệp:</span>
+<span class="text-base font-bold text-[#00E5FF] font-mono">60s - 90s</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3 Step Visual Workout Sequence -->
+<div class="space-y-4 mb-7" data-purpose="workout-sequence-blocks">
+<!-- Block 1: Warmup -->
+<div class="p-4 rounded-2xl bg-[#141A28]/80 border border-white/[0.06] hover:border-white/15 transition-all">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-lg bg-white/10 text-white font-mono font-bold text-xs flex items-center justify-center">1</span>
+<h4 class="font-extrabold text-sm text-slate-200">Khởi Động Khớp Vai &amp; Cổ Tay</h4>
+</div>
+<span class="text-[11px] font-mono font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded">5 PHÚT</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 pl-8">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-[#00E676] text-xs"></i>
+<span>Xoay cổ tay &amp; khớp C2: <strong class="text-white font-mono">15 vòng</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-[#00E676] text-xs"></i>
+<span>Hít đất bả vai (Scapular): <strong class="text-white font-mono">2 x 12 reps</strong></span>
+</div>
+</div>
+</div>
+<!-- Block 2: MAIN EXERCISE (Neon Flame Focus Card) -->
+<div class="p-5 rounded-2xl bg-gradient-to-b from-[#221B27] via-[#171926] to-[#121622] border-2 border-[#FF5500] shadow-neon-orange relative overflow-hidden">
+<span class="absolute top-0 right-0 bg-[#FF5500] text-white text-[10px] font-black uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+              TRỌNG TÂM CHÍNH
+            </span>
+<div class="flex items-center gap-2.5 mb-3">
+<span class="w-7 h-7 rounded-lg bg-[#FF5500] text-white font-mono font-black text-xs flex items-center justify-center shadow-sm">2</span>
+<div>
+<h4 class="font-black text-base text-white">Hít Đất Tiêu Chuẩn (Standard Push-ups)</h4>
+<p class="text-[11px] text-[#FF8A00] font-medium">Bàn tay mở rộng bằng vai • Mắt nhìn chéo sàn 45 độ</p>
+</div>
+</div>
+<!-- 5 SETS INTERACTIVE REPS MATRIX -->
+<div class="p-3.5 rounded-xl bg-black/60 border border-white/[0.08] mb-4">
+<div class="flex items-center justify-between text-[11px] font-mono font-bold text-slate-400 mb-2 uppercase">
+<span>LỘ TRÌNH 5 HIỆP (REPS TARGET):</span>
+<span class="text-[#FF8A00]">Tổng = 38 Reps</span>
+</div>
+<div class="grid grid-cols-5 gap-2 text-center font-mono">
+<div class="p-2.5 rounded-xl bg-[#FF5500] text-white shadow-neon-orange ring-1 ring-white/30">
+<div class="text-[9px] uppercase font-bold text-white/80">Hiệp 1</div>
+<div class="text-lg font-black mt-0.5">9</div>
+</div>
+<div class="p-2.5 rounded-xl bg-white/[0.07] border border-white/10 text-white">
+<div class="text-[9px] uppercase font-bold text-slate-400">Hiệp 2</div>
+<div class="text-lg font-black mt-0.5">8</div>
+</div>
+<div class="p-2.5 rounded-xl bg-white/[0.07] border border-white/10 text-white">
+<div class="text-[9px] uppercase font-bold text-slate-400">Hiệp 3</div>
+<div class="text-lg font-black mt-0.5">8</div>
+</div>
+<div class="p-2.5 rounded-xl bg-white/[0.07] border border-white/10 text-white">
+<div class="text-[9px] uppercase font-bold text-slate-400">Hiệp 4</div>
+<div class="text-lg font-black mt-0.5">7</div>
+</div>
+<div class="p-2.5 rounded-xl bg-white/[0.07] border border-white/10 text-white">
+<div class="text-[9px] uppercase font-bold text-slate-400">Hiệp 5</div>
+<div class="text-lg font-black mt-0.5">6</div>
+</div>
+</div>
+</div>
+<!-- Big Touch-To-Count Energy Action CTA -->
+<button class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#FF5500] via-[#FF6D00] to-[#FF8A00] hover:from-[#FF6D00] hover:to-[#FFA000] text-white font-black text-sm uppercase tracking-wider shadow-neon-orange hover:shadow-glow-orange active:scale-[0.99] transition-all flex items-center justify-center gap-3 border border-white/25" type="button">
+<i class="fa-solid fa-hand-pointer text-lg animate-bounce"></i>
+<span>CHẠM ĐỂ ĐẾM (TOUCH-TO-COUNT HUD)</span>
+</button>
+</div>
+<!-- Block 3: Support & Cooldown -->
+<div class="p-4 rounded-2xl bg-[#141A28]/80 border border-white/[0.06] hover:border-white/15 transition-all">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-lg bg-white/10 text-white font-mono font-bold text-xs flex items-center justify-center">3</span>
+<h4 class="font-extrabold text-sm text-slate-200">Bài Bổ Trợ Tay Sau &amp; Cơ Lõi (Core)</h4>
+</div>
+<span class="text-[11px] font-mono font-bold text-[#00E5FF] bg-[#00E5FF]/10 px-2 py-0.5 rounded">10 PHÚT</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 pl-8">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-[#00E676] text-xs"></i>
+<span>Hít đất kim cương (Diamond): <strong class="text-white font-mono">3 x 12 reps</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-[#00E676] text-xs"></i>
+<span>Con bọ chéo (Deadbug): <strong class="text-white font-mono">3 x 10 reps/bên</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Finish Workout Fast Toggle -->
+<div class="flex items-center justify-between pt-2 border-t border-white/[0.08]">
+<span class="text-xs text-slate-400 font-mono">Kỷ luật hôm nay là sức mạnh ngày mai</span>
+<button class="px-5 py-2.5 rounded-xl bg-white/[0.07] hover:bg-[#00E676]/20 border border-white/10 hover:border-[#00E676]/40 text-slate-200 hover:text-[#00E676] font-bold text-xs transition-all flex items-center gap-2" type="button">
+<i class="fa-solid fa-check-double"></i>
+            Đánh dấu đã hoàn thành
+          </button>
+</div>
+</article>
+<!-- Training Volume Analytics & Muscle Activation HUD -->
+<div class="rounded-3xl p-6 bg-[#111622]/90 backdrop-blur-xl border border-white/[0.08] shadow-glass-hud">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-[#00E5FF]/15 text-[#00E5FF] border border-[#00E5FF]/30 flex items-center justify-center text-xs">
+<i class="fa-solid fa-chart-column"></i>
+</div>
+<div>
+<h3 class="text-sm font-extrabold text-white uppercase font-display">PHÂN TÍCH VOLUME &amp; KÍCH HOẠT CƠ BẮP</h3>
+<p class="text-[10px] text-slate-400 font-mono">Biểu đồ dự phóng tải lượng 7 ngày tới</p>
+</div>
+</div>
+<span class="text-[10px] font-mono text-[#00E676] font-bold px-2 py-0.5 bg-[#00E676]/10 rounded border border-[#00E676]/30">
+            OPTIMAL LOAD
+          </span>
+</div>
+<!-- Volume Bar Trend Chart -->
+<div class="grid grid-cols-7 gap-2.5 items-end h-28 pt-4 pb-2 px-2 bg-black/40 rounded-2xl border border-white/[0.04] mb-4">
+<!-- T2: Today -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="text-[9px] font-mono text-[#FF8A00] font-bold">38</div>
+<div class="w-full bg-[#FF5500] rounded-t-lg h-[45%] shadow-neon-orange"></div>
+<span class="text-[10px] font-mono font-bold text-white">T2</span>
+</div>
+<!-- T3: Run -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="text-[9px] font-mono text-[#00E5FF] font-bold">4km</div>
+<div class="w-full bg-[#00E5FF] rounded-t-lg h-[60%] shadow-neon-cyan"></div>
+<span class="text-[10px] font-mono font-bold text-slate-400">T3</span>
+</div>
+<!-- T4: Push -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="text-[9px] font-mono text-[#FF8A00] font-bold">42</div>
+<div class="w-full bg-white/20 hover:bg-[#FF5500] rounded-t-lg h-[50%] transition-colors"></div>
+<span class="text-[10px] font-mono font-bold text-slate-400">T4</span>
+</div>
+<!-- T5: Run -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="text-[9px] font-mono text-[#00E5FF] font-bold">5km</div>
+<div class="w-full bg-white/20 hover:bg-[#00E5FF] rounded-t-lg h-[65%] transition-colors"></div>
+<span class="text-[10px] font-mono font-bold text-slate-400">T5</span>
+</div>
+<!-- T6: Push -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="text-[9px] font-mono text-[#FF8A00] font-bold">45</div>
+<div class="w-full bg-white/20 hover:bg-[#FF5500] rounded-t-lg h-[55%] transition-colors"></div>
+<span class="text-[10px] font-mono font-bold text-slate-400">T6</span>
+</div>
+<!-- T7: Run -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="text-[9px] font-mono text-[#00E5FF] font-bold">5km</div>
+<div class="w-full bg-white/20 hover:bg-[#00E5FF] rounded-t-lg h-[65%] transition-colors"></div>
+<span class="text-[10px] font-mono font-bold text-slate-400">T7</span>
+</div>
+<!-- CN: Rest -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="text-[9px] font-mono text-[#00E676] font-bold">Zen</div>
+<div class="w-full bg-[#00E676]/30 rounded-t-lg h-[20%]"></div>
+<span class="text-[10px] font-mono font-bold text-[#00E676]">CN</span>
+</div>
+</div>
+<!-- Muscle Activation Tags -->
+<div class="flex flex-wrap items-center gap-2 text-xs">
+<span class="text-[11px] font-bold text-slate-400 uppercase font-mono mr-1">Cơ bắp chính:</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#FF5500]/15 text-[#FF8A00] border border-[#FF5500]/30 font-bold text-[11px]">
+            Cơ Ngực (Pectoralis) 85%
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-white/[0.05] text-slate-300 border border-white/10 font-medium text-[11px]">
+            Tay sau (Triceps) 75%
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/20 font-medium text-[11px]">
+            Cơ bụng Lõi (Core) 60%
+          </span>
+</div>
+</div>
+</main>
+<!-- ======================================================== -->
+<!-- COLUMN 3: RIGHT RAIL - 100-DAY MATRIX & TROPHY (28% WIDTH)-->
+<!-- ======================================================== -->
+<aside class="lg:col-span-3 space-y-6" data-purpose="right-roadmap-matrix">
+<!-- Interactive 30-Day Matrix Grid Calendar -->
+<article class="rounded-3xl p-5 bg-[#111622]/90 backdrop-blur-xl border border-white/[0.08] shadow-glass-hud" data-purpose="roadmap-calendar-matrix">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-white/[0.08]">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-[#FF5500]/15 text-[#FF5500] border border-[#FF5500]/30 flex items-center justify-center text-xs shadow-sm">
+<i class="fa-solid fa-calendar-check"></i>
+</div>
+<div>
+<h3 class="text-sm font-extrabold text-white uppercase font-display">MA TRẬN LỘ TRÌNH 100 NGÀY</h3>
+<p class="text-[10px] text-slate-400 font-mono">Hiển thị 30 ngày Giai đoạn 1</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white/10 text-white">T1-T4</span>
+</div>
+<!-- Weekday Labels -->
+<div class="grid grid-cols-7 gap-1.5 text-center text-[10px] font-mono font-bold text-slate-400 mb-2">
+<span>T2</span>
+<span>T3</span>
+<span>T4</span>
+<span>T5</span>
+<span>T6</span>
+<span>T7</span>
+<span class="text-[#00E676]">CN</span>
+</div>
+<!-- 30-Day Grid with Distinct Functional Colors -->
+<div class="grid grid-cols-7 gap-1.5 text-xs font-mono">
+<!-- Day 1: TODAY ACTIVE (Cam Push) -->
+<div class="aspect-square rounded-xl bg-gradient-to-br from-[#FF5500] to-[#E53900] text-white flex flex-col items-center justify-center cursor-pointer shadow-neon-orange ring-1 ring-white/40 transform scale-105 relative group">
+<span class="font-black text-xs">1</span>
+<i class="fa-solid fa-dumbbell text-[8px] mt-0.5"></i>
+</div>
+<!-- Day 2: RUN (Cyan) -->
+<div class="aspect-square rounded-xl bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/30 text-[#00E5FF] flex flex-col items-center justify-center cursor-pointer transition-all">
+<span class="font-bold text-xs">2</span>
+<i class="fa-solid fa-person-running text-[8px] mt-0.5"></i>
+</div>
+<!-- Day 3: PUSH -->
+<div class="aspect-square rounded-xl bg-white/[0.04] hover:bg-[#FF5500]/10 border border-white/[0.08] text-slate-300 hover:text-[#FF8A00] hover:border-[#FF5500]/40 flex flex-col items-center justify-center cursor-pointer transition-all">
+<span class="font-bold text-xs">3</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/70 mt-0.5"></i>
+</div>
+<!-- Day 4: RUN -->
+<div class="aspect-square rounded-xl bg-white/[0.04] hover:bg-[#00E5FF]/10 border border-white/[0.08] text-slate-300 hover:text-[#00E5FF] hover:border-[#00E5FF]/40 flex flex-col items-center justify-center cursor-pointer transition-all">
+<span class="font-bold text-xs">4</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/70 mt-0.5"></i>
+</div>
+<!-- Day 5: PUSH -->
+<div class="aspect-square rounded-xl bg-white/[0.04] hover:bg-[#FF5500]/10 border border-white/[0.08] text-slate-300 hover:text-[#FF8A00] flex flex-col items-center justify-center cursor-pointer transition-all">
+<span class="font-bold text-xs">5</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/70 mt-0.5"></i>
+</div>
+<!-- Day 6: RUN -->
+<div class="aspect-square rounded-xl bg-white/[0.04] hover:bg-[#00E5FF]/10 border border-white/[0.08] text-slate-300 hover:text-[#00E5FF] flex flex-col items-center justify-center cursor-pointer transition-all">
+<span class="font-bold text-xs">6</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/70 mt-0.5"></i>
+</div>
+<!-- Day 7: REST / RECOVERY (Lime Green) -->
+<div class="aspect-square rounded-xl bg-[#00E676]/10 hover:bg-[#00E676]/20 border border-[#00E676]/30 text-[#00E676] flex flex-col items-center justify-center cursor-pointer transition-all">
+<span class="font-bold text-xs">7</span>
+<i class="fa-solid fa-leaf text-[8px] mt-0.5"></i>
+</div>
+<!-- Row 2 (8 - 14) -->
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer hover:border-[#FF5500]/40">
+<span class="font-bold text-xs">8</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer hover:border-[#00E5FF]/40">
+<span class="font-bold text-xs">9</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer hover:border-[#FF5500]/40">
+<span class="font-bold text-xs">10</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer hover:border-[#00E5FF]/40">
+<span class="font-bold text-xs">11</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer hover:border-[#FF5500]/40">
+<span class="font-bold text-xs">12</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer hover:border-[#00E5FF]/40">
+<span class="font-bold text-xs">13</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-[#00E676]/10 border border-[#00E676]/20 text-[#00E676] flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">14</span>
+<i class="fa-solid fa-leaf text-[8px] mt-0.5"></i>
+</div>
+<!-- Row 3 (15 - 21) -->
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">15</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">16</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">17</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">18</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">19</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">20</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-[#00E676]/10 border border-[#00E676]/20 text-[#00E676] flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">21</span>
+<i class="fa-solid fa-leaf text-[8px] mt-0.5"></i>
+</div>
+<!-- Row 4 (22 - 28) -->
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">22</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">23</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">24</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">25</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<!-- Day 26 Star: TEST MAX REPS -->
+<div class="aspect-square rounded-xl bg-amber-500/20 border border-amber-400 text-amber-300 flex flex-col items-center justify-center cursor-pointer relative" title="Cuối tuần 4: Test Max Reps">
+<i class="fa-solid fa-star text-[7px] text-amber-400 absolute top-1 right-1"></i>
+<span class="font-black text-xs">26</span>
+<i class="fa-solid fa-trophy text-[8px] text-amber-400 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">27</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-[#00E676]/10 border border-[#00E676]/20 text-[#00E676] flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">28</span>
+<i class="fa-solid fa-leaf text-[8px] mt-0.5"></i>
+</div>
+<!-- Row 5 (29 - 30) -->
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">29</span>
+<i class="fa-solid fa-dumbbell text-[8px] text-[#FF5500]/60 mt-0.5"></i>
+</div>
+<div class="aspect-square rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-300 flex flex-col items-center justify-center cursor-pointer">
+<span class="font-bold text-xs">30</span>
+<i class="fa-solid fa-person-running text-[8px] text-[#00E5FF]/60 mt-0.5"></i>
+</div>
+</div>
+<!-- Matrix Color Legend -->
+<div class="grid grid-cols-3 gap-1 pt-3.5 mt-4 border-t border-white/[0.08] text-[10px] font-mono font-bold text-center">
+<div class="flex items-center justify-center gap-1.5 text-[#FF8A00]">
+<span class="w-2 h-2 rounded-full bg-[#FF5500]"></span>
+<span>Hít đất</span>
+</div>
+<div class="flex items-center justify-center gap-1.5 text-[#00E5FF]">
+<span class="w-2 h-2 rounded-full bg-[#00E5FF]"></span>
+<span>Chạy bộ</span>
+</div>
+<div class="flex items-center justify-center gap-1.5 text-[#00E676]">
+<span class="w-2 h-2 rounded-full bg-[#00E676]"></span>
+<span>Phục hồi</span>
+</div>
+</div>
+</article>
+<!-- Athlete Performance Leaderboard & Career Stats -->
+<div class="rounded-3xl p-5 bg-[#111622]/90 backdrop-blur-xl border border-white/[0.08] shadow-glass-hud space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-white/[0.08]">
+<h3 class="text-xs font-black text-white uppercase tracking-wider font-display flex items-center gap-2">
+<i class="fa-solid fa-award text-amber-400"></i>
+            BẢNG THÀNH TÍCH CÁ NHÂN
+          </h3>
+<span class="text-[10px] font-mono text-slate-400">PRO HUD</span>
+</div>
+<!-- 4 Essential Stat Micro-Cards -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Stat 1 -->
+<div class="p-3.5 rounded-2xl bg-black/40 border border-white/[0.06]">
+<span class="text-[10px] font-bold text-slate-400 uppercase block font-mono">TỔNG PUSH-UPS</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-2xl font-black text-white font-mono">0</span>
+<span class="text-[10px] text-slate-400 font-bold">cái</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full mt-2">
+<div class="bg-[#FF5500] h-full w-0"></div>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="p-3.5 rounded-2xl bg-black/40 border border-white/[0.06]">
+<span class="text-[10px] font-bold text-slate-400 uppercase block font-mono">TỔNG KM CHẠY</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-2xl font-black text-[#00E5FF] font-mono">0.0</span>
+<span class="text-[10px] text-slate-400 font-bold">km</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full mt-2">
+<div class="bg-[#00E5FF] h-full w-0"></div>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="p-3.5 rounded-2xl bg-black/40 border border-white/[0.06]">
+<span class="text-[10px] font-bold text-slate-400 uppercase block font-mono">KỶ LỤC MAX REPS</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-2xl font-black text-amber-400 font-mono">0</span>
+<span class="text-[10px] text-slate-400 font-bold">reps/hiệp</span>
+</div>
+<p class="text-[9px] text-amber-400/80 mt-1 font-mono">Target: 30 reps</p>
+</div>
+<!-- Stat 4 -->
+<div class="p-3.5 rounded-2xl bg-black/40 border border-white/[0.06]">
+<span class="text-[10px] font-bold text-slate-400 uppercase block font-mono">CHẶNG ĐƯỜNG</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-2xl font-black text-[#00E676] font-mono">1</span>
+<span class="text-[10px] text-slate-400 font-bold">/ 100</span>
+</div>
+<p class="text-[9px] text-[#00E676] mt-1 font-mono">1% hoàn thành</p>
+</div>
+</div>
+<!-- Badges & Milestone Showcase -->
+<div class="pt-2">
+<div class="text-[11px] font-mono font-bold text-slate-400 uppercase mb-2">Huy hiệu chinh phục:</div>
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-xl bg-[#FF5500]/15 border border-[#FF5500]/30 flex items-center justify-center text-[#FF5500]" title="Chiến Binh Ngày 1">
+<i class="fa-solid fa-fire text-sm"></i>
+</div>
+<div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-600" title="Chưa mở khóa: 7 Days Streak">
+<i class="fa-solid fa-bolt text-sm"></i>
+</div>
+<div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-600" title="Chưa mở khóa: 50 Reps Milestone">
+<i class="fa-solid fa-trophy text-sm"></i>
+</div>
+<div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-600" title="Chưa mở khóa: Half Century Run (50km)">
+<i class="fa-solid fa-person-running text-sm"></i>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</body></html>

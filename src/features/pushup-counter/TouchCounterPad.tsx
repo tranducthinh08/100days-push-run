@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Minus, Plus, Target, CheckCircle } from 'lucide-react';
+import gsap from 'gsap';
 import { Button } from '@/shared/ui/Button';
 
 interface TouchCounterPadProps {
@@ -28,6 +29,19 @@ export function TouchCounterPad({
   onTouchEnd,
 }: TouchCounterPadProps) {
   const isGoalReached = targetReps > 0 && count >= targetReps;
+  const numberRef = useRef<HTMLSpanElement>(null);
+  const prevCountRef = useRef(count);
+
+  useEffect(() => {
+    if (numberRef.current && count > prevCountRef.current) {
+      gsap.fromTo(
+        numberRef.current,
+        { scale: 1.25, color: '#c2410c' },
+        { scale: 1, color: '#f97316', duration: 0.28, ease: 'back.out(2.5)' }
+      );
+    }
+    prevCountRef.current = count;
+  }, [count]);
 
   return (
     <div className="flex flex-col flex-1 w-full gap-3.5 select-none">
@@ -76,7 +90,10 @@ export function TouchCounterPad({
 
         {/* Reps Counter */}
         <div className="flex flex-col items-center z-10">
-          <span className="font-mono text-8xl sm:text-9xl font-black text-orange-500 tracking-tight leading-none drop-shadow-[0_4px_20px_rgba(249,115,22,0.25)]">
+          <span
+            ref={numberRef}
+            className="font-mono text-8xl sm:text-9xl font-black text-orange-500 tracking-tight leading-none drop-shadow-[0_4px_20px_rgba(249,115,22,0.25)] origin-center inline-block"
+          >
             {count}
           </span>
           <span className="text-xs uppercase tracking-widest text-slate-500 font-bold mt-3 font-condensed">
