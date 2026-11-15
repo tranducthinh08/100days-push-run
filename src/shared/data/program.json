@@ -1,0 +1,4789 @@
+[
+  {
+    "dayNumber": 1,
+    "weekNumber": 1,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 1: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      9,
+      8,
+      8,
+      7,
+      6
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "9 - 8 - 8 - 7 - 6 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 2,
+    "weekNumber": 1,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 2: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 25,
+      "distanceKmTarget": 3.5,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 3,
+    "weekNumber": 1,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 3: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "8 - 8 - 8 - 8 - 8 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 4,
+    "weekNumber": 1,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 4: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 42,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 4 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
+    }
+  },
+  {
+    "dayNumber": 5,
+    "weekNumber": 1,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 5: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      11,
+      9,
+      8,
+      7,
+      6
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "11 - 9 - 8 - 7 - 6 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 6,
+    "weekNumber": 1,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 6: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 32,
+      "distanceKmTarget": 4.8,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 32 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 7,
+    "weekNumber": 1,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 1,
+    "type": "recovery",
+    "title": "Ngày 7: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 8,
+    "weekNumber": 2,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 8: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      12,
+      11,
+      11,
+      10,
+      9
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "12 - 11 - 11 - 10 - 9 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 9,
+    "weekNumber": 2,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 9: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 25,
+      "distanceKmTarget": 3.5,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 10,
+    "weekNumber": 2,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 10: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      11,
+      11,
+      11,
+      11,
+      11
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "11 - 11 - 11 - 11 - 11 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 11,
+    "weekNumber": 2,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 11: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 42,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 4 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
+    }
+  },
+  {
+    "dayNumber": 12,
+    "weekNumber": 2,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 12: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      14,
+      12,
+      11,
+      10,
+      9
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "14 - 12 - 11 - 10 - 9 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 13,
+    "weekNumber": 2,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 13: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 34,
+      "distanceKmTarget": 5.1,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 34 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 14,
+    "weekNumber": 2,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 1,
+    "type": "recovery",
+    "title": "Ngày 14: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 15,
+    "weekNumber": 3,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 15: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      15,
+      14,
+      14,
+      13,
+      12
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "15 - 14 - 14 - 13 - 12 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 16,
+    "weekNumber": 3,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 16: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 25,
+      "distanceKmTarget": 3.5,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 17,
+    "weekNumber": 3,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 17: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      14,
+      14,
+      14,
+      14,
+      14
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "14 - 14 - 14 - 14 - 14 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 18,
+    "weekNumber": 3,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 18: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 42,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 4 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
+    }
+  },
+  {
+    "dayNumber": 19,
+    "weekNumber": 3,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 19: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      17,
+      15,
+      14,
+      13,
+      12
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "17 - 15 - 14 - 13 - 12 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 20,
+    "weekNumber": 3,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 20: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 36,
+      "distanceKmTarget": 5.4,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 36 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 21,
+    "weekNumber": 3,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 1,
+    "type": "recovery",
+    "title": "Ngày 21: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 22,
+    "weekNumber": 4,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 22: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      18,
+      17,
+      17,
+      16,
+      15
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "18 - 17 - 17 - 16 - 15 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 23,
+    "weekNumber": 4,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 23: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 25,
+      "distanceKmTarget": 3.5,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 24,
+    "weekNumber": 4,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 24: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      17,
+      17,
+      17,
+      17,
+      17
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "17 - 17 - 17 - 17 - 17 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 25,
+    "weekNumber": 4,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 25: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 42,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 4 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
+    }
+  },
+  {
+    "dayNumber": 26,
+    "weekNumber": 4,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 26: Kiểm tra Max Push-ups",
+    "focus": "Kiểm tra năng lực tối đa hiệp 1 (AMRAP)",
+    "isTestDay": true,
+    "pushupTargetRepsPerSet": [
+      30,
+      15,
+      12,
+      10
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 4,
+        "targetReps": "30 - 15 - 12 - 10 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 27,
+    "weekNumber": 4,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 27: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 38,
+      "distanceKmTarget": 5.7,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 38 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 28,
+    "weekNumber": 4,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 1,
+    "type": "recovery",
+    "title": "Ngày 28: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 29,
+    "weekNumber": 5,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 1,
+    "type": "push",
+    "title": "Ngày 29: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      21,
+      20,
+      20,
+      19,
+      18
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "21 - 20 - 20 - 19 - 18 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 30,
+    "weekNumber": 5,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 1,
+    "type": "run",
+    "title": "Ngày 30: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 25,
+      "distanceKmTarget": 3.5,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 31,
+    "weekNumber": 5,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 31: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      21,
+      21,
+      20,
+      20,
+      20
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "21 - 21 - 20 - 20 - 20 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 32,
+    "weekNumber": 5,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 32: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 48,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 6
+      }
+    }
+  },
+  {
+    "dayNumber": 33,
+    "weekNumber": 5,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 33: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      24,
+      22,
+      21,
+      20,
+      19
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "24 - 22 - 21 - 20 - 19 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 34,
+    "weekNumber": 5,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 34: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 48,
+      "distanceKmTarget": 7.2,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 48 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 35,
+    "weekNumber": 5,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 2,
+    "type": "recovery",
+    "title": "Ngày 35: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 36,
+    "weekNumber": 6,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 36: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      22,
+      21,
+      20,
+      20,
+      18
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "22 - 21 - 20 - 20 - 18 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 37,
+    "weekNumber": 6,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 37: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 40,
+      "distanceKmTarget": 5.6,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 38,
+    "weekNumber": 6,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 38: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      23,
+      23,
+      22,
+      22,
+      22
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "23 - 23 - 22 - 22 - 22 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 39,
+    "weekNumber": 6,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 39: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 48,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 6
+      }
+    }
+  },
+  {
+    "dayNumber": 40,
+    "weekNumber": 6,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 40: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      26,
+      24,
+      23,
+      22,
+      21
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "26 - 24 - 23 - 22 - 21 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 41,
+    "weekNumber": 6,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 41: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 51,
+      "distanceKmTarget": 7.6,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 51 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 42,
+    "weekNumber": 6,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 2,
+    "type": "recovery",
+    "title": "Ngày 42: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 43,
+    "weekNumber": 7,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 43: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      24,
+      23,
+      22,
+      22,
+      20
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "24 - 23 - 22 - 22 - 20 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 44,
+    "weekNumber": 7,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 44: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 40,
+      "distanceKmTarget": 5.6,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 45,
+    "weekNumber": 7,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 45: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      25,
+      25,
+      24,
+      24,
+      24
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "25 - 25 - 24 - 24 - 24 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 46,
+    "weekNumber": 7,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 46: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 48,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 6
+      }
+    }
+  },
+  {
+    "dayNumber": 47,
+    "weekNumber": 7,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 47: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      28,
+      26,
+      25,
+      24,
+      23
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "28 - 26 - 25 - 24 - 23 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 48,
+    "weekNumber": 7,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 48: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 54,
+      "distanceKmTarget": 8.1,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 54 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 49,
+    "weekNumber": 7,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 2,
+    "type": "recovery",
+    "title": "Ngày 49: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 50,
+    "weekNumber": 8,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 50: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      26,
+      25,
+      24,
+      24,
+      22
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "26 - 25 - 24 - 24 - 22 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 51,
+    "weekNumber": 8,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 51: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 40,
+      "distanceKmTarget": 5.6,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 52,
+    "weekNumber": 8,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 52: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      27,
+      27,
+      26,
+      26,
+      26
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "27 - 27 - 26 - 26 - 26 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 53,
+    "weekNumber": 8,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 53: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 48,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 6
+      }
+    }
+  },
+  {
+    "dayNumber": 54,
+    "weekNumber": 8,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 54: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      30,
+      28,
+      27,
+      26,
+      25
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "30 - 28 - 27 - 26 - 25 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 55,
+    "weekNumber": 8,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 55: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 57,
+      "distanceKmTarget": 8.5,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 57 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 56,
+    "weekNumber": 8,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 2,
+    "type": "recovery",
+    "title": "Ngày 56: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 57,
+    "weekNumber": 9,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 57: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      28,
+      27,
+      26,
+      26,
+      24
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "28 - 27 - 26 - 26 - 24 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 58,
+    "weekNumber": 9,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 58: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 40,
+      "distanceKmTarget": 5.6,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 59,
+    "weekNumber": 9,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 59: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      29,
+      29,
+      28,
+      28,
+      28
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "29 - 29 - 28 - 28 - 28 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 60,
+    "weekNumber": 9,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 60: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 48,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 6
+      }
+    }
+  },
+  {
+    "dayNumber": 61,
+    "weekNumber": 9,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 61: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      32,
+      30,
+      29,
+      28,
+      27
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "32 - 30 - 29 - 28 - 27 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 62,
+    "weekNumber": 9,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 62: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 60,
+      "distanceKmTarget": 9,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 60 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 63,
+    "weekNumber": 9,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 2,
+    "type": "recovery",
+    "title": "Ngày 63: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 64,
+    "weekNumber": 10,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 64: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      30,
+      29,
+      28,
+      28,
+      26
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "30 - 29 - 28 - 28 - 26 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 65,
+    "weekNumber": 10,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 65: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 40,
+      "distanceKmTarget": 5.6,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 66,
+    "weekNumber": 10,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 66: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      31,
+      31,
+      30,
+      30,
+      30
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "31 - 31 - 30 - 30 - 30 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 67,
+    "weekNumber": 10,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 67: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 48,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 6
+      }
+    }
+  },
+  {
+    "dayNumber": 68,
+    "weekNumber": 10,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 2,
+    "type": "push",
+    "title": "Ngày 68: Kiểm tra Max Push-ups",
+    "focus": "Kiểm tra năng lực tối đa hiệp 1 (AMRAP)",
+    "isTestDay": true,
+    "pushupTargetRepsPerSet": [
+      65,
+      25,
+      20,
+      15
+    ],
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 4,
+        "targetReps": "65 - 25 - 20 - 15 reps",
+        "restSeconds": 45
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 69,
+    "weekNumber": 10,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 2,
+    "type": "run",
+    "title": "Ngày 69: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 63,
+      "distanceKmTarget": 9.4,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 63 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 70,
+    "weekNumber": 10,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 2,
+    "type": "recovery",
+    "title": "Ngày 70: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 45,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 71,
+    "weekNumber": 11,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 71: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      70,
+      30,
+      25,
+      20,
+      15
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "70 - 30 - 25 - 20 - 15 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 72,
+    "weekNumber": 11,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 72: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 45,
+      "distanceKmTarget": 6.3,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 73,
+    "weekNumber": 11,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 73: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      65,
+      30,
+      25,
+      25,
+      20
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "65 - 30 - 25 - 25 - 20 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 74,
+    "weekNumber": 11,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 74: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 54,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 8 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 8
+      }
+    }
+  },
+  {
+    "dayNumber": 75,
+    "weekNumber": 11,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 75: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      75,
+      25,
+      20,
+      20,
+      15
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "75 - 25 - 20 - 20 - 15 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 76,
+    "weekNumber": 11,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 76: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 70,
+      "distanceKmTarget": 10.5,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 70 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 77,
+    "weekNumber": 11,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 3,
+    "type": "recovery",
+    "title": "Ngày 77: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 78,
+    "weekNumber": 12,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 78: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      75,
+      30,
+      25,
+      20,
+      15
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "75 - 30 - 25 - 20 - 15 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 79,
+    "weekNumber": 12,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 79: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 45,
+      "distanceKmTarget": 6.3,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 80,
+    "weekNumber": 12,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 80: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      70,
+      30,
+      25,
+      25,
+      20
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "70 - 30 - 25 - 25 - 20 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 81,
+    "weekNumber": 12,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 81: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 54,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 8 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 8
+      }
+    }
+  },
+  {
+    "dayNumber": 82,
+    "weekNumber": 12,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 82: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      80,
+      25,
+      20,
+      20,
+      15
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "80 - 25 - 20 - 20 - 15 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 83,
+    "weekNumber": 12,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 83: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 70,
+      "distanceKmTarget": 10.5,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 70 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 84,
+    "weekNumber": 12,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 3,
+    "type": "recovery",
+    "title": "Ngày 84: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 85,
+    "weekNumber": 13,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 85: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      80,
+      30,
+      25,
+      20,
+      15
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "80 - 30 - 25 - 20 - 15 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 86,
+    "weekNumber": 13,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 86: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 45,
+      "distanceKmTarget": 6.3,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 87,
+    "weekNumber": 13,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 87: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      75,
+      30,
+      25,
+      25,
+      20
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "75 - 30 - 25 - 25 - 20 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 88,
+    "weekNumber": 13,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 88: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 54,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 8 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 8
+      }
+    }
+  },
+  {
+    "dayNumber": 89,
+    "weekNumber": 13,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 89: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      85,
+      25,
+      20,
+      20,
+      15
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "85 - 25 - 20 - 20 - 15 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 90,
+    "weekNumber": 13,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 90: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 70,
+      "distanceKmTarget": 10.5,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 70 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 91,
+    "weekNumber": 13,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 3,
+    "type": "recovery",
+    "title": "Ngày 91: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 92,
+    "weekNumber": 14,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 92: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      80,
+      30,
+      25,
+      20,
+      15
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "80 - 30 - 25 - 20 - 15 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 93,
+    "weekNumber": 14,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 93: Chạy bộ Sức bền",
+    "focus": "Chạy nhẹ Zone 2 dưỡng sức + Phục hồi cơ chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 45,
+      "distanceKmTarget": 6.3,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  },
+  {
+    "dayNumber": 94,
+    "weekNumber": 14,
+    "dayOfWeekIndex": 2,
+    "dayOfWeekVi": "Thứ 4",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 94: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Density Push-ups (Giảm nghỉ) + Lưng xô chống gù vai",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [
+      75,
+      30,
+      25,
+      25,
+      20
+    ],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "standard-push-up",
+        "targetSets": 5,
+        "targetReps": "75 - 30 - 25 - 25 - 20 reps",
+        "restSeconds": 60
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "bent-over-dumbbell-row",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "30s/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 95,
+    "weekNumber": 14,
+    "dayOfWeekIndex": 3,
+    "dayOfWeekVi": "Thứ 5",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 95: Chạy bộ Sức bền",
+    "focus": "Chạy Interval/Tempo biến tốc + Tăng sức mạnh bắp chân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "single-leg-calf-raise",
+        "targetSets": 3,
+        "targetReps": "15 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 54,
+      "runType": "interval",
+      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 8 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "intervalConfig": {
+        "workDurationSec": 120,
+        "recoveryDurationSec": 60,
+        "repetitions": 8
+      }
+    }
+  },
+  {
+    "dayNumber": 96,
+    "weekNumber": 14,
+    "dayOfWeekIndex": 4,
+    "dayOfWeekVi": "Thứ 6",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 96: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Thử thách Reps cao + Chùng chân cân bằng cơ đùi",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 1,
+        "targetReps": "Nghỉ dưỡng cơ",
+        "restSeconds": 0
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-reverse-lunge",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "plank",
+        "targetSets": 3,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 97,
+    "weekNumber": 14,
+    "dayOfWeekIndex": 5,
+    "dayOfWeekVi": "Thứ 7",
+    "phase": 3,
+    "type": "run",
+    "title": "Ngày 97: Chạy bộ Sức bền",
+    "focus": "Chạy dài tích lũy nền tảng hiếu khí (Long Run)",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 70,
+      "distanceKmTarget": 10.5,
+      "runType": "long-run",
+      "paceGuidance": "Pace bền bỉ ổn định",
+      "description": "Chạy dài tích lũy thể lực 70 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+    }
+  },
+  {
+    "dayNumber": 98,
+    "weekNumber": 14,
+    "dayOfWeekIndex": 6,
+    "dayOfWeekVi": "Chủ nhật",
+    "phase": 3,
+    "type": "recovery",
+    "title": "Ngày 98: Active Recovery & Giãn cơ",
+    "focus": "Đi bộ thả lỏng + Kéo giãn toàn thân",
+    "isTestDay": false,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "6 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "doorway-chest-stretch",
+        "targetSets": 2,
+        "targetReps": "45s",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 99,
+    "weekNumber": 15,
+    "dayOfWeekIndex": 0,
+    "dayOfWeekVi": "Thứ 2",
+    "phase": 3,
+    "type": "push",
+    "title": "Ngày 99: Rèn luyện Sức mạnh Hít đất",
+    "focus": "Volume Hít đất + Khóa khớp tay sau + Gồng bụng chống võng lưng",
+    "isTestDay": false,
+    "pushupTargetRepsPerSet": [],
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 2,
+        "targetReps": "15 vòng",
+        "restSeconds": 20
+      },
+      {
+        "exerciseId": "scapular-push-up",
+        "targetSets": 2,
+        "targetReps": "12 reps",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [
+      {
+        "exerciseId": "wrist-circles",
+        "targetSets": 1,
+        "targetReps": "Nghỉ dưỡng cơ",
+        "restSeconds": 0
+      }
+    ],
+    "accessoryBlock": [
+      {
+        "exerciseId": "dumbbell-floor-press",
+        "targetSets": 3,
+        "targetReps": "12 reps",
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "dead-bug",
+        "targetSets": 3,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "dayNumber": 100,
+    "weekNumber": 15,
+    "dayOfWeekIndex": 1,
+    "dayOfWeekVi": "Thứ 3",
+    "phase": 3,
+    "type": "run",
+    "title": "CHINH PHỤC 100 HÍT ĐẤT LIÊN TỤC!",
+    "focus": "Mục tiêu tối thượng: 1 hiệp hoàn thành 100 cái",
+    "isTestDay": true,
+    "restBetweenSetsSec": 60,
+    "warmupBlock": [
+      {
+        "exerciseId": "worlds-greatest-stretch",
+        "targetSets": 2,
+        "targetReps": "5 reps/bên",
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "single-leg-glute-bridge",
+        "targetSets": 2,
+        "targetReps": "10 reps/bên",
+        "restSeconds": 30
+      }
+    ],
+    "mainBlock": [],
+    "accessoryBlock": [
+      {
+        "exerciseId": "couch-stretch",
+        "targetSets": 2,
+        "targetReps": "45s/bên",
+        "restSeconds": 30
+      }
+    ],
+    "runDetails": {
+      "durationMinutesTarget": 45,
+      "distanceKmTarget": 6.3,
+      "runType": "zone2",
+      "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
+      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+    }
+  }
+]

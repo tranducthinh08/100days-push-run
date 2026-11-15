@@ -1,0 +1,256 @@
+[
+  {
+    "id": "standard-push-up",
+    "name": "Hít đất tiêu chuẩn (Standard Push-up)",
+    "category": "main-push",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Ngực", "Tay sau", "Vai trước", "Cơ lõi"],
+    "cues": [
+      "Đặt tay rộng bằng hoặc hơn vai một chút, cùi chỏ tạo góc 45 độ với thân người.",
+      "Gồng chặt cơ mông và cơ bụng, người tạo thành một đường thẳng.",
+      "Hít vào bằng mũi khi hạ ngực sát sàn, thở mạnh bằng miệng khi đẩy lên."
+    ]
+  },
+  {
+    "id": "knee-push-up",
+    "name": "Hít đất quỳ gối (Knee Push-up)",
+    "category": "main-push",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Ngực", "Tay sau", "Cơ lõi"],
+    "cues": [
+      "Quỳ gối trên thảm, giữ lưng thẳng từ đầu gối đến vai.",
+      "Hạ ngực có kiểm soát, hít vào; đẩy người lên dứt khoát, thở ra."
+    ]
+  },
+  {
+    "id": "diamond-push-up",
+    "name": "Hít đất kim cương (Diamond Push-up)",
+    "category": "triceps",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Tay sau (Triceps)", "Ngực trong", "Vai"],
+    "cues": [
+      "Đặt hai bàn tay sát nhau dưới ngực, ngón trỏ và ngón cái tạo hình kim cương.",
+      "Khép cùi chỏ sát người khi hạ xuống để cô lập tối đa cơ tay sau.",
+      "Đẩy dứt khoát lên đỉnh và siết chặt cơ tay sau trong 1 giây."
+    ]
+  },
+  {
+    "id": "bench-less-triceps-pushup",
+    "name": "Hít đất khóa tay sau mặt sàn (Floor Triceps Press)",
+    "category": "triceps",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Tay sau (Triceps)", "Khuỷu tay"],
+    "cues": [
+      "Bắt đầu ở tư thế plank thấp bằng cẳng tay trên sàn.",
+      "Dùng lực cơ tay sau đẩy thẳng cẳng tay nâng toàn bộ cơ thể lên.",
+      "Hạ lại cẳng tay xuống sàn chậm rãi 2-3 giây."
+    ]
+  },
+  {
+    "id": "bent-over-dumbbell-row",
+    "name": "Kéo tạ đơn gập người (Bent-over Dumbbell Row)",
+    "category": "pull-prehab",
+    "equipment": "dumbbell",
+    "fallbackId": "prone-ytw-raises",
+    "targetMuscles": ["Lưng xô (Lats)", "Trám lưng (Rhomboids)", "Vai sau"],
+    "cues": [
+      "Hạ hông về sau, giữ lưng thẳng góc 45 độ, hai tay cầm tạ đơn.",
+      "Kéo tạ hướng về hông, khép chặt hai bả vai vào nhau ở đỉnh động tác.",
+      "Hạ tạ xuống từ từ cảm nhận cơ lưng giãn."
+    ]
+  },
+  {
+    "id": "prone-ytw-raises",
+    "name": "Nằm sấp nâng tay chữ Y-T-W (Prone Y-T-W Raises)",
+    "category": "pull-prehab",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Bả vai", "Cơ lưng trên", "Xoay vai (Rotator Cuff)"],
+    "cues": [
+      "Nằm sấp trên sàn, nâng hai tay tạo chữ Y (ngón cái hướng lên trần).",
+      "Chuyển tay sang ngang tạo chữ T rồi gập cùi chỏ tạo chữ W.",
+      "Siết chặt bả vai 2 giây ở mỗi tư thế, giữ cổ thẳng tự nhiên."
+    ]
+  },
+  {
+    "id": "scapular-push-up",
+    "name": "Hít đất bả vai (Scapular Push-up)",
+    "category": "pull-prehab",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Cơ răng trước (Serratus Anterior)", "Khớp vai"],
+    "cues": [
+      "Tư thế hít đất cao, giữ thẳng hai cánh tay suốt bài tập.",
+      "Chỉ chuyển động bả vai: ép hai bả vai chạm nhau khi hạ người.",
+      "Đẩy bả vai phồng lưng lên cao nhất có thể ở vị trí trên cùng."
+    ]
+  },
+  {
+    "id": "wrist-circles",
+    "name": "Xoay cổ tay & Căng giãn cẳng tay (Wrist Mobility)",
+    "category": "warm-up",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Khớp cổ tay", "Cẳng tay"],
+    "cues": [
+      "Đan ngón tay vào nhau xoay tròn chậm rãi 15 vòng mỗi chiều.",
+      "Áp lòng bàn tay xuống sàn đổi chiều ngón tay để kéo giãn nhẹ cổ tay."
+    ]
+  },
+  {
+    "id": "superman-hold",
+    "name": "Nằm sấp nâng toàn thân (Superman Hold)",
+    "category": "pull-prehab",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Lưng dưới", "Mông", "Cơ dựng gai sống"],
+    "cues": [
+      "Nằm sấp, đồng thời nâng hai tay và hai chân rời khỏi mặt sàn.",
+      "Siết cơ lưng dưới và cơ mông, giữ yên 20-30 giây hít thở đều."
+    ]
+  },
+  {
+    "id": "dumbbell-floor-press",
+    "name": "Đẩy tạ đơn nằm sàn (Dumbbell Floor Press)",
+    "category": "triceps",
+    "equipment": "dumbbell",
+    "fallbackId": "diamond-push-up",
+    "targetMuscles": ["Ngực", "Tay sau", "Khóa khớp khuỷu"],
+    "cues": [
+      "Nằm ngửa trên sàn, gối co, hai tay cầm tạ đơn vuông góc sàn.",
+      "Hạ tạ đến khi bắp tay chạm nhẹ mặt sàn (nghỉ 1 giây chống áp lực vai).",
+      "Đẩy mạnh tạ lên trên và siết ngực cùng tay sau."
+    ]
+  },
+  {
+    "id": "overhead-dumbbell-triceps-extension",
+    "name": "Nâng tạ sau đầu duỗi tay sau (Overhead Triceps Extension)",
+    "category": "triceps",
+    "equipment": "dumbbell",
+    "fallbackId": "bench-less-triceps-pushup",
+    "targetMuscles": ["Đầu dài cơ tay sau (Long head Triceps)"],
+    "cues": [
+      "Hai tay giữ một đầu quả tạ đơn đưa qua đỉnh đầu.",
+      "Cố định cùi chỏ hướng về phía trước, hạ tạ sau gáy có kiểm soát.",
+      "Duỗi thẳng cánh tay nâng tạ lên và siết tay sau."
+    ]
+  },
+  {
+    "id": "dumbbell-reverse-lunge",
+    "name": "Chùng chân lùi cầm tạ đơn (Dumbbell Reverse Lunge)",
+    "category": "leg-prehab",
+    "equipment": "dumbbell",
+    "fallbackId": "single-leg-glute-bridge",
+    "targetMuscles": ["Cơ đùi trước", "Cơ mông", "Ổn định khớp gối"],
+    "cues": [
+      "Hai tay cầm tạ đơn bên hông, bước lùi một chân về phía sau.",
+      "Hạ gối chân sau gần sát sàn tạo góc 90 độ ở cả hai chân.",
+      "Dùng gót chân trước đạp dứt khoát trở về vị trí đứng ban đầu."
+    ]
+  },
+  {
+    "id": "single-leg-glute-bridge",
+    "name": "Nâng hông 1 chân (Single-leg Glute Bridge)",
+    "category": "leg-prehab",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Cơ mông", "Gân kheo (Hamstrings)", "Khung chậu"],
+    "cues": [
+      "Nằm ngửa, một chân co đạp sàn, chân kia giơ thẳng lên trời.",
+      "Đạp mạnh gót chân nâng hông lên cao cho đến khi đùi và thân thẳng hàng.",
+      "Siết mông ở đỉnh 1-2 giây rồi hạ chậm xuống."
+    ]
+  },
+  {
+    "id": "dumbbell-goblet-squat",
+    "name": "Squat ôm tạ đơn trước ngực (Dumbbell Goblet Squat)",
+    "category": "leg-prehab",
+    "equipment": "dumbbell",
+    "fallbackId": "bodyweight-pause-squat",
+    "targetMuscles": ["Cơ tứ đầu đùi", "Cơ mông", "Cơ lưng trên"],
+    "cues": [
+      "Hai tay giữ tạ đơn sát ngực, chân rộng hơn vai, mũi chân mở nhẹ.",
+      "Ngồi hông xuống sâu dưới mức gối, giữ lưng thẳng ưỡn ngực.",
+      "Đạp mạnh toàn bàn chân đẩy người đứng thẳng dậy."
+    ]
+  },
+  {
+    "id": "bodyweight-pause-squat",
+    "name": "Squat ngưng 2 giây (Bodyweight Pause Squat)",
+    "category": "leg-prehab",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Cơ đùi", "Khớp gối", "Mông"],
+    "cues": [
+      "Squat hạ hông xuống vị trí thấp nhất đùi song song mặt sàn.",
+      "Giữ yên bất động 2 giây đếm nhẩm để tăng áp lực chịu tải.",
+      "Bật thẳng đứng dậy siết cơ mông."
+    ]
+  },
+  {
+    "id": "single-leg-calf-raise",
+    "name": "Nhón bắp chân 1 chân (Single-leg Calf Raise)",
+    "category": "leg-prehab",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Bắp chân (Gastrocnemius & Soleus)", "Gân Achilles"],
+    "cues": [
+      "Đứng trên 1 chân (tay chạm nhẹ tường giữ thăng bằng).",
+      "Nhón cao gót chân lên hết biên độ, giữ đỉnh 1 giây.",
+      "Hạ gót chân chậm rãi trong 3 giây để bảo vệ gân gót khi chạy."
+    ]
+  },
+  {
+    "id": "plank",
+    "name": "Plank cẳng tay (Forearm Plank)",
+    "category": "core-mobility",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Cơ bụng ngang", "Cơ lưng dưới", "Ổn định xương chậu"],
+    "cues": [
+      "Tựa cẳng tay vuông góc dưới vai, chân duỗi thẳng phía sau.",
+      "Gồng chặt cơ bụng như sắp bị đấm, khóa chặt cơ mông.",
+      "Hít thở đều đặn bằng bụng, không võng lưng hoặc nhô hông quá cao."
+    ]
+  },
+  {
+    "id": "dead-bug",
+    "name": "Con bọ chết (Dead Bug)",
+    "category": "core-mobility",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Cơ lõi sâu", "Chống ưỡn cột sống"],
+    "cues": [
+      "Nằm ngửa, hai tay giơ thẳng trần nhà, gối co 90 độ.",
+      "Ép chặt toàn bộ thắt lưng áp sát sàn nhà không để hở khoảng trống.",
+      "Đồng thời duỗi tay phải qua đầu và hạ gót chân trái gần chạm sàn."
+    ]
+  },
+  {
+    "id": "worlds-greatest-stretch",
+    "name": "Giãn cơ toàn diện (World's Greatest Stretch)",
+    "category": "warm-up",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Khớp háng", "Cột sống ngực", "Gân kheo"],
+    "cues": [
+      "Bước chân dài về trước ở tư thế chùng chân lùi sâu.",
+      "Đặt tay cùng phía xuống sàn, hạ cùi chỏ sát mắt cá chân trong.",
+      "Mở tay hướng lên trời xoay ngực hết biên độ, mắt nhìn theo tay."
+    ]
+  },
+  {
+    "id": "couch-stretch",
+    "name": "Giãn cơ gấp hông sát tường (Couch Stretch)",
+    "category": "core-mobility",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Cơ đùi trước (Quads)", "Cơ gấp hông (Hip Flexors)"],
+    "cues": [
+      "Đặt mu bàn chân sau tựa sát tường hoặc ghế sofa, gối chạm sàn.",
+      "Chân trước bước lên tạo góc 90 độ, từ từ dựng thẳng thân người.",
+      "Siết mông chân sau để cảm nhận cơ đùi trước căng giãn sâu."
+    ]
+  },
+  {
+    "id": "doorway-chest-stretch",
+    "name": "Kéo giãn cơ ngực qua khung cửa (Doorway Chest Stretch)",
+    "category": "core-mobility",
+    "equipment": "bodyweight",
+    "targetMuscles": ["Cơ ngực lớn", "Cơ ngực bé", "Vai trước"],
+    "cues": [
+      "Đặt cẳng tay lên khung cửa hoặc góc tường, cùi chỏ ngang vai.",
+      "Bước chân cùng phía lên một bước, xoay nhẹ thân người hướng ra xa.",
+      "Hít sâu và thở ra thư giãn cơ ngực trong 30 giây mỗi bên."
+    ]
+  }
+]
