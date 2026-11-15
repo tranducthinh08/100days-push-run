@@ -16,6 +16,9 @@ export interface Exercise {
   fallbackId?: string;
   targetMuscles: string[];
   cues: string[];
+  youtubeId?: string;
+  animationType?: string;
+  videoTip?: string;
 }
 
 export interface ExerciseBlockItem {

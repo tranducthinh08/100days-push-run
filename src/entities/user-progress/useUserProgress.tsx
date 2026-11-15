@@ -12,6 +12,7 @@ const DEFAULT_STATE: UserProgressState = {
   maxPushupsRecord: 0,
   streak: 0,
   lastActiveDate: '',
+  customExerciseVideos: {},
 };
 
 interface UserProgressContextType {
@@ -24,11 +25,13 @@ interface UserProgressContextType {
   totalCompletedCount: number;
   totalPushupsDone: number;
   totalRunKm: number;
+  customExerciseVideos: Record<string, string>;
   setCurrentDay: (day: number) => void;
   toggleEquipmentMode: () => void;
   setEquipmentMode: (mode: EquipmentType) => void;
   markDayCompleted: (log: WorkoutCompletionLog) => void;
   updateMaxPushupsRecord: (reps: number) => void;
+  setCustomExerciseVideo: (exerciseId: string, urlOrId: string) => void;
   resetAllProgress: () => void;
 }
 
@@ -65,6 +68,16 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     setState((prev) => ({
       ...prev,
       maxPushupsRecord: Math.max(prev.maxPushupsRecord, reps),
+    }));
+  };
+
+  const setCustomExerciseVideo = (exerciseId: string, urlOrId: string) => {
+    setState((prev) => ({
+      ...prev,
+      customExerciseVideos: {
+        ...(prev.customExerciseVideos || {}),
+        [exerciseId]: urlOrId,
+      },
     }));
   };
 
@@ -119,11 +132,13 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
         totalCompletedCount,
         totalPushupsDone,
         totalRunKm,
+        customExerciseVideos: state.customExerciseVideos || {},
         setCurrentDay,
         toggleEquipmentMode,
         setEquipmentMode,
         markDayCompleted,
         updateMaxPushupsRecord,
+        setCustomExerciseVideo,
         resetAllProgress,
       }}
     >

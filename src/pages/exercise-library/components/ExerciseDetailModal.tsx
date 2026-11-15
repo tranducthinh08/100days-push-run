@@ -4,6 +4,7 @@ import { Modal } from '@/shared/ui/Modal';
 import { Badge } from '@/shared/ui/Badge';
 import { Exercise } from '@/entities/exercise/types';
 import { getExerciseById } from '@/entities/exercise/model';
+import { ExerciseVideoPlayer } from '@/features/exercise-video/ExerciseVideoPlayer';
 
 interface ExerciseDetailModalProps {
   exercise: Exercise | null;
@@ -40,6 +41,9 @@ export function ExerciseDetailModal({ exercise, isOpen, onClose }: ExerciseDetai
           </div>
           <h2 className="text-base font-bold text-slate-900">{exercise.name}</h2>
         </div>
+
+        {/* Video & Loop Animation Player */}
+        <ExerciseVideoPlayer exercise={exercise} />
 
         {/* Fallback Notice */}
         {fallback && (

@@ -21,4 +21,5 @@ export interface UserProgressState {
   maxPushupsRecord: number;
   streak: number;
   lastActiveDate: string;
+  customExerciseVideos?: Record<string, string>;
 }
