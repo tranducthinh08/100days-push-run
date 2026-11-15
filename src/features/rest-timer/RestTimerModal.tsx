@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { Timer, FastForward, Plus, Minus } from 'lucide-react';
 import { Button } from '@/shared/ui/Button';
 import { ProgressBar } from '@/shared/ui/ProgressBar';
@@ -19,13 +20,14 @@ export function RestTimerModal({
   onAdjust,
 }: RestTimerModalProps) {
   if (!isOpen) return null;
+  if (typeof document === 'undefined') return null;
 
   const mins = Math.floor(secondsRemaining / 60);
   const secs = secondsRemaining % 60;
   const timeStr = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   const percent = initialSeconds > 0 ? ((initialSeconds - secondsRemaining) / initialSeconds) * 100 : 0;
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md" />
@@ -80,7 +82,8 @@ export function RestTimerModal({
           Sẵn sàng! Vào hiệp tiếp theo
         </Button>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 export default RestTimerModal;
