@@ -46,10 +46,12 @@ export function useCloudSync() {
     ) => {
       if (!isSupabaseConfigured()) {
         setSyncStatus('unconfigured');
+        setErrorMessage('Vui lòng nhập Project URL & Anon Key ở bên dưới rồi bấm "Lưu cấu hình Supabase" trước!');
         return;
       }
       if (!navigator.onLine) {
         setSyncStatus('offline');
+        setErrorMessage('Thiết bị đang không có kết nối Internet.');
         return;
       }
       if (isSyncingRef.current) return;
