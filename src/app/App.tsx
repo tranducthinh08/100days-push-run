@@ -20,23 +20,36 @@ export function AppContent() {
   const { state, replaceState } = useUserProgress();
   const cloudSync = useCloudSync();
   const initialSyncAttempted = useRef(false);
+  const lastSyncedStateRef = useRef<string>(JSON.stringify(state));
 
   // Initial background pull on mount if configured
   useEffect(() => {
     if (cloudSync.isConfigured && !initialSyncAttempted.current) {
       initialSyncAttempted.current = true;
-      cloudSync.syncNow(state, replaceState);
+      cloudSync.syncNow(state, (merged) => {
+        lastSyncedStateRef.current = JSON.stringify(merged);
+        replaceState(merged);
+      });
     }
-  }, [cloudSync.isConfigured, cloudSync, state, replaceState]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cloudSync.isConfigured]);
 
-  // Debounced auto-sync when local progress state changes
+  // Debounced auto-sync ONLY when local progress state actually changes
   useEffect(() => {
     if (!cloudSync.isConfigured) return;
-    const timer = setTimeout(() => {
-      cloudSync.syncNow(state, replaceState);
+    const stateJson = JSON.stringify(state);
+    if (stateJson === lastSyncedStateRef.current) return;
+
+    const timer = setTimeout(async () => {
+      lastSyncedStateRef.current = stateJson;
+      await cloudSync.syncNow(state, (merged) => {
+        lastSyncedStateRef.current = JSON.stringify(merged);
+        replaceState(merged);
+      });
     }, 2000);
     return () => clearTimeout(timer);
-  }, [state, cloudSync.isConfigured, cloudSync, replaceState]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state, cloudSync.isConfigured]);
 
   const handleStartSession = (type: 'push' | 'run' | 'recovery') => {
     if (type === 'push') {

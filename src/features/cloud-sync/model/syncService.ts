@@ -17,7 +17,6 @@ export function getDeviceId(): string {
 }
 
 export function generateRandomPin(): string {
-  // Generate a friendly 6-digit numeric PIN, e.g. 883921
   const num = Math.floor(100000 + Math.random() * 900000);
   return String(num);
 }
@@ -41,43 +40,56 @@ export async function fetchCloudData(pin: string): Promise<UserProgressState | n
   const client = getSupabaseClient();
   if (!client || !pin) return null;
 
-  const { data, error } = await client
-    .from('athlete_sync')
-    .select('data, updated_at')
-    .eq('sync_pin', pin.trim())
-    .maybeSingle();
+  try {
+    const { data, error } = await client
+      .from('athlete_sync')
+      .select('data, updated_at')
+      .eq('sync_pin', pin.trim())
+      .maybeSingle();
 
-  if (error) {
-    console.error('Supabase fetch error:', error);
+    if (error) {
+      console.error('Supabase fetch error:', error);
+      return null;
+    }
+    return (data?.data as UserProgressState) || null;
+  } catch (err) {
+    console.error('fetchCloudData exception:', err);
     return null;
   }
-  return (data?.data as UserProgressState) || null;
 }
 
 export async function saveToCloud(
   pin: string,
   state: UserProgressState
-): Promise<boolean> {
+): Promise<{ success: boolean; error?: string }> {
   const client = getSupabaseClient();
-  if (!client || !pin) return false;
-
-  const deviceId = getDeviceId();
-  const payload = {
-    sync_pin: pin.trim(),
-    data: state,
-    updated_at: new Date().toISOString(),
-    device_id: deviceId,
-  };
-
-  const { error } = await client
-    .from('athlete_sync')
-    .upsert(payload, { onConflict: 'sync_pin' });
-
-  if (error) {
-    console.error('Supabase upsert error:', error);
-    return false;
+  if (!client || !pin) {
+    return { success: false, error: 'Chưa cấu hình Supabase Client hoặc thiếu PIN' };
   }
-  return true;
+
+  try {
+    const deviceId = getDeviceId();
+    const payload = {
+      sync_pin: pin.trim(),
+      data: state,
+      updated_at: new Date().toISOString(),
+      device_id: deviceId,
+    };
+
+    const { error } = await client
+      .from('athlete_sync')
+      .upsert(payload, { onConflict: 'sync_pin' });
+
+    if (error) {
+      console.error('Supabase upsert error:', error);
+      return { success: false, error: error.message || error.details || 'Lỗi khi lưu lên Supabase' };
+    }
+    return { success: true };
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('saveToCloud exception:', err);
+    return { success: false, error: msg };
+  }
 }
 
 export async function executeTwoWaySync(
@@ -100,9 +112,9 @@ export async function executeTwoWaySync(
       finalState = mergeProgressStates(localState, remoteState);
     }
 
-    const saved = await saveToCloud(pin, finalState);
-    if (!saved) {
-      return { success: false, message: 'Lỗi khi lưu lên Supabase' };
+    const saveRes = await saveToCloud(pin, finalState);
+    if (!saveRes.success) {
+      return { success: false, message: saveRes.error || 'Lỗi khi lưu lên Supabase' };
     }
 
     return {

@@ -48,7 +48,7 @@ export function useCloudSync() {
     ): Promise<{ success: boolean; message: string }> => {
       if (!isSupabaseConfigured()) {
         setSyncStatus('unconfigured');
-        const msg = 'Vui lòng nhập Project URL & Anon Key ở bên dưới rồi bấm "Lưu cấu hình Supabase" trước!';
+        const msg = 'Vui lòng kiểm tra cấu hình Supabase URL & Key.';
         setErrorMessage(msg);
         return { success: false, message: msg };
       }
@@ -66,20 +66,27 @@ export function useCloudSync() {
       setSyncStatus('syncing');
       setErrorMessage(null);
 
-      const res = await executeTwoWaySync(currentState, syncPin);
-      isSyncingRef.current = false;
-
-      if (res.success && res.mergedState) {
-        setSyncStatus('synced');
-        setLastSyncedAt(res.lastSyncedAt || new Date().toISOString());
-        if (onStateUpdated) {
-          onStateUpdated(res.mergedState);
+      try {
+        const res = await executeTwoWaySync(currentState, syncPin);
+        if (res.success && res.mergedState) {
+          setSyncStatus('synced');
+          setLastSyncedAt(res.lastSyncedAt || new Date().toISOString());
+          if (onStateUpdated) {
+            onStateUpdated(res.mergedState);
+          }
+          return { success: true, message: 'Đã đồng bộ dữ liệu thành công!' };
+        } else {
+          setSyncStatus('error');
+          setErrorMessage(res.message || 'Lỗi đồng bộ');
+          return { success: false, message: res.message || 'Lỗi đồng bộ' };
         }
-        return { success: true, message: 'Đã đồng bộ dữ liệu thành công!' };
-      } else {
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Lỗi đồng bộ';
         setSyncStatus('error');
-        setErrorMessage(res.message || 'Lỗi đồng bộ');
-        return { success: false, message: res.message || 'Lỗi đồng bộ' };
+        setErrorMessage(msg);
+        return { success: false, message: msg };
+      } finally {
+        isSyncingRef.current = false;
       }
     },
     [syncPin]
@@ -98,7 +105,7 @@ export function useCloudSync() {
       if (cleanPin === syncPin) {
         return {
           success: false,
-          message: `Mã ${cleanPin} là mã PIN của CHÍNH thiết bị này. Để liên kết, bạn hãy mở thiết bị kia và lấy mã PIN ở thiết bị đó nhập vào đây nhé!`,
+          message: `Mã ${cleanPin} là mã PIN của CHÍNH thiết bị này. Hãy mở thiết bị kia và lấy mã PIN ở đó nhập vào đây nhé!`,
         };
       }
 
@@ -112,29 +119,38 @@ export function useCloudSync() {
       setSyncStatus('syncing');
       setErrorMessage(null);
 
-      const cloudData = await fetchCloudData(cleanPin);
-      if (!cloudData) {
+      try {
+        const cloudData = await fetchCloudData(cleanPin);
+        if (!cloudData) {
+          setSyncStatus('error');
+          const msg = `Không tìm thấy dữ liệu trên Cloud cho mã PIN ${cleanPin}. Hãy mở thiết bị kia và bấm "Đồng bộ ngay" trước!`;
+          setErrorMessage(msg);
+          return { success: false, message: msg };
+        }
+
+        const merged = mergeProgressStates(currentState, cloudData);
+        saveSyncPin(cleanPin);
+        setSyncPinState(cleanPin);
+        await saveToCloud(cleanPin, merged);
+
+        if (onStateUpdated) {
+          onStateUpdated(merged);
+        }
+        setSyncStatus('synced');
+        setLastSyncedAt(new Date().toISOString());
+
+        return {
+          success: true,
+          message: `Đã kết nối thành công với mã PIN ${cleanPin} và cập nhật dữ liệu!`,
+        };
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Lỗi kết nối';
         setSyncStatus('error');
-        const msg = `Không tìm thấy dữ liệu trên Cloud cho mã PIN ${cleanPin}. Hãy mở thiết bị kia và bấm "Đồng bộ ngay" trước!`;
         setErrorMessage(msg);
         return { success: false, message: msg };
+      } finally {
+        isSyncingRef.current = false;
       }
-
-      const merged = mergeProgressStates(currentState, cloudData);
-      saveSyncPin(cleanPin);
-      setSyncPinState(cleanPin);
-      await saveToCloud(cleanPin, merged);
-
-      if (onStateUpdated) {
-        onStateUpdated(merged);
-      }
-      setSyncStatus('synced');
-      setLastSyncedAt(new Date().toISOString());
-
-      return {
-        success: true,
-        message: `Đã kết nối thành công với mã PIN ${cleanPin} và cập nhật dữ liệu!`,
-      };
     },
     [syncPin]
   );
