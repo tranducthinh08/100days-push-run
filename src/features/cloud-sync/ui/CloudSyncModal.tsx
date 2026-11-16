@@ -3,6 +3,7 @@ import { Modal } from '@/shared/ui/Modal';
 import { Button } from '@/shared/ui/Button';
 import { ShieldCheck, Copy, Check, RefreshCw, Key, ChevronDown, ChevronUp, Database, ArrowRight, AlertTriangle, Info } from 'lucide-react';
 import { SyncStatus } from '../model/syncTypes';
+import { normalizeSupabaseUrl } from '@/shared/lib/supabaseClient';
 
 interface CloudSyncModalProps {
   isOpen: boolean;
@@ -73,7 +74,7 @@ export function CloudSyncModal({
   const handleSaveConfig = (e: React.FormEvent) => {
     e.preventDefault();
     setUiError(null);
-    const trimmedUrl = urlInput.trim();
+    const trimmedUrl = normalizeSupabaseUrl(urlInput);
     const trimmedKey = keyInput.trim();
 
     if (!trimmedUrl || !trimmedKey) {
@@ -81,10 +82,11 @@ export function CloudSyncModal({
       return;
     }
     if (!trimmedUrl.startsWith('http')) {
-      setUiError('Project URL phải bắt đầu bằng https:// (VD: https://xyz.supabase.co)');
+      setUiError('Project URL không hợp lệ (VD: https://xyz.supabase.co hoặc link Dashboard)');
       return;
     }
 
+    setUrlInput(trimmedUrl);
     onSaveConfig(trimmedUrl, trimmedKey);
     setUiSuccess('✅ Đã lưu cấu hình Supabase thành công! Đang đồng bộ...');
     setTimeout(() => onSyncNow(), 400);

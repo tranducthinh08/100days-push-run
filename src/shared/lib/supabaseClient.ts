@@ -12,6 +12,26 @@ export interface SupabaseConfig {
   anonKey: string;
 }
 
+export function normalizeSupabaseUrl(rawUrl: string): string {
+  const trimmed = rawUrl.trim();
+  if (!trimmed) return '';
+
+  const dashboardMatch = trimmed.match(/supabase\.com\/dashboard\/project\/([a-zA-Z0-9_-]+)/);
+  if (dashboardMatch && dashboardMatch[1]) {
+    return `https://${dashboardMatch[1]}.supabase.co`;
+  }
+
+  if (/^[a-zA-Z0-9_-]{15,30}$/.test(trimmed)) {
+    return `https://${trimmed}.supabase.co`;
+  }
+
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    return trimmed.replace(/\/+$/, '');
+  }
+
+  return trimmed;
+}
+
 export function getSupabaseConfig(): SupabaseConfig {
   if (typeof window === 'undefined') {
     return { url: '', anonKey: '' };
@@ -21,17 +41,19 @@ export function getSupabaseConfig(): SupabaseConfig {
   const envUrl = (import.meta.env.VITE_SUPABASE_URL as string) || '';
   const envKey = (import.meta.env.VITE_SUPABASE_ANON_KEY as string) || '';
 
+  const rawUrl = storedUrl.trim() || envUrl.trim();
   return {
-    url: storedUrl.trim() || envUrl.trim(),
+    url: normalizeSupabaseUrl(rawUrl),
     anonKey: storedKey.trim() || envKey.trim(),
   };
 }
 
 export function saveSupabaseConfig(url: string, anonKey: string): void {
   if (typeof window === 'undefined') return;
-  localStorage.setItem(STORAGE_URL_KEY, url.trim());
+  const normalized = normalizeSupabaseUrl(url);
+  localStorage.setItem(STORAGE_URL_KEY, normalized);
   localStorage.setItem(STORAGE_KEY_KEY, anonKey.trim());
-  cachedClient = null; // Invalidate cached client
+  cachedClient = null;
 }
 
 export function isSupabaseConfigured(): boolean {
