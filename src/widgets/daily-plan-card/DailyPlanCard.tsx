@@ -8,6 +8,7 @@ import { DailyPlanBlocks } from './components/DailyPlanBlocks';
 import { DailyTargetArcCard } from './components/DailyTargetArcCard';
 import { TechniqueTipsCard } from './components/TechniqueTipsCard';
 import { WarmupGuideModal } from './components/WarmupGuideModal';
+import { RunSplitsModal } from './components/RunSplitsModal';
 import { ExerciseDetailModal } from '@/pages/exercise-library/components/ExerciseDetailModal';
 
 interface DailyPlanCardProps {
@@ -18,6 +19,7 @@ interface DailyPlanCardProps {
 export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps) {
   const { equipmentMode, completedDays, markDayCompleted, unmarkDayCompleted } = useUserProgress();
   const [isWarmupModalOpen, setIsWarmupModalOpen] = useState(false);
+  const [isRunSplitsModalOpen, setIsRunSplitsModalOpen] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
 
   const isCompleted = !!completedDays[programDay.dayNumber];
@@ -114,6 +116,7 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
         accessoryResolved={accessoryResolved}
         onOpenWarmupModal={() => setIsWarmupModalOpen(true)}
         onSelectExercise={(ex) => setSelectedExercise(ex)}
+        onOpenRunSplitsModal={() => setIsRunSplitsModalOpen(true)}
       />
 
       {/* Action CTA Buttons */}
@@ -164,6 +167,15 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
         warmupExercises={warmupResolved}
         onSelectExercise={(ex) => setSelectedExercise(ex)}
         onStartMainSession={() => onStartSession(programDay.type)}
+      />
+
+      {/* Full Itinerary Run Splits Modal */}
+      <RunSplitsModal
+        isOpen={isRunSplitsModalOpen}
+        onClose={() => setIsRunSplitsModalOpen(false)}
+        runDetails={programDay.runDetails}
+        dayNumber={programDay.dayNumber}
+        onStartRun={() => onStartSession('run')}
       />
 
       {/* Exercise Detail Modal */}
