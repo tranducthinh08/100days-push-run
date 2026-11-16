@@ -10,13 +10,25 @@ export interface RunIntervalConfig {
   repetitions: number;
 }
 
+export interface RunRepSplit {
+  setNumber: number;
+  label: string; // e.g. "Hiệp 1"
+  work: string; // e.g. "4 phút chạy nhẹ (~700m)"
+  pace: string; // e.g. "Pace 7:00 (Zone 2)"
+  rest: string; // e.g. "60s đi bộ thả lỏng"
+}
+
 export interface RunDetails {
   durationMinutesTarget: number;
   distanceKmTarget?: number;
   runType: 'zone2' | 'interval' | 'long-run' | 'easy';
   paceGuidance: string;
   description: string;
+  cadenceGuidance?: string;
+  heartRateZone?: string;
   intervalConfig?: RunIntervalConfig;
+  splitsSummary?: string;
+  splits?: RunRepSplit[];
 }
 
 export interface DayProgram {

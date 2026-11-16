@@ -20,26 +20,48 @@ export function DailyTargetArcCard({
   const targetLabel = isPush
     ? 'MỤC TIÊU SỐ REPS HÔM NAY'
     : isRun
-    ? 'MỤC TIÊU CHẠY BỘ'
+    ? `MỤC TIÊU CHẠY BỘ (${programDay.runDetails?.runType === 'interval' ? 'INTERVAL' : programDay.runDetails?.runType === 'long-run' ? 'LONG RUN' : 'ZONE 2'})`
     : 'MỤC TIÊU PHỤC HỒI';
 
   const mainNumber = isPush
     ? totalTargetReps
     : isRun
-    ? `${programDay.runDetails?.distanceKmTarget || 4}km`
+    ? `${programDay.runDetails?.distanceKmTarget || 3.5}km`
     : '30';
 
   const subMetric = isPush
     ? `REPS / ${programDay.pushupTargetRepsPerSet?.length || 5} HIỆP`
     : isRun
-    ? 'ZONE 2'
+    ? (programDay.runDetails?.splitsSummary || `${programDay.runDetails?.durationMinutesTarget || 25} PHÚT CHẠY`).toUpperCase()
     : 'PHÚT GIÃN CƠ';
 
   const tempoAdvice = isPush
     ? 'Phân bổ nhịp độ: 2 giây xuống - 1 giây đẩy bốc'
     : isRun
-    ? 'Pace đàm thoại: hít thở đều nhịp 3-3'
+    ? `${programDay.runDetails?.paceGuidance || 'Pace trò chuyện thoải mái'} • Thở đều nhịp 3-3`
     : 'Giảm tải căng cơ ngực và gân kheo';
+
+  const durationMain = isRun
+    ? `${programDay.runDetails?.durationMinutesTarget || 25} Phút`
+    : isPush
+    ? '35 - 40 Phút'
+    : '30 Phút';
+
+  const durationSub = isRun
+    ? `(Tổng buổi ~${(programDay.runDetails?.durationMinutesTarget || 25) + 15}p)`
+    : '';
+
+  const restLabel = isPush
+    ? 'Nghỉ giữa hiệp:'
+    : isRun
+    ? (programDay.runDetails?.runType === 'long-run' ? 'Nghỉ tiếp nước:' : 'Đi bộ thả lỏng:')
+    : 'Nhịp thở giãn cơ:';
+
+  const restValue = isPush
+    ? `${programDay.restBetweenSetsSec || 60}s - 90s`
+    : isRun
+    ? (programDay.runDetails?.runType === 'long-run' ? '90s / chặng' : '60s / hiệp')
+    : 'Hít 4s - Thở 6s';
 
   return (
     <div className="p-5 rounded-2xl bg-gradient-to-br from-[#161C2C] to-[#0D111A] border border-white/[0.08] relative mb-6">
@@ -92,12 +114,17 @@ export function DailyTargetArcCard({
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-2 pt-3 sm:pt-0 sm:border-l sm:border-white/10 sm:pl-4">
           <div>
             <span className="text-[10px] text-slate-400 font-mono uppercase block">Thời lượng:</span>
-            <span className="text-base font-bold text-white font-mono">35 - 40 Phút</span>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-base font-bold text-white font-mono">{durationMain}</span>
+              {durationSub && (
+                <span className="text-[10px] text-slate-400 font-mono">{durationSub}</span>
+              )}
+            </div>
           </div>
           <div>
-            <span className="text-[10px] text-[#00E5FF] font-mono uppercase block">Nghỉ giữa hiệp:</span>
+            <span className="text-[10px] text-[#00E5FF] font-mono uppercase block">{restLabel}</span>
             <span className="text-base font-bold text-[#00E5FF] font-mono">
-              {programDay.restBetweenSetsSec || 60}s - 90s
+              {restValue}
             </span>
           </div>
         </div>

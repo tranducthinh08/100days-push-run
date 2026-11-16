@@ -104,7 +104,7 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
       />
 
       {/* 3 Golden Technique Rules & Day 1 Max Test Guide */}
-      <TechniqueTipsCard dayNumber={programDay.dayNumber} />
+      <TechniqueTipsCard dayNumber={programDay.dayNumber} workoutType={programDay.type} />
 
       {/* 3 Step Visual Workout Sequence */}
       <DailyPlanBlocks

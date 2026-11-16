@@ -9,33 +9,26 @@ function getPhase(day: number): ProgramPhase {
 }
 
 function calculatePushupSets(day: number, phase: ProgramPhase, dayOfWeekIndex: number): number[] {
-  // Day 100: The Final Challenge
   if (day === 100) return [100];
-  // Tapering days before Day 100 (Days 97, 98, 99): complete upper body rest
   if (day >= 96 && day <= 99) return [];
-
-  // Test days
   if (day === 26) return [30, 15, 12, 10]; // Week 4 Test Max
   if (day === 68) return [65, 25, 20, 15]; // Week 10 Test Max
 
   if (phase === 1) {
-    // Week 1-4: 5 sets x 8-18 reps
     const weekProgress = Math.floor((day - 1) / 7);
-    const baseRep = 8 + weekProgress * 3; // 8, 11, 14, 17
+    const baseRep = 8 + weekProgress * 3;
     if (dayOfWeekIndex === 0) return [baseRep + 1, baseRep, baseRep, baseRep - 1, baseRep - 2];
     if (dayOfWeekIndex === 2) return [baseRep, baseRep, baseRep, baseRep, baseRep];
     if (dayOfWeekIndex === 4) return [baseRep + 3, baseRep + 1, baseRep, baseRep - 1, baseRep - 2];
   } else if (phase === 2) {
-    // Week 5-10: 5-6 sets x 20-32 reps
     const weekProgress = Math.floor((day - 31) / 7);
-    const baseRep = 20 + weekProgress * 2; // 20 to 30
+    const baseRep = 20 + weekProgress * 2;
     if (dayOfWeekIndex === 0) return [baseRep + 2, baseRep + 1, baseRep, baseRep, baseRep - 2];
     if (dayOfWeekIndex === 2) return [baseRep + 1, baseRep + 1, baseRep, baseRep, baseRep];
     if (dayOfWeekIndex === 4) return [baseRep + 4, baseRep + 2, baseRep + 1, baseRep, baseRep - 1];
   } else {
-    // Phase 3 (Day 71-95) Peak volume
     const weekProgress = Math.min(2, Math.floor((day - 71) / 7));
-    const peakFirst = 70 + weekProgress * 5; // 70, 75, 80
+    const peakFirst = 70 + weekProgress * 5;
     if (dayOfWeekIndex === 0) return [peakFirst, 30, 25, 20, 15];
     if (dayOfWeekIndex === 2) return [peakFirst - 5, 30, 25, 25, 20];
     if (dayOfWeekIndex === 4) return [peakFirst + 5, 25, 20, 20, 15];
@@ -174,30 +167,46 @@ function getAccessoryBlock(dow: number, type: WorkoutDayType) {
 function getRunDetails(dow: number, phase: ProgramPhase, week: number) {
   if (dow === 1) {
     const duration = phase === 1 ? 25 : phase === 2 ? 40 : 45;
+    const distance = +(duration * 0.14).toFixed(1);
+    const sets = phase === 1 ? 5 : phase === 2 ? 5 : 4;
+    const workMins = phase === 1 ? 4 : phase === 2 ? 7 : 10;
     return {
       durationMinutesTarget: duration,
-      distanceKmTarget: +(duration * 0.14).toFixed(1),
+      distanceKmTarget: distance,
       runType: 'zone2' as const,
       paceGuidance: 'Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)',
-      description: `Chạy đều liên tục ${duration} phút với nhịp thở đều 3 bước hít - 3 bước thở.`,
+      description: `Chạy chia làm ${sets} hiệp x [${workMins}p chạy Zone 2 + 1p đi bộ], thở đều 3-3.`,
+      cadenceGuidance: '165 - 175 spm',
+      heartRateZone: 'Zone 2 (65 - 75% Max HR)',
+      splitsSummary: `${sets} hiệp x [${workMins}p chạy + 1p đi bộ]`,
+      intervalConfig: { workDurationSec: workMins * 60, recoveryDurationSec: 60, repetitions: sets },
     };
   }
   if (dow === 3) {
     const reps = phase === 1 ? 4 : phase === 2 ? 6 : 8;
     return {
-      durationMinutesTarget: 30 + reps * 3,
+      durationMinutesTarget: 15 + reps * 3,
+      distanceKmTarget: +(3.0 + reps * 0.4).toFixed(1),
       runType: 'interval' as const,
-      paceGuidance: 'Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi',
-      description: `Khởi động 5p -> Lặp lại ${reps} lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.`,
+      paceGuidance: 'Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi',
+      description: `Lặp lại ${reps} reps [2 phút chạy nhanh / 1 phút đi bộ].`,
+      cadenceGuidance: '180 - 190 spm',
+      heartRateZone: 'Zone 4 - 5 (85 - 92% Max HR)',
+      splitsSummary: `${reps} reps x [2p nhanh + 1p đi bộ]`,
       intervalConfig: { workDurationSec: 120, recoveryDurationSec: 60, repetitions: reps },
     };
   }
-  const longRunDuration = phase === 1 ? 30 + week * 2 : phase === 2 ? 45 + (week - 4) * 3 : 70;
+  const longDuration = phase === 1 ? 30 + week * 2 : phase === 2 ? 45 + (week - 4) * 3 : 70;
+  const numChangs = phase === 1 ? 3 : phase === 2 ? 4 : 5;
   return {
-    durationMinutesTarget: longRunDuration,
-    distanceKmTarget: +(longRunDuration * 0.15).toFixed(1),
+    durationMinutesTarget: longDuration,
+    distanceKmTarget: +(longDuration * 0.15).toFixed(1),
     runType: 'long-run' as const,
     paceGuidance: 'Pace bền bỉ ổn định',
-    description: `Chạy dài tích lũy thể lực ${longRunDuration} phút. Uống từng ngụm nước nhỏ mỗi 20 phút.`,
+    description: `Chạy dài tích lũy thể lực chia ${numChangs} chặng. Nghỉ đi bộ nạp nước 90s.`,
+    cadenceGuidance: '165 - 172 spm',
+    heartRateZone: 'Zone 2 (68 - 75% Max HR)',
+    splitsSummary: `${numChangs} chặng x ~${+(longDuration * 0.15 / numChangs).toFixed(1)} km`,
+    intervalConfig: { workDurationSec: Math.round((longDuration * 60) / numChangs), recoveryDurationSec: 90, repetitions: numChangs },
   };
 }

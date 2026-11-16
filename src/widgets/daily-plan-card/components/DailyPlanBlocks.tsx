@@ -2,6 +2,7 @@ import React from 'react';
 import { Clock, Activity, Dumbbell, Footprints, HeartPulse, Info, ChevronRight } from 'lucide-react';
 import { DayProgram } from '@/entities/program/types';
 import { ResolvedExerciseItem, Exercise } from '@/entities/exercise/types';
+import { RunSplitsPlanBlock } from './RunSplitsPlanBlock';
 
 interface DailyPlanBlocksProps {
   programDay: DayProgram;
@@ -121,17 +122,7 @@ export function DailyPlanBlocks({
             </div>
           ))
         ) : programDay.runDetails ? (
-          <div className="flex flex-col gap-1">
-            <div className="flex justify-between items-center font-black text-[#00E5FF] font-mono text-sm">
-              <span>{programDay.runDetails.durationMinutesTarget} phút</span>
-              {programDay.runDetails.distanceKmTarget && (
-                <span>~{programDay.runDetails.distanceKmTarget} km</span>
-              )}
-            </div>
-            <span className="text-[11px] text-slate-300 font-medium leading-relaxed">
-              {programDay.runDetails.paceGuidance}
-            </span>
-          </div>
+          <RunSplitsPlanBlock runDetails={programDay.runDetails} />
         ) : (
           <span className="text-slate-300 font-medium">Thực hiện giãn cơ và giải tỏa căng cứng khớp toàn thân.</span>
         )}
@@ -154,16 +145,16 @@ export function DailyPlanBlocks({
               className="w-full flex justify-between items-center text-slate-300 font-medium py-1 px-1.5 rounded-xl hover:bg-white/[0.06] hover:text-white transition-all text-left cursor-pointer group"
               title="Bấm để xem chi tiết bài tập & kỹ thuật"
             >
-              <span className="truncate pr-1 flex items-center gap-1 group-hover:underline">
+              <span className="min-w-0 flex-1 truncate pr-2 flex items-center gap-1 group-hover:underline">
                 <Info className="w-3 h-3 text-slate-400 group-hover:text-[#FF8A00] shrink-0" />
-                {item.exercise.name.split('(')[0]}
+                <span className="truncate">{item.exercise.name.split('(')[0]}</span>
                 {item.isFallback && (
-                  <span className="text-[9px] text-[#FF8A00] bg-[#FF5500]/15 px-1 py-0.2 rounded font-bold border border-[#FF5500]/30">
+                  <span className="text-[9px] text-[#FF8A00] bg-[#FF5500]/15 px-1 py-0.2 rounded font-bold border border-[#FF5500]/30 shrink-0">
                     BW
                   </span>
                 )}
               </span>
-              <span className="text-slate-400 group-hover:text-[#FF8A00] font-mono text-[11px] shrink-0 font-bold">
+              <span className="text-slate-400 group-hover:text-[#FF8A00] font-mono text-[11px] shrink-0 font-bold ml-1">
                 {item.targetSets}x{item.targetReps}
               </span>
             </button>

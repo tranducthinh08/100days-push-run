@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Sparkles, Compass } from 'lucide-react';
+import { ChevronDown, ChevronUp, Sparkles, Compass, Footprints, Dumbbell, HeartPulse } from 'lucide-react';
+import { WorkoutDayType } from '@/entities/program/types';
 
 interface TechniqueRule {
   id: string;
@@ -8,12 +9,7 @@ interface TechniqueRule {
   description: string;
 }
 
-const MAX_TEST_GUIDE = {
-  title: 'Bước 0: Kiểm tra Reps tối đa (Max Reps Test)',
-  description: 'Trước khi bắt đầu, hãy thực hiện 1 hiệp hít đất hết sức chuẩn form (ngực sát sàn) để xác định mốc nền tảng ban đầu.',
-};
-
-const TECHNIQUE_RULES: TechniqueRule[] = [
+const PUSH_RULES: TechniqueRule[] = [
   {
     id: 'elbow',
     tag: 'Bảo vệ vai',
@@ -27,26 +23,91 @@ const TECHNIQUE_RULES: TechniqueRule[] = [
     description: 'Gồng chặt bụng và mông như tấm ván phẳng, tuyệt đối không võng thắt lưng hoặc nhổm mông khi hạ/đẩy người.',
   },
   {
-    id: 'zone2',
-    tag: 'Sức bền hiếu khí',
-    title: 'Chạy chậm Zone 2',
-    description: 'Duy trì tốc độ có thể nói chuyện thành câu trọn vẹn, hít thở đều 3 bước hít - 3 bước thở để bảo vệ khớp gối.',
+    id: 'tempo',
+    tag: 'Nhịp phát lực',
+    title: 'Xuống 2s - Đẩy 1s bốc',
+    description: 'Hạ người có kiểm soát trong 2 giây để nạp thế năng vào cơ ngực, sau đó bung lực dứt khoát khóa khớp tay sau trong 1 giây.',
+  },
+];
+
+const RUN_RULES: TechniqueRule[] = [
+  {
+    id: 'midfoot',
+    tag: 'Tiếp đất êm',
+    title: 'Tiếp đất giữa bàn chân (Midfoot)',
+    description: 'Tiếp đất nhẹ nhàng ngay dưới trọng tâm cơ thể. Tuyệt đối không giẫm gót chân (heel strike) để tránh lực dội gây đau khớp gối.',
+  },
+  {
+    id: 'cadence',
+    tag: 'Guồng chân',
+    title: 'Guồng chân 170-180 spm',
+    description: 'Giữ sải bước chân ngắn và nhanh như lướt trên mặt đất. Bước ngắn giúp giảm tải 30% chấn động lên cơ đùi và cổ chân.',
+  },
+  {
+    id: 'breathing',
+    tag: 'Hít thở Zone 2',
+    title: 'Nhịp thở đàm thoại 3-3',
+    description: '3 bước chân hít vào - 3 bước chân thở ra bằng mũi & miệng. Chạy với tốc độ vẫn có thể nói chuyện thành câu trọn vẹn.',
+  },
+];
+
+const RECOVERY_RULES: TechniqueRule[] = [
+  {
+    id: 'diaphragm',
+    tag: 'Hạ Cortisol',
+    title: 'Thở sâu cơ hoành',
+    description: 'Đặt tay lên bụng, hít sâu phình bụng 4 giây, thở chậm 6 giây để kích hoạt hệ thần kinh đối giao cảm giúp cơ bắp thư giãn sâu.',
+  },
+  {
+    id: 'static-hold',
+    tag: 'Giãn cơ tĩnh',
+    title: 'Giữ tĩnh 30-45 giây',
+    description: 'Tuyệt đối không nhấp nhô hay giật cục khi giãn cơ. Giữ căng ở mức 6/10 và thở chậm để các sợi cơ được nới lỏng tự nhiên.',
+  },
+  {
+    id: 'hydration',
+    tag: 'Tái tạo tế bào',
+    title: 'Bù nước & Điện giải',
+    description: 'Uống đủ nước từng ngụm nhỏ và bổ sung khoáng chất (Magie, Kali) sau khi tập để đào thải axit lactic và chống co rút cơ.',
   },
 ];
 
 interface TechniqueTipsCardProps {
   dayNumber: number;
+  workoutType?: WorkoutDayType;
 }
 
-export function TechniqueTipsCard({ dayNumber }: TechniqueTipsCardProps) {
-  const [isExpanded, setIsExpanded] = useState(dayNumber === 1);
+export function TechniqueTipsCard({ dayNumber, workoutType = 'push' }: TechniqueTipsCardProps) {
+  const [isExpanded, setIsExpanded] = useState(dayNumber === 1 || workoutType === 'run');
+
+  const rules = workoutType === 'run' ? RUN_RULES : workoutType === 'recovery' ? RECOVERY_RULES : PUSH_RULES;
+  const isRun = workoutType === 'run';
+  const isRecovery = workoutType === 'recovery';
+
+  const themeColor = isRun ? '#00E5FF' : isRecovery ? '#00E676' : '#FF8A00';
+  const themeBg = isRun ? 'bg-[#00E5FF]/15 text-[#00E5FF] border-[#00E5FF]/30' : isRecovery ? 'bg-[#00E676]/15 text-[#00E676] border-[#00E676]/30' : 'bg-[#FF8A00]/15 text-[#FF8A00] border-[#FF8A00]/30';
+
+  const cardTitle = isRun
+    ? '3 Lưu ý kỹ thuật chạy bộ bảo vệ gối & bền sức'
+    : isRecovery
+    ? '3 Nguyên tắc phục hồi cơ bắp & bôi trơn khớp'
+    : '3 Lưu ý kỹ thuật giúp tăng số cái nhanh gấp đôi';
+
+  const cardSubtitle = isRun
+    ? 'Tiếp đất Midfoot • Cadence 170-180 spm • Thở nhịp 3:3'
+    : isRecovery
+    ? 'Thở cơ hoành • Giữ tĩnh 30s • Bù nước & điện giải'
+    : 'Bảo vệ vai góc 45° • Khóa bụng tấm ván • Đẩy bốc hạ chậm';
 
   return (
     <div className="rounded-2xl bg-[#0F1420]/90 border border-white/[0.08] p-4 text-xs space-y-3 mb-6 relative overflow-hidden">
-      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-[#FF8A00] to-transparent pointer-events-none" />
+      <div
+        className="absolute top-0 inset-x-0 h-0.5 pointer-events-none"
+        style={{ background: `linear-gradient(to right, transparent, ${themeColor}, transparent)` }}
+      />
 
-      {/* Day 1 Max Test Pre-workout Banner */}
-      {dayNumber === 1 && (
+      {/* Day 1 Max Test Banner */}
+      {dayNumber === 1 && workoutType === 'push' && (
         <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#FF5500]/20 to-amber-500/10 border border-[#FF5500]/40 flex items-start gap-2.5 shadow-neon-orange/20">
           <div className="w-8 h-8 rounded-lg bg-[#FF5500] text-white flex items-center justify-center shrink-0 shadow-md">
             <Compass className="w-4 h-4" />
@@ -54,35 +115,35 @@ export function TechniqueTipsCard({ dayNumber }: TechniqueTipsCardProps) {
           <div>
             <div className="flex items-center gap-2">
               <span className="font-black text-white uppercase tracking-wide font-display text-[11px]">
-                {MAX_TEST_GUIDE.title}
+                Bước 0: Kiểm tra Reps tối đa (Max Reps Test)
               </span>
               <span className="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-[#FF5500] text-white uppercase">
                 Bước 0
               </span>
             </div>
             <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
-              {MAX_TEST_GUIDE.description}
+              Trước khi bắt đầu, hãy thực hiện 1 hiệp hít đất hết sức chuẩn form (ngực sát sàn) để xác định mốc nền tảng ban đầu.
             </p>
           </div>
         </div>
       )}
 
-      {/* 3 Golden Technique Rules Header */}
+      {/* Dynamic Header */}
       <button
         type="button"
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full flex items-center justify-between text-left group cursor-pointer"
       >
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-[#FF8A00]/15 text-[#FF8A00] border border-[#FF8A00]/30 flex items-center justify-center">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className={`w-7 h-7 rounded-lg border flex items-center justify-center ${themeBg}`}>
+            {isRun ? <Footprints className="w-3.5 h-3.5" /> : isRecovery ? <HeartPulse className="w-3.5 h-3.5" /> : <Sparkles className="w-3.5 h-3.5" />}
           </div>
           <div>
-            <h4 className="text-xs font-black text-white uppercase font-display tracking-wide group-hover:text-[#FF8A00] transition-colors">
-              3 Lưu ý kỹ thuật giúp tăng số cái nhanh gấp đôi
+            <h4 className="text-xs font-black text-white uppercase font-display tracking-wide group-hover:text-white transition-colors">
+              {cardTitle}
             </h4>
             <p className="text-[10px] text-slate-400 font-mono">
-              Bảo vệ vai góc 45° &bull; Khóa bụng tấm ván &bull; Chạy chậm Zone 2
+              {cardSubtitle}
             </p>
           </div>
         </div>
@@ -95,14 +156,14 @@ export function TechniqueTipsCard({ dayNumber }: TechniqueTipsCardProps) {
       {/* Expandable Rules Grid */}
       {isExpanded && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-2 border-t border-white/[0.06]">
-          {TECHNIQUE_RULES.map((rule, idx) => (
+          {rules.map((rule, idx) => (
             <div
               key={rule.id}
               className="p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.06] transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="font-mono font-bold text-[10px] text-[#FF8A00] bg-[#FF5500]/15 px-1.5 py-0.5 rounded border border-[#FF5500]/30">
+                  <span className={`font-mono font-bold text-[10px] px-1.5 py-0.5 rounded border ${themeBg}`}>
                     Quy tắc #{idx + 1}
                   </span>
                   <span className="text-[9px] font-mono text-slate-400">{rule.tag}</span>

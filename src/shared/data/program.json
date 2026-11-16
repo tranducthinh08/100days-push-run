@@ -93,7 +93,52 @@
       "distanceKmTarget": 3.5,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [4 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [4p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 240,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -186,10 +231,44 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 42,
+      "durationMinutesTarget": 27,
+      "distanceKmTarget": 4.6,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 4 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 4 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "4 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -291,7 +370,38 @@
       "distanceKmTarget": 4.8,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 32 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 3 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "3 chặng x ~1.6 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "11 phút (~1.6km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "11 phút (~1.6km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "11 phút (~1.6km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 640,
+        "recoveryDurationSec": 90,
+        "repetitions": 3
+      }
     }
   },
   {
@@ -429,7 +539,52 @@
       "distanceKmTarget": 3.5,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [4 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [4p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 240,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -522,10 +677,44 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 42,
+      "durationMinutesTarget": 27,
+      "distanceKmTarget": 4.6,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 4 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 4 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "4 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -627,7 +816,38 @@
       "distanceKmTarget": 5.1,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 34 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 3 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "3 chặng x ~1.7 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "11 phút (~1.7km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "11 phút (~1.7km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "11 phút (~1.7km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 680,
+        "recoveryDurationSec": 90,
+        "repetitions": 3
+      }
     }
   },
   {
@@ -765,7 +985,52 @@
       "distanceKmTarget": 3.5,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [4 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [4p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 240,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -858,10 +1123,44 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 42,
+      "durationMinutesTarget": 27,
+      "distanceKmTarget": 4.6,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 4 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 4 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "4 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -963,7 +1262,38 @@
       "distanceKmTarget": 5.4,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 36 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 3 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "3 chặng x ~1.8 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "12 phút (~1.8km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "12 phút (~1.8km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "12 phút (~1.8km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 720,
+        "recoveryDurationSec": 90,
+        "repetitions": 3
+      }
     }
   },
   {
@@ -1101,7 +1431,52 @@
       "distanceKmTarget": 3.5,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [4 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [4p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 240,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -1194,10 +1569,44 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 42,
+      "durationMinutesTarget": 27,
+      "distanceKmTarget": 4.6,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 4 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 4 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "4 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:30 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -1298,7 +1707,38 @@
       "distanceKmTarget": 5.7,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 38 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 3 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "3 chặng x ~1.9 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "13 phút (~1.9km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "13 phút (~1.9km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "13 phút (~1.9km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 760,
+        "recoveryDurationSec": 90,
+        "repetitions": 3
+      }
     }
   },
   {
@@ -1436,7 +1876,52 @@
       "distanceKmTarget": 3.5,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 25 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [4 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [4p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "4 phút chạy nhẹ (~0.7km)",
+          "pace": "Pace 7:00 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 240,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -1529,10 +2014,58 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 48,
+      "durationMinutesTarget": 33,
+      "distanceKmTarget": 5.4,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "6 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -1634,7 +2167,45 @@
       "distanceKmTarget": 7.2,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 48 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 4 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "4 chặng x ~1.8 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "12 phút (~1.8km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "12 phút (~1.8km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "12 phút (~1.8km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "12 phút (~1.8km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 720,
+        "recoveryDurationSec": 90,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -1772,7 +2343,52 @@
       "distanceKmTarget": 5.6,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [7 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [7p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 420,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -1865,10 +2481,58 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 48,
+      "durationMinutesTarget": 33,
+      "distanceKmTarget": 5.4,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "6 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -1970,7 +2634,45 @@
       "distanceKmTarget": 7.6,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 51 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 4 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "4 chặng x ~1.9 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "13 phút (~1.9km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "13 phút (~1.9km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "13 phút (~1.9km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "13 phút (~1.9km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 765,
+        "recoveryDurationSec": 90,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -2108,7 +2810,52 @@
       "distanceKmTarget": 5.6,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [7 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [7p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 420,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -2201,10 +2948,58 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 48,
+      "durationMinutesTarget": 33,
+      "distanceKmTarget": 5.4,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "6 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -2306,7 +3101,45 @@
       "distanceKmTarget": 8.1,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 54 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 4 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "4 chặng x ~2.0 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "14 phút (~2.0km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "14 phút (~2.0km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "14 phút (~2.0km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "14 phút (~2.0km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 810,
+        "recoveryDurationSec": 90,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -2444,7 +3277,52 @@
       "distanceKmTarget": 5.6,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [7 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [7p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 420,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -2537,10 +3415,58 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 48,
+      "durationMinutesTarget": 33,
+      "distanceKmTarget": 5.4,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "6 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -2642,7 +3568,45 @@
       "distanceKmTarget": 8.5,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 57 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 4 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "4 chặng x ~2.1 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 855,
+        "recoveryDurationSec": 90,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -2780,7 +3744,52 @@
       "distanceKmTarget": 5.6,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [7 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [7p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 420,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -2873,10 +3882,58 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 48,
+      "durationMinutesTarget": 33,
+      "distanceKmTarget": 5.4,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "6 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -2978,7 +4035,45 @@
       "distanceKmTarget": 9,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 60 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 4 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "4 chặng x ~2.3 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "15 phút (~2.3km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "15 phút (~2.3km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "15 phút (~2.3km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "15 phút (~2.3km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 900,
+        "recoveryDurationSec": 90,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -3116,7 +4211,52 @@
       "distanceKmTarget": 5.6,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 40 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 5 hiệp x [7 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "5 hiệp x [7p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 5,
+          "label": "Hiệp 5",
+          "work": "7 phút chạy nhẹ (~1.1km)",
+          "pace": "Pace 6:30 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 420,
+        "recoveryDurationSec": 60,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -3209,10 +4349,58 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 48,
+      "durationMinutesTarget": 33,
+      "distanceKmTarget": 5.4,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 6 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 6 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "6 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:15 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -3313,7 +4501,45 @@
       "distanceKmTarget": 9.4,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 63 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 4 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "4 chặng x ~2.4 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "16 phút (~2.4km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "16 phút (~2.4km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "16 phút (~2.4km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "16 phút (~2.4km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 945,
+        "recoveryDurationSec": 90,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -3451,7 +4677,45 @@
       "distanceKmTarget": 6.3,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 4 hiệp x [10 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "4 hiệp x [10p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 600,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -3544,10 +4808,72 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 54,
+      "durationMinutesTarget": 39,
+      "distanceKmTarget": 6.2,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 8 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 8 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "8 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 7,
+          "label": "Rep 7",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 8,
+          "label": "Rep 8",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -3649,7 +4975,52 @@
       "distanceKmTarget": 10.5,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 70 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 5 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "5 chặng x ~2.1 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 5,
+          "label": "Chặng 5",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 840,
+        "recoveryDurationSec": 90,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -3787,7 +5158,45 @@
       "distanceKmTarget": 6.3,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 4 hiệp x [10 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "4 hiệp x [10p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 600,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -3880,10 +5289,72 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 54,
+      "durationMinutesTarget": 39,
+      "distanceKmTarget": 6.2,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 8 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 8 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "8 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 7,
+          "label": "Rep 7",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 8,
+          "label": "Rep 8",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -3985,7 +5456,52 @@
       "distanceKmTarget": 10.5,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 70 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 5 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "5 chặng x ~2.1 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 5,
+          "label": "Chặng 5",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 840,
+        "recoveryDurationSec": 90,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -4123,7 +5639,45 @@
       "distanceKmTarget": 6.3,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 4 hiệp x [10 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "4 hiệp x [10p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 600,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -4216,10 +5770,72 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 54,
+      "durationMinutesTarget": 39,
+      "distanceKmTarget": 6.2,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 8 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 8 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "8 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 7,
+          "label": "Rep 7",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 8,
+          "label": "Rep 8",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -4321,7 +5937,52 @@
       "distanceKmTarget": 10.5,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 70 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 5 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "5 chặng x ~2.1 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 5,
+          "label": "Chặng 5",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 840,
+        "recoveryDurationSec": 90,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -4459,7 +6120,45 @@
       "distanceKmTarget": 6.3,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 4 hiệp x [10 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "4 hiệp x [10p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 600,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
     }
   },
   {
@@ -4552,10 +6251,72 @@
       }
     ],
     "runDetails": {
-      "durationMinutesTarget": 54,
+      "durationMinutesTarget": 39,
+      "distanceKmTarget": 6.2,
       "runType": "interval",
-      "paceGuidance": "Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi",
-      "description": "Khởi động 5p -> Lặp lại 8 lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "paceGuidance": "Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi",
+      "description": "Khởi động 5p -> Lặp lại 8 reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.",
+      "cadenceGuidance": "180 - 190 spm",
+      "heartRateZone": "Zone 4 - 5 (85 - 92% Max HR)",
+      "splitsSummary": "8 reps x [2p nhanh + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Rep 1",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 2,
+          "label": "Rep 2",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 3,
+          "label": "Rep 3",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 4,
+          "label": "Rep 4",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 5,
+          "label": "Rep 5",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 6,
+          "label": "Rep 6",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 7,
+          "label": "Rep 7",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        },
+        {
+          "setNumber": 8,
+          "label": "Rep 8",
+          "work": "2 phút chạy bốc (~350-400m)",
+          "pace": "Pace 5:00 (Zone 4-5)",
+          "rest": "60s đi bộ phục hồi"
+        }
+      ],
       "intervalConfig": {
         "workDurationSec": 120,
         "recoveryDurationSec": 60,
@@ -4651,7 +6412,52 @@
       "distanceKmTarget": 10.5,
       "runType": "long-run",
       "paceGuidance": "Pace bền bỉ ổn định",
-      "description": "Chạy dài tích lũy thể lực 70 phút. Uống từng ngụm nước nhỏ mỗi 20 phút."
+      "description": "Chạy dài tích lũy thể lực chia 5 chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.",
+      "cadenceGuidance": "165 - 172 spm",
+      "heartRateZone": "Zone 2 (68 - 75% Max HR)",
+      "splitsSummary": "5 chặng x ~2.1 km",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Chặng 1",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 2,
+          "label": "Chặng 2",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 3,
+          "label": "Chặng 3",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 4,
+          "label": "Chặng 4",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        },
+        {
+          "setNumber": 5,
+          "label": "Chặng 5",
+          "work": "14 phút (~2.1km)",
+          "pace": "Pace 6:45 - 7:00 (Zone 2)",
+          "rest": "90s đi bộ tiếp nước"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 840,
+        "recoveryDurationSec": 90,
+        "repetitions": 5
+      }
     }
   },
   {
@@ -4783,7 +6589,45 @@
       "distanceKmTarget": 6.3,
       "runType": "zone2",
       "paceGuidance": "Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)",
-      "description": "Chạy đều liên tục 45 phút với nhịp thở đều 3 bước hít - 3 bước thở."
+      "description": "Chạy chia làm 4 hiệp x [10 phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.",
+      "cadenceGuidance": "165 - 175 spm",
+      "heartRateZone": "Zone 2 (65 - 75% Max HR)",
+      "splitsSummary": "4 hiệp x [10p chạy + 1p đi bộ]",
+      "splits": [
+        {
+          "setNumber": 1,
+          "label": "Hiệp 1",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 2,
+          "label": "Hiệp 2",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 3,
+          "label": "Hiệp 3",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        },
+        {
+          "setNumber": 4,
+          "label": "Hiệp 4",
+          "work": "10 phút chạy nhẹ (~1.6km)",
+          "pace": "Pace 6:15 (Zone 2)",
+          "rest": "60s đi bộ thở đều"
+        }
+      ],
+      "intervalConfig": {
+        "workDurationSec": 600,
+        "recoveryDurationSec": 60,
+        "repetitions": 4
+      }
     }
   }
 ]

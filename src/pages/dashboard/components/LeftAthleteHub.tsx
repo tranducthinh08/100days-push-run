@@ -25,7 +25,13 @@ function getCoachAdvice(day: DayProgram): string {
     return 'Tập trung khép khuỷu tay 45 độ, siết mông bụng không để võng hông. Nghỉ đúng thời gian đếm ngược giữa hiệp.';
   }
   if (day.type === 'run') {
-    return 'Giữ nhịp thở đều 3 bước hít - 3 bước thở. Chạy ở tốc độ đàm thoại Zone 2 để tích lũy sức bền dẻo dai.';
+    if (day.runDetails?.runType === 'interval') {
+      return `Chạy biến tốc Interval: Bứt tốc trong hiệp chạy và đi bộ phục hồi giữa các hiệp để nâng cao VO2 Max.`;
+    }
+    if (day.runDetails?.runType === 'long-run') {
+      return `Chạy dài tích lũy: Giữ guồng chân 170 spm, chia đều sức qua các chặng và tiếp nước mỗi 20 phút.`;
+    }
+    return `Chạy nhẹ Zone 2: Thực hiện ${day.runDetails?.splitsSummary || 'các hiệp Run-Walk'}, thở đều nhịp 3-3 bảo vệ khớp gối.`;
   }
   return 'Phục hồi chủ động: Thả lỏng toàn bộ cơ bắp, uống đủ nước và ngủ đủ giấc để cơ thể phục hồi tối đa.';
 }

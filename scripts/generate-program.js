@@ -128,31 +128,82 @@ function getAccessoryBlock(dow, type) {
 function getRunDetails(dow, phase, week) {
   if (dow === 1) {
     const duration = phase === 1 ? 25 : phase === 2 ? 40 : 45;
+    const distance = +(duration * 0.14).toFixed(1);
+    const numSets = phase === 1 ? 5 : phase === 2 ? 5 : 4;
+    const workMins = phase === 1 ? 4 : phase === 2 ? 7 : 10;
+    const setDistance = (distance / numSets).toFixed(1);
+    const pace = phase === 1 ? 'Pace 7:00' : phase === 2 ? 'Pace 6:30' : 'Pace 6:15';
+    
+    const splits = Array.from({ length: numSets }, (_, i) => ({
+      setNumber: i + 1,
+      label: `Hiệp ${i + 1}`,
+      work: `${workMins} phút chạy nhẹ (~${setDistance}km)`,
+      pace: `${pace} (Zone 2)`,
+      rest: '60s đi bộ thở đều',
+    }));
+
     return {
       durationMinutesTarget: duration,
-      distanceKmTarget: +(duration * 0.14).toFixed(1),
+      distanceKmTarget: distance,
       runType: 'zone2',
       paceGuidance: 'Pace trò chuyện thoải mái (Zone 2 - Tim 65-75%)',
-      description: `Chạy đều liên tục ${duration} phút với nhịp thở đều 3 bước hít - 3 bước thở.`,
+      description: `Chạy chia làm ${numSets} hiệp x [${workMins} phút chạy nhẹ Zone 2 + 1 phút đi bộ phục hồi], nhịp thở đều 3-3.`,
+      cadenceGuidance: '165 - 175 spm',
+      heartRateZone: 'Zone 2 (65 - 75% Max HR)',
+      splitsSummary: `${numSets} hiệp x [${workMins}p chạy + 1p đi bộ]`,
+      splits,
+      intervalConfig: { workDurationSec: workMins * 60, recoveryDurationSec: 60, repetitions: numSets },
     };
   }
+
   if (dow === 3) {
     const reps = phase === 1 ? 4 : phase === 2 ? 6 : 8;
+    const pace = phase === 1 ? 'Pace 5:30' : phase === 2 ? 'Pace 5:15' : 'Pace 5:00';
+    const splits = Array.from({ length: reps }, (_, i) => ({
+      setNumber: i + 1,
+      label: `Rep ${i + 1}`,
+      work: '2 phút chạy bốc (~350-400m)',
+      pace: `${pace} (Zone 4-5)`,
+      rest: '60s đi bộ phục hồi',
+    }));
+
     return {
-      durationMinutesTarget: 30 + reps * 3,
+      durationMinutesTarget: 15 + reps * 3,
+      distanceKmTarget: +(3.0 + reps * 0.4).toFixed(1),
       runType: 'interval',
-      paceGuidance: 'Pace nhanh 85-90% MHR xen kẽ Đi bộ phục hồi',
-      description: `Khởi động 5p -> Lặp lại ${reps} lần [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.`,
+      paceGuidance: 'Pace nhanh 85-92% MHR xen kẽ Đi bộ phục hồi',
+      description: `Khởi động 5p -> Lặp lại ${reps} reps [2 phút chạy nhanh / 1 phút đi bộ] -> Thả lỏng 5p.`,
+      cadenceGuidance: '180 - 190 spm',
+      heartRateZone: 'Zone 4 - 5 (85 - 92% Max HR)',
+      splitsSummary: `${reps} reps x [2p nhanh + 1p đi bộ]`,
+      splits,
       intervalConfig: { workDurationSec: 120, recoveryDurationSec: 60, repetitions: reps },
     };
   }
+
   const longRunDuration = phase === 1 ? 30 + week * 2 : phase === 2 ? 45 + (week - 4) * 3 : 70;
+  const longDistance = +(longRunDuration * 0.15).toFixed(1);
+  const numChangs = phase === 1 ? 3 : phase === 2 ? 4 : 5;
+  const changKm = (longDistance / numChangs).toFixed(1);
+  const splits = Array.from({ length: numChangs }, (_, i) => ({
+    setNumber: i + 1,
+    label: `Chặng ${i + 1}`,
+    work: `${Math.round(longRunDuration / numChangs)} phút (~${changKm}km)`,
+    pace: 'Pace 6:45 - 7:00 (Zone 2)',
+    rest: '90s đi bộ tiếp nước',
+  }));
+
   return {
     durationMinutesTarget: longRunDuration,
-    distanceKmTarget: +(longRunDuration * 0.15).toFixed(1),
+    distanceKmTarget: longDistance,
     runType: 'long-run',
     paceGuidance: 'Pace bền bỉ ổn định',
-    description: `Chạy dài tích lũy thể lực ${longRunDuration} phút. Uống từng ngụm nước nhỏ mỗi 20 phút.`,
+    description: `Chạy dài tích lũy thể lực chia ${numChangs} chặng. Nghỉ đi bộ nạp nước 90s giữa mỗi chặng.`,
+    cadenceGuidance: '165 - 172 spm',
+    heartRateZone: 'Zone 2 (68 - 75% Max HR)',
+    splitsSummary: `${numChangs} chặng x ~${changKm} km`,
+    splits,
+    intervalConfig: { workDurationSec: Math.round((longRunDuration * 60) / numChangs), recoveryDurationSec: 90, repetitions: numChangs },
   };
 }
 
