@@ -109,8 +109,9 @@ export function AppContent() {
         isConfigured={cloudSync.isConfigured}
         configUrl={cloudSync.config.url}
         configKey={cloudSync.config.anonKey}
+        errorMessage={cloudSync.errorMessage}
         onSyncNow={() => cloudSync.syncNow(state, replaceState)}
-        onLinkPin={(pin) => cloudSync.linkNewPin(pin, replaceState)}
+        onLinkPin={(pin) => cloudSync.linkNewPin(pin, state, replaceState)}
         onSaveConfig={cloudSync.updateCredentials}
         onResetPin={cloudSync.resetPin}
       />

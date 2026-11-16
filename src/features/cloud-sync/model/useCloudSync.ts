@@ -6,7 +6,9 @@ import {
   generateRandomPin,
   executeTwoWaySync,
   fetchCloudData,
+  saveToCloud,
 } from './syncService';
+import { mergeProgressStates } from './mergeHelper';
 import {
   isSupabaseConfigured,
   saveSupabaseConfig,
@@ -43,18 +45,22 @@ export function useCloudSync() {
     async (
       currentState: UserProgressState,
       onStateUpdated?: (merged: UserProgressState) => void
-    ) => {
+    ): Promise<{ success: boolean; message: string }> => {
       if (!isSupabaseConfigured()) {
         setSyncStatus('unconfigured');
-        setErrorMessage('Vui lòng nhập Project URL & Anon Key ở bên dưới rồi bấm "Lưu cấu hình Supabase" trước!');
-        return;
+        const msg = 'Vui lòng nhập Project URL & Anon Key ở bên dưới rồi bấm "Lưu cấu hình Supabase" trước!';
+        setErrorMessage(msg);
+        return { success: false, message: msg };
       }
       if (!navigator.onLine) {
         setSyncStatus('offline');
-        setErrorMessage('Thiết bị đang không có kết nối Internet.');
-        return;
+        const msg = 'Thiết bị đang không có kết nối Internet.';
+        setErrorMessage(msg);
+        return { success: false, message: msg };
       }
-      if (isSyncingRef.current) return;
+      if (isSyncingRef.current) {
+        return { success: true, message: 'Đang trong quá trình đồng bộ...' };
+      }
 
       isSyncingRef.current = true;
       setSyncStatus('syncing');
@@ -69,9 +75,11 @@ export function useCloudSync() {
         if (onStateUpdated) {
           onStateUpdated(res.mergedState);
         }
+        return { success: true, message: 'Đã đồng bộ dữ liệu thành công!' };
       } else {
         setSyncStatus('error');
         setErrorMessage(res.message || 'Lỗi đồng bộ');
+        return { success: false, message: res.message || 'Lỗi đồng bộ' };
       }
     },
     [syncPin]
@@ -80,29 +88,55 @@ export function useCloudSync() {
   const linkNewPin = useCallback(
     async (
       newPin: string,
+      currentState: UserProgressState,
       onStateUpdated?: (merged: UserProgressState) => void
-    ) => {
+    ): Promise<{ success: boolean; message: string }> => {
       const cleanPin = newPin.trim().toUpperCase();
-      if (!cleanPin) return;
-      saveSyncPin(cleanPin);
-      setSyncPinState(cleanPin);
+      if (!cleanPin) {
+        return { success: false, message: 'Vui lòng nhập mã PIN hợp lệ!' };
+      }
+      if (cleanPin === syncPin) {
+        return {
+          success: false,
+          message: `Mã ${cleanPin} là mã PIN của CHÍNH thiết bị này. Để liên kết, bạn hãy mở thiết bị kia và lấy mã PIN ở thiết bị đó nhập vào đây nhé!`,
+        };
+      }
 
       if (!isSupabaseConfigured()) {
         setSyncStatus('unconfigured');
-        return;
+        const msg = 'Chưa cấu hình Supabase URL & Key.';
+        setErrorMessage(msg);
+        return { success: false, message: msg };
       }
 
       setSyncStatus('syncing');
+      setErrorMessage(null);
+
       const cloudData = await fetchCloudData(cleanPin);
-      if (cloudData && onStateUpdated) {
-        onStateUpdated(cloudData);
-        setSyncStatus('synced');
-        setLastSyncedAt(new Date().toISOString());
-      } else {
-        setSyncStatus('idle');
+      if (!cloudData) {
+        setSyncStatus('error');
+        const msg = `Không tìm thấy dữ liệu trên Cloud cho mã PIN ${cleanPin}. Hãy mở thiết bị kia và bấm "Đồng bộ ngay" trước!`;
+        setErrorMessage(msg);
+        return { success: false, message: msg };
       }
+
+      const merged = mergeProgressStates(currentState, cloudData);
+      saveSyncPin(cleanPin);
+      setSyncPinState(cleanPin);
+      await saveToCloud(cleanPin, merged);
+
+      if (onStateUpdated) {
+        onStateUpdated(merged);
+      }
+      setSyncStatus('synced');
+      setLastSyncedAt(new Date().toISOString());
+
+      return {
+        success: true,
+        message: `Đã kết nối thành công với mã PIN ${cleanPin} và cập nhật dữ liệu!`,
+      };
     },
-    []
+    [syncPin]
   );
 
   const updateCredentials = useCallback((url: string, key: string) => {
