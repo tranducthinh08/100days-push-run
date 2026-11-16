@@ -12,6 +12,20 @@ export interface SupabaseConfig {
   anonKey: string;
 }
 
+export function isSecretKey(key: string): boolean {
+  const trimmed = key.trim();
+  return trimmed.startsWith('sb_secret_') || trimmed.includes('service_role');
+}
+
+export function clearCustomSupabaseConfig(): void {
+  if (typeof window === 'undefined') return;
+  localStorage.removeItem(STORAGE_URL_KEY);
+  localStorage.removeItem(STORAGE_KEY_KEY);
+  cachedClient = null;
+  cachedUrl = '';
+  cachedKey = '';
+}
+
 export function normalizeSupabaseUrl(rawUrl: string): string {
   const trimmed = rawUrl.trim();
   if (!trimmed) return '';
@@ -36,10 +50,16 @@ export function getSupabaseConfig(): SupabaseConfig {
   if (typeof window === 'undefined') {
     return { url: '', anonKey: '' };
   }
-  const storedUrl = localStorage.getItem(STORAGE_URL_KEY) || '';
-  const storedKey = localStorage.getItem(STORAGE_KEY_KEY) || '';
+  let storedUrl = localStorage.getItem(STORAGE_URL_KEY) || '';
+  let storedKey = localStorage.getItem(STORAGE_KEY_KEY) || '';
   const envUrl = (import.meta.env.VITE_SUPABASE_URL as string) || '';
   const envKey = (import.meta.env.VITE_SUPABASE_ANON_KEY as string) || '';
+
+  // Auto-purge any accidentally saved secret/service_role keys
+  if (isSecretKey(storedKey)) {
+    localStorage.removeItem(STORAGE_KEY_KEY);
+    storedKey = '';
+  }
 
   const rawUrl = storedUrl.trim() || envUrl.trim();
   return {
@@ -50,6 +70,9 @@ export function getSupabaseConfig(): SupabaseConfig {
 
 export function saveSupabaseConfig(url: string, anonKey: string): void {
   if (typeof window === 'undefined') return;
+  if (isSecretKey(anonKey)) {
+    throw new Error('Supabase nghiêm cấm dùng Secret Key trong trình duyệt. Vui lòng dùng Publishable Key hoặc Anon Key!');
+  }
   const normalized = normalizeSupabaseUrl(url);
   localStorage.setItem(STORAGE_URL_KEY, normalized);
   localStorage.setItem(STORAGE_KEY_KEY, anonKey.trim());
@@ -58,12 +81,12 @@ export function saveSupabaseConfig(url: string, anonKey: string): void {
 
 export function isSupabaseConfigured(): boolean {
   const { url, anonKey } = getSupabaseConfig();
-  return Boolean(url && anonKey && url.startsWith('http'));
+  return Boolean(url && anonKey && url.startsWith('http') && !isSecretKey(anonKey));
 }
 
 export function getSupabaseClient(): SupabaseClient | null {
   const { url, anonKey } = getSupabaseConfig();
-  if (!url || !anonKey || !url.startsWith('http')) {
+  if (!url || !anonKey || !url.startsWith('http') || isSecretKey(anonKey)) {
     return null;
   }
   if (cachedClient && cachedUrl === url && cachedKey === anonKey) {
