@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, Upload, History } from 'lucide-react';
+import { Download, Upload, History, Cloud } from 'lucide-react';
 import { PhaseProgressBar } from '@/widgets/phase-progress-bar/PhaseProgressBar';
 import { EquipmentToggle } from '@/widgets/equipment-toggle/EquipmentToggle';
 import { DailyPlanCard } from '@/widgets/daily-plan-card/DailyPlanCard';
@@ -10,12 +10,21 @@ import { DesktopDashboardView } from './components/DesktopDashboardView';
 import { useUserProgress } from '@/entities/user-progress/useUserProgress';
 import { getProgramDay } from '@/entities/program/model';
 import { exportAllData, importAllData } from '@/shared/lib/storage';
+import { SyncStatus } from '@/features/cloud-sync/model/syncTypes';
 
 interface DashboardPageProps {
   onStartSession: (type: 'push' | 'run' | 'recovery') => void;
+  onOpenCloudSync?: () => void;
+  syncPin?: string;
+  syncStatus?: SyncStatus;
 }
 
-export function DashboardPage({ onStartSession }: DashboardPageProps) {
+export function DashboardPage({
+  onStartSession,
+  onOpenCloudSync,
+  syncPin,
+  syncStatus,
+}: DashboardPageProps) {
   const { currentDay } = useUserProgress();
   const [isDayModalOpen, setIsDayModalOpen] = useState(false);
   const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
@@ -57,6 +66,9 @@ export function DashboardPage({ onStartSession }: DashboardPageProps) {
         programDay={programDay}
         onStartSession={onStartSession}
         onOpenHistory={() => setIsHistoryModalOpen(true)}
+        onOpenCloudSync={onOpenCloudSync}
+        syncPin={syncPin}
+        syncStatus={syncStatus}
       />
 
       {/* MOBILE LAYOUT (< 768px): Mobile-First Stack */}
@@ -73,6 +85,15 @@ export function DashboardPage({ onStartSession }: DashboardPageProps) {
           </div>
 
           <div className="flex items-center gap-1.5">
+            {onOpenCloudSync && (
+              <button
+                onClick={onOpenCloudSync}
+                title="Sao lưu đám mây Supabase (Mã PIN)"
+                className="w-9 h-9 rounded-xl bg-[#00E5FF]/15 border border-[#00E5FF]/30 hover:bg-[#00E5FF]/25 text-[#00E5FF] flex items-center justify-center transition-colors shadow-xs cursor-pointer"
+              >
+                <Cloud className="w-4 h-4" />
+              </button>
+            )}
             <button
               onClick={() => setIsHistoryModalOpen(true)}
               title="Lịch sử buổi tập"

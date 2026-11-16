@@ -16,12 +16,16 @@ import { NavTab } from '../bottom-navigation/BottomNavigation';
 import { useUserProgress } from '@/entities/user-progress/useUserProgress';
 import { exportAllData, importAllData } from '@/shared/lib/storage';
 import { playWhistleSound } from '@/shared/lib/audio';
+import { SyncStatusBadge } from '@/features/cloud-sync/ui/SyncStatusBadge';
+import { SyncStatus } from '@/features/cloud-sync/model/syncTypes';
 
 interface DesktopHeaderProps {
   activeTab: NavTab;
   onTabChange: (tab: NavTab) => void;
   onOpenHistory: () => void;
   onOpenDaySelector: () => void;
+  onOpenCloudSync?: () => void;
+  syncStatus?: SyncStatus;
 }
 
 export function DesktopHeader({
@@ -29,6 +33,8 @@ export function DesktopHeader({
   onTabChange,
   onOpenHistory,
   onOpenDaySelector,
+  onOpenCloudSync,
+  syncStatus = 'unconfigured',
 }: DesktopHeaderProps) {
   const { currentDay, streak } = useUserProgress();
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -136,6 +142,11 @@ export function DesktopHeader({
 
         {/* Right Athlete Control Telemetry */}
         <div className="flex items-center gap-2.5 shrink-0">
+          {/* Cloud Sync Status Badge */}
+          {onOpenCloudSync && (
+            <SyncStatusBadge status={syncStatus} onClick={onOpenCloudSync} />
+          )}
+
           {/* Day Selector Pill */}
           <button
             onClick={onOpenDaySelector}

@@ -41,6 +41,7 @@ interface UserProgressContextType {
   resetStreakAndRestart: (newStartDate?: string) => void;
   updateMaxPushupsRecord: (reps: number) => void;
   setCustomExerciseVideo: (exerciseId: string, urlOrId: string) => void;
+  replaceState: (newState: UserProgressState) => void;
   resetAllProgress: () => void;
 }
 
@@ -144,6 +145,10 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     }));
   };
 
+  const replaceState = (newState: UserProgressState) => {
+    setState(newState);
+  };
+
   const completedList = Object.values(state.completedDays);
   const totalCompletedCount = completedList.length;
   const totalPushupsDone = completedList.reduce((acc, cur) => acc + (cur.totalPushupsDone || 0), 0);
@@ -175,6 +180,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
         resetStreakAndRestart,
         updateMaxPushupsRecord,
         setCustomExerciseVideo,
+        replaceState,
         resetAllProgress,
       }}
     >

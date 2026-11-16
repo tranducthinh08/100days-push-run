@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { UserProgressProvider } from '@/entities/user-progress/useUserProgress';
+import React, { useState, useEffect, useRef } from 'react';
+import { UserProgressProvider, useUserProgress } from '@/entities/user-progress/useUserProgress';
 import { DashboardPage } from '@/pages/dashboard/DashboardPage';
 import { WorkoutSessionPage } from '@/pages/workout-session/WorkoutSessionPage';
 import { RunSessionPage } from '@/pages/run-session/RunSessionPage';
@@ -8,11 +8,35 @@ import { BottomNavigation, NavTab } from '@/widgets/bottom-navigation/BottomNavi
 import { DesktopHeader } from '@/widgets/desktop-header/DesktopHeader';
 import { DaySelectorModal } from '@/pages/dashboard/components/DaySelectorModal';
 import { WorkoutHistoryModal } from '@/pages/dashboard/components/WorkoutHistoryModal';
+import { useCloudSync } from '@/features/cloud-sync/model/useCloudSync';
+import { CloudSyncModal } from '@/features/cloud-sync/ui/CloudSyncModal';
 
 export function AppContent() {
   const [activeTab, setActiveTab] = useState<NavTab>('dashboard');
   const [isDaySelectorOpen, setIsDaySelectorOpen] = useState(false);
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [isCloudSyncOpen, setIsCloudSyncOpen] = useState(false);
+
+  const { state, replaceState } = useUserProgress();
+  const cloudSync = useCloudSync();
+  const initialSyncAttempted = useRef(false);
+
+  // Initial background pull on mount if configured
+  useEffect(() => {
+    if (cloudSync.isConfigured && !initialSyncAttempted.current) {
+      initialSyncAttempted.current = true;
+      cloudSync.syncNow(state, replaceState);
+    }
+  }, [cloudSync.isConfigured, cloudSync, state, replaceState]);
+
+  // Debounced auto-sync when local progress state changes
+  useEffect(() => {
+    if (!cloudSync.isConfigured) return;
+    const timer = setTimeout(() => {
+      cloudSync.syncNow(state, replaceState);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [state, cloudSync.isConfigured, cloudSync, replaceState]);
 
   const handleStartSession = (type: 'push' | 'run' | 'recovery') => {
     if (type === 'push') {
@@ -37,12 +61,19 @@ export function AppContent() {
         onTabChange={setActiveTab}
         onOpenHistory={() => setIsHistoryOpen(true)}
         onOpenDaySelector={() => setIsDaySelectorOpen(true)}
+        onOpenCloudSync={() => setIsCloudSyncOpen(true)}
+        syncStatus={cloudSync.syncStatus}
       />
 
-      {/* Main Content Area: High-Performance 1880px Responsive Container */}
+      {/* Main Content Area */}
       <main className="flex-1 w-full max-w-[1880px] mx-auto px-4 lg:px-6 py-4 pb-28 md:pb-8 hud-pattern">
         {activeTab === 'dashboard' && (
-          <DashboardPage onStartSession={handleStartSession} />
+          <DashboardPage
+            onStartSession={handleStartSession}
+            onOpenCloudSync={() => setIsCloudSyncOpen(true)}
+            syncPin={cloudSync.syncPin}
+            syncStatus={cloudSync.syncStatus}
+          />
         )}
         {activeTab === 'workout' && (
           <WorkoutSessionPage onBackToDashboard={() => setActiveTab('dashboard')} />
@@ -60,7 +91,7 @@ export function AppContent() {
         <BottomNavigation activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
 
-      {/* Global Modals triggered from Desktop Header */}
+      {/* Global Modals */}
       <DaySelectorModal
         isOpen={isDaySelectorOpen}
         onClose={() => setIsDaySelectorOpen(false)}
@@ -68,6 +99,20 @@ export function AppContent() {
       <WorkoutHistoryModal
         isOpen={isHistoryOpen}
         onClose={() => setIsHistoryOpen(false)}
+      />
+      <CloudSyncModal
+        isOpen={isCloudSyncOpen}
+        onClose={() => setIsCloudSyncOpen(false)}
+        syncPin={cloudSync.syncPin}
+        syncStatus={cloudSync.syncStatus}
+        lastSyncedAt={cloudSync.lastSyncedAt}
+        isConfigured={cloudSync.isConfigured}
+        configUrl={cloudSync.config.url}
+        configKey={cloudSync.config.anonKey}
+        onSyncNow={() => cloudSync.syncNow(state, replaceState)}
+        onLinkPin={(pin) => cloudSync.linkNewPin(pin, replaceState)}
+        onSaveConfig={cloudSync.updateCredentials}
+        onResetPin={cloudSync.resetPin}
       />
     </div>
   );

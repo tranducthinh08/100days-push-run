@@ -7,16 +7,23 @@ import { VolumeAnalyticsChart } from './VolumeAnalyticsChart';
 import { StravaConnectModal } from '@/features/strava-sync/StravaConnectModal';
 import { useStravaSync } from '@/features/strava-sync/useStravaSync';
 import { DayProgram, ProgramPhase } from '@/entities/program/types';
+import { SyncStatus } from '@/features/cloud-sync/model/syncTypes';
 
 interface DesktopDashboardViewProps {
   programDay: DayProgram;
   onStartSession: (type: 'push' | 'run' | 'recovery') => void;
   onOpenHistory: () => void;
+  onOpenCloudSync?: () => void;
+  syncPin?: string;
+  syncStatus?: SyncStatus;
 }
 
 export function DesktopDashboardView({
   programDay,
   onStartSession,
+  onOpenCloudSync,
+  syncPin,
+  syncStatus,
 }: DesktopDashboardViewProps) {
   const [isStravaModalOpen, setIsStravaModalOpen] = useState(false);
   const [activePhase, setActivePhase] = useState<ProgramPhase>(
@@ -33,6 +40,9 @@ export function DesktopDashboardView({
           onOpenStravaModal={() => setIsStravaModalOpen(true)}
           activePhase={activePhase}
           onSelectPhase={setActivePhase}
+          onOpenCloudSync={onOpenCloudSync}
+          syncPin={syncPin}
+          syncStatus={syncStatus}
         />
       </div>
 
