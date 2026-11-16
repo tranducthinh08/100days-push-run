@@ -22,6 +22,23 @@ body {
   background: radial-gradient(circle at 50% 50%, rgba(255, 85, 0, 0.22) 0%, rgba(255, 85, 0, 0) 70%);
 }
 
+/* Safe Area Insets for iOS Home Bar & Notch */
+.pb-safe {
+  padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+}
+.pt-safe {
+  padding-top: max(12px, env(safe-area-inset-top, 12px));
+}
+.pl-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+.pr-safe {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+.mb-safe {
+  margin-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+}
+
 .cyan-radial {
   background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.16) 0%, rgba(0, 229, 255, 0) 70%);
 }

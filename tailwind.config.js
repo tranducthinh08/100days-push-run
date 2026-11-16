@@ -42,6 +42,12 @@ export default {
         mono: ['"Space Mono"', 'monospace'],
         condensed: ['"Space Grotesk"', 'sans-serif'],
       },
+      spacing: {
+        '4.5': '1.125rem',
+        '13': '3.25rem',
+        '15': '3.75rem',
+        '18': '4.5rem',
+      },
       boxShadow: {
         'neon-orange': '0 0 25px -4px rgba(255, 85, 0, 0.55), 0 0 10px -2px rgba(255, 85, 0, 0.35)',
         'neon-cyan': '0 0 25px -4px rgba(0, 229, 255, 0.45), 0 0 10px -2px rgba(0, 229, 255, 0.3)',

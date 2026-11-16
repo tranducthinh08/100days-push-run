@@ -29,10 +29,10 @@ export function TreadmillManualView({ onSaveManualRun }: TreadmillManualViewProp
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-3xl p-5 md:p-6 flex flex-col gap-4 shadow-xl shadow-slate-900/5">
+    <form onSubmit={handleSubmit} className="bg-[#111622]/90 backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-5 md:p-6 flex flex-col gap-4 shadow-glass-hud text-slate-100">
       <div className="flex flex-col gap-0.5">
-        <h3 className="text-sm font-bold text-slate-900">Nhập thông số chạy máy (Treadmill)</h3>
-        <p className="text-xs text-slate-500">
+        <h3 className="text-sm font-bold text-white font-display">Nhập thông số chạy máy (Treadmill)</h3>
+        <p className="text-xs text-slate-400 font-mono">
           Dành cho các buổi chạy trong nhà hoặc không mang điện thoại.
         </p>
       </div>
@@ -40,8 +40,8 @@ export function TreadmillManualView({ onSaveManualRun }: TreadmillManualViewProp
       <div className="grid grid-cols-2 gap-3">
         {/* Distance input */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
-            <Gauge className="w-3.5 h-3.5 text-orange-500" />
+          <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5 font-mono">
+            <Gauge className="w-3.5 h-3.5 text-[#00E5FF]" />
             Quãng đường (km)
           </label>
           <input
@@ -52,14 +52,14 @@ export function TreadmillManualView({ onSaveManualRun }: TreadmillManualViewProp
             value={distance}
             onChange={(e) => setDistance(e.target.value)}
             required
-            className="w-full bg-white border border-slate-200/90 rounded-2xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 shadow-sm"
+            className="w-full bg-[#181D2D] border border-white/10 rounded-2xl px-3.5 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF]/40 shadow-sm transition-all"
           />
         </div>
 
         {/* Duration input */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5 text-orange-500" />
+          <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5 font-mono">
+            <Clock className="w-3.5 h-3.5 text-[#00E5FF]" />
             Thời gian (phút)
           </label>
           <input
@@ -70,23 +70,24 @@ export function TreadmillManualView({ onSaveManualRun }: TreadmillManualViewProp
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
             required
-            className="w-full bg-white border border-slate-200/90 rounded-2xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 shadow-sm"
+            className="w-full bg-[#181D2D] border border-white/10 rounded-2xl px-3.5 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF]/40 shadow-sm transition-all"
           />
         </div>
       </div>
 
       {/* Computed Pace preview */}
-      <div className="bg-orange-50/60 border border-orange-100 rounded-2xl p-3.5 flex justify-between items-center text-xs">
-        <span className="text-slate-600 font-medium">Tốc độ ước tính (Pace):</span>
-        <span className="font-mono font-bold text-orange-600 text-sm">{calculatedPace}</span>
+      <div className="bg-[#181D2D]/90 border border-white/[0.08] rounded-2xl p-3.5 flex justify-between items-center text-xs">
+        <span className="text-slate-400 font-medium font-mono">Tốc độ ước tính (Pace):</span>
+        <span className="font-mono font-bold text-[#00E5FF] text-sm">{calculatedPace}</span>
       </div>
 
       <Button
-        variant="primary"
+        variant="blue"
         size="lg"
         type="submit"
         fullWidth
         leftIcon={<Save className="w-5 h-5" />}
+        className="h-13 font-display uppercase tracking-wider"
       >
         Lưu kết quả buổi chạy máy
       </Button>

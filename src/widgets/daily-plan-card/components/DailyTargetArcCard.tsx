@@ -46,7 +46,7 @@ export function DailyTargetArcCard({
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
         {/* Circular Target Arc Progress */}
         <div className="flex items-center gap-4 sm:col-span-2">
-          <div className="relative w-18 h-18 shrink-0">
+          <div className="relative w-[72px] h-[72px] shrink-0">
             <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
               <path
                 className="text-white/10"

@@ -39,11 +39,11 @@ export function GpsRunTrackerView({ onFinishRun }: GpsRunTrackerViewProps) {
   };
 
   return (
-    <div className="flex flex-col gap-4 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-3xl p-5 md:p-6 shadow-xl shadow-slate-900/5">
+    <div className="flex flex-col gap-4 bg-[#111622]/90 backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-5 md:p-6 shadow-glass-hud text-slate-100">
       {/* Mode toggle: GPS real vs Simulated test */}
-      <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-100">
-        <div className="flex items-center gap-1.5 text-slate-700">
-          <MapPin className="w-4 h-4 text-orange-500" />
+      <div className="flex items-center justify-between text-xs pb-3 border-b border-white/[0.08]">
+        <div className="flex items-center gap-1.5 text-slate-300 font-mono">
+          <MapPin className="w-4 h-4 text-[#00E5FF]" />
           <span className="font-semibold">
             {isSimulation ? 'Chế độ Giả lập (Test máy tính)' : 'Định vị GPS thực tế'}
           </span>
@@ -52,7 +52,7 @@ export function GpsRunTrackerView({ onFinishRun }: GpsRunTrackerViewProps) {
         {!isTracking && (
           <button
             onClick={() => setIsSimulation(!isSimulation)}
-            className="flex items-center gap-1 text-[11px] font-semibold text-orange-600 hover:text-orange-700 px-2.5 py-1 rounded-xl bg-orange-50 border border-orange-200 transition-colors"
+            className="flex items-center gap-1 text-[11px] font-semibold text-[#00E5FF] hover:text-white px-2.5 py-1 rounded-xl bg-[#00E5FF]/15 border border-[#00E5FF]/30 transition-colors font-mono cursor-pointer"
           >
             <Radio className="w-3 h-3" />
             {isSimulation ? 'Chuyển sang GPS thật' : 'Bật Giả lập'}
@@ -61,7 +61,7 @@ export function GpsRunTrackerView({ onFinishRun }: GpsRunTrackerViewProps) {
       </div>
 
       {gpsError && !isSimulation && (
-        <div className="p-3 rounded-2xl bg-rose-50 border border-rose-200 text-rose-600 text-xs flex items-center gap-2">
+        <div className="p-3 rounded-2xl bg-rose-500/15 border border-rose-500/30 text-rose-400 text-xs flex items-center gap-2 font-mono">
           <AlertCircle className="w-4 h-4 shrink-0" />
           <span>{gpsError} (Bạn có thể bấm "Bật Giả lập" để chạy thử)</span>
         </div>
@@ -69,44 +69,44 @@ export function GpsRunTrackerView({ onFinishRun }: GpsRunTrackerViewProps) {
 
       {/* Giant Distance Display */}
       <div className="flex flex-col items-center py-2">
-        <span className="font-mono text-7xl font-extrabold text-slate-900 tracking-tight leading-none">
+        <span className="font-mono text-7xl sm:text-8xl font-black text-white tracking-tight leading-none drop-shadow-[0_0_35px_rgba(0,229,255,0.4)]">
           {distanceKm}
         </span>
-        <span className="text-xs uppercase tracking-widest text-orange-500 font-bold mt-2">
+        <span className="text-xs uppercase tracking-widest text-[#00E5FF] font-black mt-2 font-display">
           QUÃNG ĐƯỜNG (KM)
         </span>
       </div>
 
       {/* Stats Grid: Time, Pace, Speed */}
       <div className="grid grid-cols-3 gap-2.5 pt-1">
-        <div className="bg-slate-50 border border-slate-100 p-3 rounded-2xl flex flex-col items-center shadow-inner">
-          <span className="text-[10px] text-slate-500 font-medium">Thời gian</span>
-          <span className="font-mono text-lg font-bold text-slate-900">{timeFormatted}</span>
+        <div className="bg-[#181D2D]/90 border border-white/[0.08] p-3 rounded-2xl flex flex-col items-center shadow-inner">
+          <span className="text-[10px] text-slate-400 font-medium font-mono">Thời gian</span>
+          <span className="font-mono text-lg font-bold text-white">{timeFormatted}</span>
         </div>
 
-        <div className="bg-orange-50/50 border border-orange-100 p-3 rounded-2xl flex flex-col items-center shadow-inner">
-          <span className="text-[10px] text-orange-700 font-medium">Pace TB</span>
-          <span className="font-mono text-lg font-bold text-orange-600">{currentPace}</span>
+        <div className="bg-[#FF5500]/10 border border-[#FF5500]/25 p-3 rounded-2xl flex flex-col items-center shadow-inner">
+          <span className="text-[10px] text-[#FF8A00] font-medium font-mono">Pace TB</span>
+          <span className="font-mono text-lg font-bold text-[#FF8A00]">{currentPace}</span>
         </div>
 
-        <div className="bg-slate-50 border border-slate-100 p-3 rounded-2xl flex flex-col items-center shadow-inner">
-          <span className="text-[10px] text-slate-500 font-medium">Tốc độ</span>
-          <span className="font-mono text-lg font-bold text-slate-900">{currentSpeedKmh} <span className="text-[10px] font-normal text-slate-500">km/h</span></span>
+        <div className="bg-[#181D2D]/90 border border-white/[0.08] p-3 rounded-2xl flex flex-col items-center shadow-inner">
+          <span className="text-[10px] text-slate-400 font-medium font-mono">Tốc độ</span>
+          <span className="font-mono text-lg font-bold text-white">{currentSpeedKmh} <span className="text-[10px] font-normal text-slate-400">km/h</span></span>
         </div>
       </div>
 
       {/* KM Splits */}
       {splits.length > 0 && (
-        <div className="flex flex-col gap-1.5 pt-2 border-t border-slate-100">
-          <span className="text-xs font-semibold text-slate-700 flex items-center gap-1">
-            <Compass className="w-3.5 h-3.5 text-orange-500" />
+        <div className="flex flex-col gap-1.5 pt-2 border-t border-white/[0.08]">
+          <span className="text-xs font-semibold text-slate-300 flex items-center gap-1 font-mono">
+            <Compass className="w-3.5 h-3.5 text-[#00E5FF]" />
             Splits theo từng Kilomet:
           </span>
           <div className="grid grid-cols-2 gap-1.5 max-h-24 overflow-y-auto">
             {splits.map((s) => (
-              <div key={s.km} className="bg-slate-50 border border-slate-200/80 px-2.5 py-1.5 rounded-xl flex justify-between text-[11px] font-mono">
-                <span className="text-slate-500">KM {s.km}:</span>
-                <span className="text-orange-600 font-bold">{s.pace}</span>
+              <div key={s.km} className="bg-[#181D2D]/90 border border-white/[0.08] px-2.5 py-1.5 rounded-xl flex justify-between text-[11px] font-mono">
+                <span className="text-slate-400">KM {s.km}:</span>
+                <span className="text-[#00E5FF] font-bold">{s.pace}</span>
               </div>
             ))}
           </div>
@@ -117,22 +117,24 @@ export function GpsRunTrackerView({ onFinishRun }: GpsRunTrackerViewProps) {
       <div className="flex items-center gap-2 pt-2">
         {!isTracking ? (
           <Button
-            variant="secondary"
+            variant="blue"
             size="lg"
             fullWidth
             onClick={startRun}
-            leftIcon={<Play className="w-5 h-5 fill-slate-950" />}
+            leftIcon={<Play className="w-5 h-5 fill-black" />}
+            className="h-13 font-display uppercase tracking-wider"
           >
             Bắt đầu chạy GPS
           </Button>
         ) : isPaused ? (
           <>
             <Button
-              variant="secondary"
+              variant="blue"
               size="lg"
               fullWidth
               onClick={resumeRun}
-              leftIcon={<Play className="w-5 h-5 fill-slate-950" />}
+              leftIcon={<Play className="w-5 h-5 fill-black" />}
+              className="h-13 font-display uppercase tracking-wider"
             >
               Tiếp tục
             </Button>
@@ -141,6 +143,7 @@ export function GpsRunTrackerView({ onFinishRun }: GpsRunTrackerViewProps) {
               size="lg"
               onClick={handleFinish}
               leftIcon={<Square className="w-5 h-5 text-rose-400" />}
+              className="h-13"
             >
               Kết thúc
             </Button>
@@ -153,6 +156,7 @@ export function GpsRunTrackerView({ onFinishRun }: GpsRunTrackerViewProps) {
               fullWidth
               onClick={pauseRun}
               leftIcon={<Pause className="w-5 h-5" />}
+              className="h-13 font-display uppercase tracking-wider"
             >
               Tạm dừng
             </Button>
@@ -161,6 +165,7 @@ export function GpsRunTrackerView({ onFinishRun }: GpsRunTrackerViewProps) {
               size="lg"
               onClick={handleFinish}
               leftIcon={<Square className="w-5 h-5" />}
+              className="h-13"
             >
               Kết thúc
             </Button>

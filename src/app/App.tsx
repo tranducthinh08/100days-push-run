@@ -40,7 +40,7 @@ export function AppContent() {
       />
 
       {/* Main Content Area: High-Performance 1880px Responsive Container */}
-      <main className="flex-1 w-full max-w-[1880px] mx-auto px-4 lg:px-6 py-4 hud-pattern">
+      <main className="flex-1 w-full max-w-[1880px] mx-auto px-4 lg:px-6 py-4 pb-28 md:pb-8 hud-pattern">
         {activeTab === 'dashboard' && (
           <DashboardPage onStartSession={handleStartSession} />
         )}

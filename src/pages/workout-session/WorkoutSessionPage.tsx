@@ -140,7 +140,7 @@ export function WorkoutSessionPage({ onBackToDashboard }: WorkoutSessionPageProp
       {/* Responsive Workstation Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left Column: Guidelines, Checklists, Set Tracker */}
-        <div className="lg:col-span-5 flex flex-col gap-3.5">
+        <div className="lg:col-span-5 flex flex-col gap-3.5 order-2 lg:order-1">
           <BreathingCueBanner />
 
           {warmupResolved.length > 0 && (
@@ -166,7 +166,7 @@ export function WorkoutSessionPage({ onBackToDashboard }: WorkoutSessionPageProp
         </div>
 
         {/* Right Column: Giant Touch / Spacebar Counter Pad */}
-        <div className="lg:col-span-7 flex flex-col">
+        <div className="lg:col-span-7 flex flex-col order-1 lg:order-2">
           <TouchCounterPad
             count={touchCounter.count}
             targetReps={targetReps}

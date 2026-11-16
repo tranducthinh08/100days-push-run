@@ -117,46 +117,50 @@ export function RunSessionPage({ onBackToDashboard }: RunSessionPageProps) {
           )}
 
           {/* Mode Selector Tabs */}
-          <div className="bg-[#111622]/90 border border-white/[0.08] rounded-3xl p-2.5 flex flex-col gap-1 text-xs shadow-glass-hud">
+          <div className="bg-[#111622]/90 border border-white/[0.08] rounded-3xl p-2 sm:p-2.5 grid grid-cols-2 lg:grid-cols-1 gap-1.5 text-xs shadow-glass-hud">
             <button
               onClick={() => setActiveTab('coach')}
-              className={`w-full py-2.5 px-3.5 rounded-xl font-bold flex items-center gap-2.5 transition-all text-left cursor-pointer font-display ${
+              className={`py-2.5 px-3 rounded-xl font-bold flex items-center gap-2 transition-all text-left cursor-pointer font-display ${
                 activeTab === 'coach'
                   ? 'bg-[#00E5FF] text-black shadow-neon-cyan font-black'
                   : 'text-slate-400 hover:text-white hover:bg-white/[0.06]'
               }`}
             >
-              <Flame className="w-4 h-4 shrink-0 text-current" /> Interval / Tempo Coach
+              <Flame className="w-4 h-4 shrink-0 text-current" />
+              <span className="truncate">Interval Coach</span>
             </button>
             <button
               onClick={() => setActiveTab('gps')}
-              className={`w-full py-2.5 px-3.5 rounded-xl font-bold flex items-center gap-2.5 transition-all text-left cursor-pointer font-display ${
+              className={`py-2.5 px-3 rounded-xl font-bold flex items-center gap-2 transition-all text-left cursor-pointer font-display ${
                 activeTab === 'gps'
                   ? 'bg-[#00E5FF] text-black shadow-neon-cyan font-black'
                   : 'text-slate-400 hover:text-white hover:bg-white/[0.06]'
               }`}
             >
-              <MapPin className="w-4 h-4 shrink-0 text-current" /> Định vị GPS Ngoài trời
+              <MapPin className="w-4 h-4 shrink-0 text-current" />
+              <span className="truncate">GPS Ngoài trời</span>
             </button>
             <button
               onClick={() => setActiveTab('strava')}
-              className={`w-full py-2.5 px-3.5 rounded-xl font-bold flex items-center gap-2.5 transition-all text-left cursor-pointer font-display ${
+              className={`py-2.5 px-3 rounded-xl font-bold flex items-center gap-2 transition-all text-left cursor-pointer font-display ${
                 activeTab === 'strava'
                   ? 'bg-[#00E5FF] text-black shadow-neon-cyan font-black'
                   : 'text-slate-400 hover:text-white hover:bg-white/[0.06]'
               }`}
             >
-              <RefreshCw className="w-4 h-4 shrink-0 text-current" /> Đồng bộ từ Strava API
+              <RefreshCw className="w-4 h-4 shrink-0 text-current" />
+              <span className="truncate">Strava API</span>
             </button>
             <button
               onClick={() => setActiveTab('treadmill')}
-              className={`w-full py-2.5 px-3.5 rounded-xl font-bold flex items-center gap-2.5 transition-all text-left cursor-pointer font-display ${
+              className={`py-2.5 px-3 rounded-xl font-bold flex items-center gap-2 transition-all text-left cursor-pointer font-display ${
                 activeTab === 'treadmill'
                   ? 'bg-[#00E5FF] text-black shadow-neon-cyan font-black'
                   : 'text-slate-400 hover:text-white hover:bg-white/[0.06]'
               }`}
             >
-              <Gauge className="w-4 h-4 shrink-0 text-current" /> Chạy máy (Treadmill)
+              <Gauge className="w-4 h-4 shrink-0 text-current" />
+              <span className="truncate">Chạy máy</span>
             </button>
           </div>
         </div>

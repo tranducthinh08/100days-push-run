@@ -95,17 +95,17 @@ export function IntervalCoachView({ runDetails, onFinishRun }: IntervalCoachView
   const progressPercent = initialPhaseSeconds > 0 ? ((initialPhaseSeconds - secondsLeft) / initialPhaseSeconds) * 100 : 0;
 
   return (
-    <div className="flex flex-col gap-4 bg-white border border-slate-200/90 rounded-3xl p-6 shadow-xl shadow-slate-200/40">
+    <div className="flex flex-col gap-4 bg-[#111622]/90 backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-5 sm:p-6 shadow-glass-hud text-slate-100">
       {/* Phase status indicator */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span
-            className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
+            className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider font-mono ${
               phase === 'work'
-                ? 'bg-orange-100 text-orange-700 border border-orange-300'
+                ? 'bg-[#FF5500]/20 text-[#FF8A00] border border-[#FF5500]/40'
                 : phase === 'recovery'
-                ? 'bg-sky-100 text-sky-700 border border-sky-300'
-                : 'bg-emerald-100 text-emerald-700 border border-emerald-300'
+                ? 'bg-[#00E5FF]/20 text-[#00E5FF] border border-[#00E5FF]/40'
+                : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
             }`}
           >
             {phase === 'warmup'
@@ -121,7 +121,7 @@ export function IntervalCoachView({ runDetails, onFinishRun }: IntervalCoachView
         </div>
 
         {phase === 'work' || phase === 'recovery' ? (
-          <span className="text-xs font-bold text-orange-600 font-mono">
+          <span className="text-xs font-bold text-[#FF8A00] font-mono">
             Lần {currentRep} / {totalReps}
           </span>
         ) : null}
@@ -129,10 +129,10 @@ export function IntervalCoachView({ runDetails, onFinishRun }: IntervalCoachView
 
       {/* Large countdown */}
       <div className="flex flex-col items-center py-4">
-        <span className="font-mono text-7xl font-black text-orange-500 tracking-tight drop-shadow-sm">
+        <span className="font-mono text-7xl sm:text-8xl font-black text-[#FF5500] tracking-tight drop-shadow-[0_0_25px_rgba(255,85,0,0.5)]">
           {timeDisplay}
         </span>
-        <span className="text-xs text-slate-500 mt-1 font-medium">
+        <span className="text-xs text-slate-400 mt-1 font-medium font-mono">
           {phase === 'work' ? 'Duy trì nhịp chạy nhanh 85-90% sức' : 'Hạ nhịp tim, thở đều bằng mũi'}
         </span>
       </div>
@@ -151,7 +151,7 @@ export function IntervalCoachView({ runDetails, onFinishRun }: IntervalCoachView
           fullWidth
           onClick={() => setIsActive(!isActive)}
           leftIcon={isActive ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 fill-white" />}
-          className="h-13"
+          className="h-13 font-display uppercase tracking-wider"
         >
           {isActive ? 'Tạm dừng' : totalElapsedTime > 0 ? 'Tiếp tục' : 'Bắt đầu bấm giờ'}
         </Button>
@@ -161,7 +161,7 @@ export function IntervalCoachView({ runDetails, onFinishRun }: IntervalCoachView
             variant="outline"
             size="lg"
             onClick={skipCurrentPhase}
-            leftIcon={<FastForward className="w-4 h-4 text-orange-600" />}
+            leftIcon={<FastForward className="w-4 h-4 text-[#FF8A00]" />}
             className="w-16 shrink-0 h-13"
           >
             <span className="sr-only">Bỏ qua</span>
@@ -175,7 +175,8 @@ export function IntervalCoachView({ runDetails, onFinishRun }: IntervalCoachView
           size="sm"
           fullWidth
           onClick={handleCompleteEarly}
-          leftIcon={<CheckCircle className="w-4 h-4 text-emerald-600" />}
+          leftIcon={<CheckCircle className="w-4 h-4 text-[#00E676]" />}
+          className="text-slate-300 hover:text-white"
         >
           Kết thúc & Lưu buổi chạy ({Math.round(totalElapsedTime / 60)} phút)
         </Button>
