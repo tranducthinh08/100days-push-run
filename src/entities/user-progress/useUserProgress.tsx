@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useMemo } from '
 import { EquipmentType } from '../exercise/types';
 import { UserProgressState, WorkoutCompletionLog } from './types';
 import { getStorageItem, setStorageItem } from '@/shared/lib/storage';
-import { getTodayDateStr, checkDisciplineStreakBroken, calculateAccurateStreak } from './disciplineHelper';
+import { getTodayDateStr, checkDisciplineStreakBroken, calculateAccurateStreak, filterCompletedDaysByStartDate } from './disciplineHelper';
 
 const STORAGE_KEY = 'user_progress_state';
 
@@ -53,26 +53,24 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
   const [state, setState] = useState<UserProgressState>(() => {
     const loaded = getStorageItem<UserProgressState>(STORAGE_KEY, DEFAULT_STATE);
     const startDate = loaded.startDate || getTodayDateStr();
-    const streak = calculateAccurateStreak(loaded.completedDays || {}, startDate);
-    return { ...loaded, startDate, streak };
+    const validDays = filterCompletedDaysByStartDate(loaded.completedDays || {}, startDate);
+    const streak = calculateAccurateStreak(validDays, startDate);
+    const dayNums = Object.keys(validDays).map(Number);
+    const maxDay = dayNums.length > 0 ? Math.max(...dayNums) : 0;
+    return { ...loaded, startDate, streak, currentDay: Math.min(100, Math.max(1, maxDay + 1)), completedDays: validDays };
   });
 
-  useEffect(() => {
-    setStorageItem(STORAGE_KEY, state);
-  }, [state]);
+  useEffect(() => { setStorageItem(STORAGE_KEY, state); }, [state]);
 
   const activeStartDate = state.startDate || getTodayDateStr();
-
-  const disciplineStatus = useMemo(() => {
-    return checkDisciplineStreakBroken(state.completedDays, activeStartDate);
-  }, [state.completedDays, activeStartDate]);
+  const disciplineStatus = useMemo(
+    () => checkDisciplineStreakBroken(state.completedDays, activeStartDate),
+    [state.completedDays, activeStartDate]
+  );
 
   // Synchronize streak deterministically
   useEffect(() => {
-    const accurateStreak = disciplineStatus.isBroken
-      ? 0
-      : calculateAccurateStreak(state.completedDays, activeStartDate);
-
+    const accurateStreak = disciplineStatus.isBroken ? 0 : calculateAccurateStreak(state.completedDays, activeStartDate);
     if (state.streak !== accurateStreak) {
       setState((prev) => ({
         ...prev,
@@ -87,11 +85,24 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
   const toggleEquipmentMode = () => setState((p) => ({ ...p, equipmentMode: p.equipmentMode === 'dumbbell' ? 'bodyweight' : 'dumbbell' }));
   const updateMaxPushupsRecord = (reps: number) => setState((p) => ({ ...p, maxPushupsRecord: Math.max(p.maxPushupsRecord, reps) }));
   const resetAllProgress = () => setState(DEFAULT_STATE);
+  const replaceState = (newState: UserProgressState) => setState(newState);
+  const setCustomExerciseVideo = (exerciseId: string, urlOrId: string) =>
+    setState((prev) => ({ ...prev, customExerciseVideos: { ...(prev.customExerciseVideos || {}), [exerciseId]: urlOrId } }));
 
   const setStartDate = (dateStr: string) => {
     setState((prev) => {
-      const accurateStreak = calculateAccurateStreak(prev.completedDays, dateStr);
-      return { ...prev, startDate: dateStr, streak: accurateStreak };
+      const validDays = filterCompletedDaysByStartDate(prev.completedDays, dateStr);
+      const streak = calculateAccurateStreak(validDays, dateStr);
+      const dayNums = Object.keys(validDays).map(Number);
+      const maxDay = dayNums.length > 0 ? Math.max(...dayNums) : 0;
+      return {
+        ...prev,
+        startDate: dateStr,
+        streak,
+        currentDay: Math.min(100, Math.max(1, maxDay + 1)),
+        completedDays: validDays,
+        lastActiveDate: new Date().toISOString(),
+      };
     });
   };
 
@@ -102,7 +113,6 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
       const accurateStreak = calculateAccurateStreak(updatedCompleted, prev.startDate || today);
       const nextMax = log.maxPushupsSet ? Math.max(prev.maxPushupsRecord, log.maxPushupsSet) : prev.maxPushupsRecord;
       const nextCurrent = prev.currentDay === log.dayNumber && log.dayNumber < 100 ? log.dayNumber + 1 : prev.currentDay;
-
       return {
         ...prev,
         currentDay: nextCurrent,
@@ -118,37 +128,25 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     setState((prev) => {
       const updatedCompleted = { ...prev.completedDays };
       delete updatedCompleted[dayNumber];
-      const accurateStreak = calculateAccurateStreak(updatedCompleted, prev.startDate || getTodayDateStr());
-
       return {
         ...prev,
         currentDay: Math.min(prev.currentDay, dayNumber),
-        streak: accurateStreak,
+        streak: calculateAccurateStreak(updatedCompleted, prev.startDate || getTodayDateStr()),
         completedDays: updatedCompleted,
+        lastActiveDate: new Date().toISOString(),
       };
     });
   };
 
   const resetStreakAndRestart = (newStartDate?: string) => {
-    const chosenStart = newStartDate || getTodayDateStr();
     setState((prev) => ({
       ...prev,
       currentDay: 1,
       streak: 0,
-      startDate: chosenStart,
+      startDate: newStartDate || getTodayDateStr(),
       completedDays: {},
+      lastActiveDate: new Date().toISOString(),
     }));
-  };
-
-  const setCustomExerciseVideo = (exerciseId: string, urlOrId: string) => {
-    setState((prev) => ({
-      ...prev,
-      customExerciseVideos: { ...(prev.customExerciseVideos || {}), [exerciseId]: urlOrId },
-    }));
-  };
-
-  const replaceState = (newState: UserProgressState) => {
-    setState(newState);
   };
 
   const recordJumpRopeWorkout = (dayNumber: number, count: number, durationSec: number, notes?: string) => {

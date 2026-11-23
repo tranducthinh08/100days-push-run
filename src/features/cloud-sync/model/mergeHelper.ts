@@ -1,9 +1,9 @@
 import { UserProgressState, WorkoutCompletionLog } from '@/entities/user-progress/types';
-import { calculateAccurateStreak, getTodayDateStr } from '@/entities/user-progress/disciplineHelper';
+import { calculateAccurateStreak, filterCompletedDaysByStartDate, getTodayDateStr } from '@/entities/user-progress/disciplineHelper';
 
 /**
  * Two-Way Auto-Merge: Mathematically guarantees zero data loss.
- * Unions all completed days, preserves highest records, and recalculates streak.
+ * Unions active challenge days, respects user reset, preserves records, recalculates streak.
  */
 export function mergeProgressStates(
   local: UserProgressState,
@@ -12,45 +12,45 @@ export function mergeProgressStates(
   if (!remote || !remote.completedDays) return local;
   if (!local || !local.completedDays) return remote;
 
-  // 1. Union completedDays: never lose any day completed on either device
-  const mergedCompletedDays: Record<number, WorkoutCompletionLog> = {
-    ...remote.completedDays,
-    ...local.completedDays,
-  };
+  // 1. Determine active challenge start date: newest date wins!
+  const localStart = local.startDate || '';
+  const remoteStart = remote.startDate || '';
+  const activeStartDate = localStart > remoteStart ? localStart : (remoteStart || localStart || getTodayDateStr());
 
-  for (const [dayKey, remoteLog] of Object.entries(remote.completedDays)) {
-    const day = Number(dayKey);
-    const localLog = local.completedDays[day];
-    if (!localLog) {
-      mergedCompletedDays[day] = remoteLog;
-    } else {
-      // If both completed, pick the one with later timestamp or more pushups
-      const remoteTime = new Date(remoteLog.completedAt).getTime() || 0;
-      const localTime = new Date(localLog.completedAt).getTime() || 0;
-      if (remoteTime > localTime) {
-        mergedCompletedDays[day] = remoteLog;
+  // 2. Filter completed days: only days completed on or after activeStartDate are valid
+  const validLocalDays = filterCompletedDaysByStartDate(local.completedDays, activeStartDate);
+  const validRemoteDays = filterCompletedDaysByStartDate(remote.completedDays, activeStartDate);
+
+  // If local is a newer challenge or a fresh reset, do not resurrect old remote days
+  const isLocalNewerChallenge = localStart > remoteStart;
+  const mergedCompletedDays = isLocalNewerChallenge
+    ? validLocalDays
+    : { ...validRemoteDays, ...validLocalDays };
+
+  if (!isLocalNewerChallenge) {
+    for (const [dayKey, remoteLog] of Object.entries(validRemoteDays)) {
+      const day = Number(dayKey);
+      const localLog = validLocalDays[day];
+      if (localLog && remoteLog) {
+        const remoteTime = new Date(remoteLog.completedAt).getTime() || 0;
+        const localTime = new Date(localLog.completedAt).getTime() || 0;
+        if (remoteTime > localTime) {
+          mergedCompletedDays[day] = remoteLog;
+        }
       }
     }
   }
 
-  // 2. Max records
-  const maxPushupsRecord = Math.max(
-    local.maxPushupsRecord || 0,
-    remote.maxPushupsRecord || 0
-  );
+  // 3. Max records preserved
+  const maxPushupsRecord = Math.max(local.maxPushupsRecord || 0, remote.maxPushupsRecord || 0);
 
-  // 3. Current day: pick maximum day
-  const currentDay = Math.max(local.currentDay || 1, remote.currentDay || 1);
+  // 4. Current day calculation
+  const completedDayNumbers = Object.keys(mergedCompletedDays).map(Number);
+  const maxCompletedDay = completedDayNumbers.length > 0 ? Math.max(...completedDayNumbers) : 0;
+  const currentDay = Math.min(100, Math.max(1, maxCompletedDay + 1));
 
-  // 4. Custom exercise video links
-  const customExerciseVideos = {
-    ...(remote.customExerciseVideos || {}),
-    ...(local.customExerciseVideos || {}),
-  };
-
-  // 5. Start date & accurate streak
-  const startDate = local.startDate || remote.startDate || getTodayDateStr();
-  const streak = calculateAccurateStreak(mergedCompletedDays, startDate);
+  // 5. Accurate streak
+  const streak = calculateAccurateStreak(mergedCompletedDays, activeStartDate);
 
   return {
     currentDay,
@@ -59,7 +59,10 @@ export function mergeProgressStates(
     maxPushupsRecord,
     streak,
     lastActiveDate: new Date().toISOString(),
-    startDate,
-    customExerciseVideos,
+    startDate: activeStartDate,
+    customExerciseVideos: {
+      ...(remote.customExerciseVideos || {}),
+      ...(local.customExerciseVideos || {}),
+    },
   };
 }

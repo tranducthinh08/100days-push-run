@@ -34,7 +34,6 @@ export function formatDateVi(dateStr: string): string {
 
 /**
  * Calculates how many days elapsed between startDate and targetDate.
- * If targetDate === startDate, returns 0 (Day 1).
  */
 export function getElapsedDays(startDateStr: string, targetDateStr: string): number {
   if (!startDateStr || !targetDateStr) return 0;
@@ -45,9 +44,27 @@ export function getElapsedDays(startDateStr: string, targetDateStr: string): num
 }
 
 /**
+ * Filters completed days so only days completed on or after startDate are retained.
+ * Discards old days from previous failed challenges.
+ */
+export function filterCompletedDaysByStartDate(
+  completedDays: Record<number, WorkoutCompletionLog>,
+  startDateStr: string
+): Record<number, WorkoutCompletionLog> {
+  if (!startDateStr) return completedDays;
+  const filtered: Record<number, WorkoutCompletionLog> = {};
+  for (const [key, log] of Object.entries(completedDays || {})) {
+    if (!log || !log.completedAt) continue;
+    const logDate = log.completedAt.substring(0, 10);
+    if (logDate >= startDateStr) {
+      filtered[Number(key)] = log;
+    }
+  }
+  return filtered;
+}
+
+/**
  * Checks whether any day between startDate and yesterday was missed.
- * If yesterday was Day K and any day from 1 to K was not completed,
- * then the discipline streak is broken!
  */
 export function checkDisciplineStreakBroken(
   completedDays: Record<number, WorkoutCompletionLog>,
@@ -61,19 +78,15 @@ export function checkDisciplineStreakBroken(
   const elapsed = getElapsedDays(startDateStr, todayStr);
   const expectedDayToday = Math.min(100, Math.max(1, elapsed + 1));
 
-  // If today is before startDate
-  if (elapsed < 0) {
-    return { isBroken: false, missedDay: null, expectedDayToday: 1 };
-  }
-
-  // If today is Day 1 (elapsed === 0), no past day exists to miss
-  if (elapsed === 0) {
+  if (elapsed <= 0) {
     return { isBroken: false, missedDay: null, expectedDayToday: 1 };
   }
 
   // Check every day from Day 1 to Day `elapsed` (yesterday)
   for (let day = 1; day <= elapsed; day++) {
-    if (!completedDays[day]) {
+    const log = completedDays[day];
+    const isDone = Boolean(log && (!startDateStr || !log.completedAt || log.completedAt.substring(0, 10) >= startDateStr));
+    if (!isDone) {
       return { isBroken: true, missedDay: day, expectedDayToday };
     }
   }
@@ -83,7 +96,6 @@ export function checkDisciplineStreakBroken(
 
 /**
  * Calculates current consecutive streak accurately from completedDays.
- * Does not increase when clicking multiple times on the same day.
  */
 export function calculateAccurateStreak(
   completedDays: Record<number, WorkoutCompletionLog>,
@@ -99,9 +111,10 @@ export function calculateAccurateStreak(
   if (isBroken) return 0;
 
   let streak = 0;
-  // Count consecutive completed days starting from Day 1 up to expectedDayToday
   for (let day = 1; day <= expectedDayToday; day++) {
-    if (completedDays[day]) {
+    const log = completedDays[day];
+    const isDone = Boolean(log && (!startDateStr || !log.completedAt || log.completedAt.substring(0, 10) >= startDateStr));
+    if (isDone) {
       streak++;
     } else {
       break;
