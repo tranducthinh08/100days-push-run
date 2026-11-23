@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RotateCcw, Footprints, Dumbbell, HeartPulse, Gauge, Target, CheckCircle2 } from 'lucide-react';
+import { RotateCcw, Footprints, Dumbbell, HeartPulse, Gauge, Target, CheckCircle2, Zap } from 'lucide-react';
 import { DayProgram } from '@/entities/program/types';
 import { useUserProgress } from '@/entities/user-progress/useUserProgress';
 import { resolveExercise } from '@/entities/exercise/model';
@@ -21,6 +21,14 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
   const [isWarmupModalOpen, setIsWarmupModalOpen] = useState(false);
   const [isRunSplitsModalOpen, setIsRunSplitsModalOpen] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
+  const [cardioMode, setCardioMode] = useState<'run' | 'jumprope'>(
+    () => (sessionStorage.getItem('preferred_cardio_tab') as 'run' | 'jumprope') || 'run'
+  );
+
+  const handleToggleCardioMode = (mode: 'run' | 'jumprope') => {
+    setCardioMode(mode);
+    sessionStorage.setItem('preferred_cardio_tab', mode === 'jumprope' ? 'jumprope' : 'coach');
+  };
 
   const isCompleted = !!completedDays[programDay.dayNumber];
   const isPush = programDay.type === 'push';
@@ -29,10 +37,7 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
   const warmupResolved = programDay.warmupBlock.map((i) => resolveExercise(i, equipmentMode));
   const mainResolved = programDay.mainBlock.map((i) => resolveExercise(i, equipmentMode));
   const accessoryResolved = programDay.accessoryBlock.map((i) => resolveExercise(i, equipmentMode));
-
-  const totalTargetReps = programDay.pushupTargetRepsPerSet
-    ? programDay.pushupTargetRepsPerSet.reduce((a, b) => a + b, 0)
-    : 38;
+  const totalTargetReps = programDay.pushupTargetRepsPerSet?.reduce((a, b) => a + b, 0) || 38;
 
   const handleQuickToggleComplete = () => {
     if (isCompleted) {
@@ -42,9 +47,17 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
         dayNumber: programDay.dayNumber,
         completedAt: new Date().toISOString(),
         type: programDay.type,
+        cardioType: isRun && cardioMode === 'jumprope' ? 'jump-rope' : 'run',
         equipmentMode,
       });
     }
+  };
+
+  const handleStartWithMode = () => {
+    if (isRun) {
+      sessionStorage.setItem('preferred_cardio_tab', cardioMode === 'jumprope' ? 'jumprope' : 'coach');
+    }
+    onStartSession(programDay.type);
   };
 
   return (
@@ -114,6 +127,8 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
         warmupResolved={warmupResolved}
         mainResolved={mainResolved}
         accessoryResolved={accessoryResolved}
+        cardioMode={cardioMode}
+        onToggleCardioMode={handleToggleCardioMode}
         onOpenWarmupModal={() => setIsWarmupModalOpen(true)}
         onSelectExercise={(ex) => setSelectedExercise(ex)}
         onOpenRunSplitsModal={() => setIsRunSplitsModalOpen(true)}
@@ -122,7 +137,7 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
       {/* Action CTA Buttons */}
       <div className="flex flex-col sm:flex-row items-center gap-3 pt-5 mt-5 border-t border-white/[0.08] relative z-10">
         <button
-          onClick={() => onStartSession(programDay.type)}
+          onClick={handleStartWithMode}
           className={`flex-1 w-full py-4 px-6 rounded-2xl font-black text-sm uppercase tracking-wider flex items-center justify-center gap-3 transition-all cursor-pointer font-display ${
             isPush
               ? 'bg-[#FF5500] hover:bg-[#E54D00] text-white shadow-neon-orange hover:shadow-orange-500/80 hover:scale-[1.01]'
@@ -138,10 +153,17 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
               <span>BẮT ĐẦU BUỔI TẬP (TOUCH-TO-COUNT) [CHẾ ĐỘ SÀN]</span>
             </>
           ) : isRun ? (
-            <>
-              <Footprints className="w-5 h-5" />
-              <span>BẮT ĐẦU BUỔI CHẠY (HOẶC NHẢY DÂY ~{programDay.runDetails?.jumpRopeTargetReps || 1100} CÁI)</span>
-            </>
+            cardioMode === 'jumprope' ? (
+              <>
+                <Zap className="w-5 h-5 text-black" />
+                <span>BẮT ĐẦU BUỔI NHẢY DÂY (~{programDay.runDetails?.jumpRopeTargetReps || 1100} CÁI • 5 HIỆP)</span>
+              </>
+            ) : (
+              <>
+                <Footprints className="w-5 h-5" />
+                <span>BẮT ĐẦU BUỔI CHẠY ({programDay.runDetails?.distanceKmTarget || 3.5} KM)</span>
+              </>
+            )
           ) : (
             <>
               <HeartPulse className="w-5 h-5" />

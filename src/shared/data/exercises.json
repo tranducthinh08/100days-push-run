@@ -412,5 +412,45 @@
     "youtubeId": "1BZM2Vre5oc",
     "animationType": "cardio",
     "videoTip": "Duy trì nhịp thở đều 2 nhịp nhảy 1 nhịp thở, giữ nhịp tim ở vùng khởi động dễ chịu."
+  },
+  {
+    "id": "jump-rope-basic",
+    "name": "Nhảy dây 2 chân cơ bản (Basic Bounce)",
+    "category": "cardio",
+    "equipment": "bodyweight",
+    "targetMuscles": [
+      "Bắp chuối (Calves)",
+      "Cơ đùi trước (Quads)",
+      "Cổ chân",
+      "Hệ tim mạch (Cardio)"
+    ],
+    "cues": [
+      "Tiếp đất nhẹ nhàng bằng nửa bàn chân trước (Ball of foot), tuyệt đối không giẫm gót.",
+      "Gối hơi chùng nhẹ để bảo vệ khớp gối và hấp thụ lực đàn hồi từ mặt sàn.",
+      "Cánh tay áp sát mạn sườn, chuyển động quay xuất phát từ cổ tay chứ không vung cả cánh tay."
+    ],
+    "youtubeId": "1BZM2Vre5oc",
+    "animationType": "cardio",
+    "videoTip": "Bật nhảy cao chỉ khoảng 2 - 3cm vừa đủ cho dây đi qua. Giữ thân người thẳng, mắt nhìn về phía trước."
+  },
+  {
+    "id": "jump-rope-boxer",
+    "name": "Nhảy dây bước chạy võ sĩ (Boxer Step)",
+    "category": "cardio",
+    "equipment": "bodyweight",
+    "targetMuscles": [
+      "Bắp chuối (Calves)",
+      "Khớp hông & Cơ mông",
+      "Cổ chân linh hoạt",
+      "Sức bền tim mạch"
+    ],
+    "cues": [
+      "Chuyển trọng tâm nhịp nhàng từ chân này sang chân kia theo từng vòng quay của dây.",
+      "Chân trụ gánh lực nảy nhẹ, chân còn lại chạm đất hỗ trợ thăng bằng như đang nhún nhảy.",
+      "Kỹ thuật này giúp phân bổ tải trọng, giảm mỏi bắp chuối đến 40% so với nhảy 2 chân liên tục."
+    ],
+    "youtubeId": "hCuXx_b_b-w",
+    "animationType": "cardio",
+    "videoTip": "Thư giãn vai gáy và thở đều theo chu kỳ 3-3 hoặc 4-4 để duy trì nhịp tim Zone 2 bền bỉ."
   }
 ]

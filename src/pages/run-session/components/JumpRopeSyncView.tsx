@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/shared/ui/Button';
 import { Activity, Flame, Clock, CheckCircle2, RotateCcw, Sparkles } from 'lucide-react';
+import { getJumpRopePlan } from '@/entities/program/jumpRopePlan';
 
 interface JumpRopeSyncViewProps {
   dayNumber: number;
@@ -17,8 +18,9 @@ export function JumpRopeSyncView({
   suggestedMinutes = 20,
   onComplete,
 }: JumpRopeSyncViewProps) {
-  const [jumps, setJumps] = useState<number>(suggestedJumps);
-  const [minutes, setMinutes] = useState<number>(suggestedMinutes);
+  const plan = getJumpRopePlan(dayNumber, targetDistanceKm, suggestedMinutes);
+  const [jumps, setJumps] = useState<number>(suggestedJumps || plan.totalTargetJumps);
+  const [minutes, setMinutes] = useState<number>(suggestedMinutes || plan.totalDurationMinutes);
   const [notes, setNotes] = useState<string>('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -54,10 +56,10 @@ export function JumpRopeSyncView({
             </span>
             <div>
               <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00E5FF] block">
-                Cardio Ngày {dayNumber} • Quy đổi tương đương
+                Cardio Ngày {dayNumber} • {plan.intensityLabel}
               </span>
               <h3 className="text-base sm:text-lg font-black text-white font-display">
-                Mục tiêu Nhảy dây: ~{suggestedJumps.toLocaleString('vi-VN')} cái
+                Mục tiêu Nhảy dây: ~{plan.totalTargetJumps.toLocaleString('vi-VN')} cái
               </h3>
             </div>
           </div>
@@ -67,24 +69,34 @@ export function JumpRopeSyncView({
         </div>
 
         <p className="text-xs text-slate-300 leading-relaxed">
-          Tự nhảy bên ngoài với dây nhảy riêng theo nhịp thở đều. Sau khi tập xong, nhập kết quả bên dưới để ghi nhận vào lộ trình 100 ngày.
+          {plan.summary}. Tự đếm theo đồng hồ ngoài, sau đó xác nhận kết quả bên dưới để ghi nhận vào lộ trình 100 ngày.
         </p>
 
+        {/* Planned Sets Breakdown */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 mt-3 pt-3 border-t border-white/10 font-mono text-[11px]">
+          {plan.sets.map((s) => (
+            <div key={s.setNumber} className="bg-black/40 px-2.5 py-1.5 rounded-xl border border-white/10 flex items-center justify-between">
+              <span className="text-[#00E5FF] font-bold">{s.label}:</span>
+              <span className="text-white font-bold">{s.targetReps} cái</span>
+            </div>
+          ))}
+        </div>
+
         {/* Quick Stats Preview */}
-        <div className="grid grid-cols-3 gap-2.5 mt-4 pt-4 border-t border-white/10 font-mono text-center">
-          <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
-            <span className="text-[10px] text-slate-400 block uppercase">Nhịp độ ước tính</span>
-            <span className="text-sm font-bold text-[#00E5FF]">{estRpm} cái/phút</span>
+        <div className="grid grid-cols-3 gap-2.5 mt-3 pt-3 border-t border-white/10 font-mono text-center">
+          <div className="p-2 rounded-xl bg-black/40 border border-white/5">
+            <span className="text-[10px] text-slate-400 block uppercase">Nhịp độ</span>
+            <span className="text-xs sm:text-sm font-bold text-[#00E5FF]">{estRpm} cái/p</span>
           </div>
-          <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
-            <span className="text-[10px] text-slate-400 block uppercase">Calo tiêu hao</span>
-            <span className="text-sm font-bold text-amber-400 flex items-center justify-center gap-1">
+          <div className="p-2 rounded-xl bg-black/40 border border-white/5">
+            <span className="text-[10px] text-slate-400 block uppercase">Tiêu hao</span>
+            <span className="text-xs sm:text-sm font-bold text-amber-400 flex items-center justify-center gap-1">
               <Flame className="w-3 h-3 text-amber-400" /> ~{estCalories} kcal
             </span>
           </div>
-          <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
-            <span className="text-[10px] text-slate-400 block uppercase">Vùng nhịp tim</span>
-            <span className="text-sm font-bold text-emerald-400">Zone 2 (Cardio)</span>
+          <div className="p-2 rounded-xl bg-black/40 border border-white/5">
+            <span className="text-[10px] text-slate-400 block uppercase">Vùng tim</span>
+            <span className="text-xs sm:text-sm font-bold text-emerald-400">{plan.heartRateZone.split('(')[0]}</span>
           </div>
         </div>
       </div>

@@ -21,7 +21,10 @@ export function RunSessionPage({ onBackToDashboard }: RunSessionPageProps) {
   const { currentDay, equipmentMode, markDayCompleted } = useUserProgress();
   const programDay = getProgramDay(currentDay);
 
-  const [activeTab, setActiveTab] = useState<RunTab>('coach');
+  const [activeTab, setActiveTab] = useState<RunTab>(() => {
+    const saved = sessionStorage.getItem('preferred_cardio_tab') as RunTab;
+    return saved && ['coach', 'gps', 'strava', 'treadmill', 'jumprope'].includes(saved) ? saved : 'coach';
+  });
   const [completedMessage, setCompletedMessage] = useState<string | null>(null);
 
   useEffect(() => {

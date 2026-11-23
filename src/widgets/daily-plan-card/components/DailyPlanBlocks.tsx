@@ -1,14 +1,19 @@
 import React from 'react';
-import { Clock, Activity, Dumbbell, Footprints, HeartPulse, Info, ChevronRight } from 'lucide-react';
+import { Activity, Dumbbell, Footprints, HeartPulse, Info, Zap } from 'lucide-react';
 import { DayProgram } from '@/entities/program/types';
 import { ResolvedExerciseItem, Exercise } from '@/entities/exercise/types';
+import { getJumpRopePlan } from '@/entities/program/jumpRopePlan';
 import { RunSplitsPlanBlock } from './RunSplitsPlanBlock';
+import { JumpRopePlanBlock } from './JumpRopePlanBlock';
+import { AuxiliaryWorkoutBlocks } from './AuxiliaryWorkoutBlocks';
 
 interface DailyPlanBlocksProps {
   programDay: DayProgram;
   warmupResolved: ResolvedExerciseItem[];
   mainResolved: ResolvedExerciseItem[];
   accessoryResolved: ResolvedExerciseItem[];
+  cardioMode?: 'run' | 'jumprope';
+  onToggleCardioMode?: (mode: 'run' | 'jumprope') => void;
   onOpenWarmupModal: () => void;
   onSelectExercise: (exercise: Exercise) => void;
   onOpenRunSplitsModal?: () => void;
@@ -19,6 +24,8 @@ export function DailyPlanBlocks({
   warmupResolved,
   mainResolved,
   accessoryResolved,
+  cardioMode = 'run',
+  onToggleCardioMode,
   onOpenWarmupModal,
   onSelectExercise,
   onOpenRunSplitsModal,
@@ -26,9 +33,17 @@ export function DailyPlanBlocks({
   const isPush = programDay.type === 'push';
   const isRun = programDay.type === 'run';
 
+  const jumpRopePlan = isRun
+    ? getJumpRopePlan(
+        programDay.dayNumber,
+        programDay.runDetails?.distanceKmTarget || 3.5,
+        programDay.runDetails?.durationMinutesTarget || 25
+      )
+    : null;
+
   return (
     <div className="flex flex-col gap-4 relative z-10 text-xs" data-purpose="workout-sequence-blocks">
-      {/* Block 2: BÀI TẬP CHÍNH (HERO WORKOUT STATION - CHIẾM TRỌN CHIỀU NGANG RỘNG RÃI) */}
+      {/* Block 2: BÀI TẬP CHÍNH */}
       <div
         className={`rounded-3xl p-5 sm:p-6 flex flex-col gap-3.5 shadow-sm border transition-all ${
           isPush
@@ -39,7 +54,7 @@ export function DailyPlanBlocks({
         }`}
       >
         <div
-          className={`flex items-center justify-between text-xs font-bold border-b pb-3 ${
+          className={`flex flex-wrap items-center justify-between gap-2 text-xs font-bold border-b pb-3 ${
             isPush
               ? 'border-[#FF5500]/25 text-[#FF8A00]'
               : isRun
@@ -51,15 +66,50 @@ export function DailyPlanBlocks({
             {isPush ? (
               <Activity className="w-4 h-4 text-[#FF5500]" />
             ) : isRun ? (
-              <Footprints className="w-4 h-4 text-[#00E5FF]" />
+              cardioMode === 'jumprope' ? (
+                <Zap className="w-4 h-4 text-[#00E5FF]" />
+              ) : (
+                <Footprints className="w-4 h-4 text-[#00E5FF]" />
+              )
             ) : (
               <HeartPulse className="w-4 h-4 text-[#00E676]" />
             )}
-            2. Bài tập chính ({isRun ? 'Lộ trình chạy bộ' : isPush ? 'Khối lượng hít đất' : 'Phục hồi'})
+            2. Bài tập chính ({isRun ? (cardioMode === 'jumprope' ? 'Giáo án Nhảy Dây' : 'Lộ trình chạy bộ') : isPush ? 'Khối lượng hít đất' : 'Phục hồi'})
           </span>
-          <span className="font-mono text-xs sm:text-sm font-black px-2.5 py-1 rounded-lg bg-black/40 border border-white/10">
-            {isPush ? '25 phút' : isRun ? `${programDay.runDetails?.durationMinutesTarget || 30} phút` : '30 phút'}
-          </span>
+
+          {/* Toggle between Run and Jump Rope on Run Days */}
+          {isRun && onToggleCardioMode && jumpRopePlan && (
+            <div className="flex items-center gap-1 p-1 bg-black/50 rounded-xl border border-white/10 font-mono text-[11px]">
+              <button
+                type="button"
+                onClick={() => onToggleCardioMode('run')}
+                className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                  cardioMode === 'run'
+                    ? 'bg-[#00E5FF] text-black shadow-neon-cyan'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                Chạy bộ
+              </button>
+              <button
+                type="button"
+                onClick={() => onToggleCardioMode('jumprope')}
+                className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                  cardioMode === 'jumprope'
+                    ? 'bg-[#00E5FF] text-black shadow-neon-cyan'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                Nhảy dây ({jumpRopePlan.totalTargetJumps.toLocaleString('vi-VN')} cái)
+              </button>
+            </div>
+          )}
+
+          {!isRun && (
+            <span className="font-mono text-xs sm:text-sm font-black px-2.5 py-1 rounded-lg bg-black/40 border border-white/10">
+              {isPush ? '25 phút' : '30 phút'}
+            </span>
+          )}
         </div>
 
         {isPush ? (
@@ -87,7 +137,6 @@ export function DailyPlanBlocks({
                 </span>
               </div>
 
-              {/* Push-up sets visual badges */}
               {programDay.pushupTargetRepsPerSet && programDay.pushupTargetRepsPerSet.length > 0 && (
                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 mt-1">
                   {programDay.pushupTargetRepsPerSet.map((reps, sIdx) => (
@@ -100,92 +149,24 @@ export function DailyPlanBlocks({
               )}
             </div>
           ))
-        ) : programDay.runDetails ? (
-          <RunSplitsPlanBlock
-            runDetails={programDay.runDetails}
-            onOpenExpandModal={onOpenRunSplitsModal}
-          />
+        ) : isRun ? (
+          cardioMode === 'jumprope' && jumpRopePlan ? (
+            <JumpRopePlanBlock plan={jumpRopePlan} onOpenQuickLog={onOpenRunSplitsModal} />
+          ) : programDay.runDetails ? (
+            <RunSplitsPlanBlock runDetails={programDay.runDetails} onOpenExpandModal={onOpenRunSplitsModal} />
+          ) : null
         ) : (
           <span className="text-slate-300 font-medium">Thực hiện giãn cơ và giải tỏa căng cứng khớp toàn thân.</span>
         )}
       </div>
 
-      {/* Hàng phụ: Block 1 Khởi động (5p) & Block 3 Bổ trợ/Giãn cơ (10p) xếp song song */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-        {/* Block 1: Warmup */}
-        <div className="p-4 rounded-2xl bg-[#141A28]/80 border border-white/[0.06] hover:border-white/15 transition-all flex flex-col gap-2.5">
-          <button
-            type="button"
-            onClick={onOpenWarmupModal}
-            className="w-full flex items-center justify-between text-[11px] font-bold border-b border-white/[0.08] pb-2 hover:text-[#FF8A00] transition-colors text-left group cursor-pointer"
-          >
-            <span className="flex items-center gap-1.5 text-slate-200 group-hover:text-[#FF8A00]">
-              <Clock className="w-3.5 h-3.5 text-[#FF8A00]" />
-              <span>1. Khởi động</span>
-              <span className="text-[10px] font-semibold text-[#FF8A00] bg-[#FF5500]/15 border border-[#FF5500]/30 px-1.5 py-0.2 rounded ml-1">
-                Bấm xem
-              </span>
-            </span>
-            <span className="font-mono text-slate-400 group-hover:text-[#FF8A00] flex items-center gap-0.5">
-              5 phút <ChevronRight className="w-3.5 h-3.5" />
-            </span>
-          </button>
-
-          <div className="flex flex-col gap-1">
-            {warmupResolved.map((item, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => onSelectExercise(item.exercise)}
-                className="w-full flex justify-between items-center text-slate-300 font-medium py-1 px-1.5 rounded-xl hover:bg-white/[0.06] hover:text-white transition-all text-left cursor-pointer group"
-                title="Bấm để xem chi tiết bài tập & kỹ thuật"
-              >
-                <span className="truncate pr-2 flex items-center gap-1 group-hover:underline">
-                  <Info className="w-3 h-3 text-slate-400 group-hover:text-[#FF8A00] shrink-0" />
-                  <span className="truncate">{item.exercise.name.split('(')[0]}</span>
-                </span>
-                <span className="text-slate-400 group-hover:text-[#FF8A00] font-mono text-[11px] shrink-0 font-bold ml-1">
-                  {item.targetSets}x{item.targetReps}
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Block 3: Accessory */}
-        <div className="p-4 rounded-2xl bg-[#141A28]/80 border border-white/[0.06] hover:border-white/15 transition-all flex flex-col gap-2.5">
-          <div className="flex items-center justify-between text-slate-300 text-[11px] font-bold border-b border-white/[0.08] pb-2">
-            <span className="flex items-center gap-1.5 text-slate-200">
-              <Dumbbell className="w-3.5 h-3.5 text-[#FF8A00]" /> 3. Bổ trợ & Giãn cơ
-            </span>
-            <span className="font-mono text-slate-400">10 phút</span>
-          </div>
-          <div className="flex flex-col gap-1">
-            {accessoryResolved.map((item, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => onSelectExercise(item.exercise)}
-                className="w-full flex justify-between items-center text-slate-300 font-medium py-1 px-1.5 rounded-xl hover:bg-white/[0.06] hover:text-white transition-all text-left cursor-pointer group"
-                title="Bấm để xem chi tiết bài tập & kỹ thuật"
-              >
-                <span className="min-w-0 flex-1 truncate pr-2 flex items-center gap-1 group-hover:underline">
-                  <Info className="w-3 h-3 text-slate-400 group-hover:text-[#FF8A00] shrink-0" />
-                  <span className="truncate">{item.exercise.name.split('(')[0]}</span>
-                  {item.isFallback && (
-                    <span className="text-[9px] text-[#FF8A00] bg-[#FF5500]/15 px-1 py-0.2 rounded font-bold border border-[#FF5500]/30 shrink-0 ml-1">
-                      BW
-                    </span>
-                  )}
-                </span>
-                <span className="text-slate-400 group-hover:text-[#FF8A00] font-mono text-[11px] shrink-0 font-bold ml-1">
-                  {item.targetSets}x{item.targetReps}
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Auxiliary blocks: Warmup (1) & Accessory (3) */}
+      <AuxiliaryWorkoutBlocks
+        warmupResolved={warmupResolved}
+        accessoryResolved={accessoryResolved}
+        onOpenWarmupModal={onOpenWarmupModal}
+        onSelectExercise={onSelectExercise}
+      />
     </div>
   );
 }
