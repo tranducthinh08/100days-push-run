@@ -44,10 +44,17 @@ export function mergeProgressStates(
   // 3. Max records preserved
   const maxPushupsRecord = Math.max(local.maxPushupsRecord || 0, remote.maxPushupsRecord || 0);
 
-  // 4. Current day calculation
-  const completedDayNumbers = Object.keys(mergedCompletedDays).map(Number);
-  const maxCompletedDay = completedDayNumbers.length > 0 ? Math.max(...completedDayNumbers) : 0;
-  const currentDay = Math.min(100, Math.max(1, maxCompletedDay + 1));
+  // 4. Current day calculation: preserve the day user is currently viewing/active on,
+  // unless remote has completed newer workouts that push progress forward.
+  const localDayNums = Object.keys(validLocalDays).map(Number);
+  const localMax = localDayNums.length > 0 ? Math.max(...localDayNums) : 0;
+  const remoteDayNums = Object.keys(validRemoteDays).map(Number);
+  const remoteMax = remoteDayNums.length > 0 ? Math.max(...remoteDayNums) : 0;
+
+  let currentDay = local.currentDay || 1;
+  if (!isLocalNewerChallenge && remoteMax > localMax) {
+    currentDay = Math.min(100, Math.max(currentDay, remoteMax + 1));
+  }
 
   // 5. Accurate streak
   const streak = calculateAccurateStreak(mergedCompletedDays, activeStartDate);

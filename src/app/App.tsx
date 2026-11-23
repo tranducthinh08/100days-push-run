@@ -34,16 +34,21 @@ export function AppContent() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cloudSync.isConfigured]);
 
-  // Debounced auto-sync ONLY when local progress state actually changes
+  // Debounced auto-sync ONLY when workout progress (completed days, streak, records) actually changes
   useEffect(() => {
     if (!cloudSync.isConfigured) return;
-    const stateJson = JSON.stringify(state);
-    if (stateJson === lastSyncedStateRef.current) return;
+    const progressFingerprint = JSON.stringify({
+      completedDays: state.completedDays,
+      startDate: state.startDate,
+      maxPushupsRecord: state.maxPushupsRecord,
+      equipmentMode: state.equipmentMode,
+      customExerciseVideos: state.customExerciseVideos,
+    });
+    if (progressFingerprint === lastSyncedStateRef.current) return;
 
     const timer = setTimeout(async () => {
-      lastSyncedStateRef.current = stateJson;
+      lastSyncedStateRef.current = progressFingerprint;
       await cloudSync.syncNow(state, (merged) => {
-        lastSyncedStateRef.current = JSON.stringify(merged);
         replaceState(merged);
       });
     }, 2000);
