@@ -31,6 +31,7 @@ interface UserProgressContextType {
   totalCompletedCount: number;
   totalPushupsDone: number;
   totalRunKm: number;
+  totalJumpRopeCount: number;
   customExerciseVideos: Record<string, string>;
   setCurrentDay: (day: number) => void;
   setStartDate: (dateStr: string) => void;
@@ -43,6 +44,7 @@ interface UserProgressContextType {
   setCustomExerciseVideo: (exerciseId: string, urlOrId: string) => void;
   replaceState: (newState: UserProgressState) => void;
   resetAllProgress: () => void;
+  recordJumpRopeWorkout: (dayNumber: number, count: number, durationSec: number, notes?: string) => void;
 }
 
 const UserProgressContext = createContext<UserProgressContextType | null>(null);
@@ -149,10 +151,24 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
     setState(newState);
   };
 
+  const recordJumpRopeWorkout = (dayNumber: number, count: number, durationSec: number, notes?: string) => {
+    markDayCompleted({
+      dayNumber,
+      completedAt: new Date().toISOString(),
+      type: 'run',
+      cardioType: 'jump-rope',
+      jumpRopeCount: count,
+      jumpRopeDurationSec: durationSec,
+      equipmentMode: state.equipmentMode,
+      notes: notes || `Nhảy dây ${count.toLocaleString('vi-VN')} cái (${Math.round(durationSec / 60)} phút)`,
+    });
+  };
+
   const completedList = Object.values(state.completedDays);
   const totalCompletedCount = completedList.length;
   const totalPushupsDone = completedList.reduce((acc, cur) => acc + (cur.totalPushupsDone || 0), 0);
   const totalRunKm = +completedList.reduce((acc, cur) => acc + (cur.runDistanceKm || 0), 0).toFixed(1);
+  const totalJumpRopeCount = completedList.reduce((acc, cur) => acc + (cur.jumpRopeCount || 0), 0);
 
   return (
     <UserProgressContext.Provider
@@ -170,6 +186,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
         totalCompletedCount,
         totalPushupsDone,
         totalRunKm,
+        totalJumpRopeCount,
         customExerciseVideos: state.customExerciseVideos || {},
         setCurrentDay,
         setStartDate,
@@ -182,6 +199,7 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
         setCustomExerciseVideo,
         replaceState,
         resetAllProgress,
+        recordJumpRopeWorkout,
       }}
     >
       {children}

@@ -140,7 +140,7 @@ export function DailyPlanCard({ programDay, onStartSession }: DailyPlanCardProps
           ) : isRun ? (
             <>
               <Footprints className="w-5 h-5" />
-              <span>BẮT ĐẦU BUỔI CHẠY (GPS / INTERVAL)</span>
+              <span>BẮT ĐẦU BUỔI CHẠY (HOẶC NHẢY DÂY ~{programDay.runDetails?.jumpRopeTargetReps || 1100} CÁI)</span>
             </>
           ) : (
             <>

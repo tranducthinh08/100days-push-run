@@ -21,6 +21,7 @@ export interface RunRepSplit {
 export interface RunDetails {
   durationMinutesTarget: number;
   distanceKmTarget?: number;
+  jumpRopeTargetReps?: number;
   runType: 'zone2' | 'interval' | 'long-run' | 'easy';
   paceGuidance: string;
   description: string;

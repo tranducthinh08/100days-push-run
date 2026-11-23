@@ -10,6 +10,9 @@ export interface WorkoutCompletionLog {
   runDistanceKm?: number;
   runDurationSec?: number;
   runPace?: string;
+  jumpRopeCount?: number;
+  jumpRopeDurationSec?: number;
+  cardioType?: 'run' | 'jump-rope';
   equipmentMode: EquipmentType;
   notes?: string;
 }

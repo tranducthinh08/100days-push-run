@@ -4,7 +4,12 @@
     "name": "Hít đất tiêu chuẩn (Standard Push-up)",
     "category": "main-push",
     "equipment": "bodyweight",
-    "targetMuscles": ["Ngực", "Tay sau", "Vai trước", "Cơ lõi"],
+    "targetMuscles": [
+      "Ngực",
+      "Tay sau",
+      "Vai trước",
+      "Cơ lõi"
+    ],
     "cues": [
       "Đặt tay rộng bằng hoặc hơn vai một chút, cùi chỏ tạo góc 45 độ với thân người.",
       "Gồng chặt cơ mông và cơ bụng, người tạo thành một đường thẳng.",
@@ -19,7 +24,11 @@
     "name": "Hít đất quỳ gối (Knee Push-up)",
     "category": "main-push",
     "equipment": "bodyweight",
-    "targetMuscles": ["Ngực", "Tay sau", "Cơ lõi"],
+    "targetMuscles": [
+      "Ngực",
+      "Tay sau",
+      "Cơ lõi"
+    ],
     "cues": [
       "Quỳ gối trên thảm, giữ lưng thẳng từ đầu gối đến vai.",
       "Hạ ngực có kiểm soát, hít vào; đẩy người lên dứt khoát, thở ra."
@@ -33,7 +42,11 @@
     "name": "Hít đất kim cương (Diamond Push-up)",
     "category": "triceps",
     "equipment": "bodyweight",
-    "targetMuscles": ["Tay sau (Triceps)", "Ngực trong", "Vai"],
+    "targetMuscles": [
+      "Tay sau (Triceps)",
+      "Ngực trong",
+      "Vai"
+    ],
     "cues": [
       "Đặt hai bàn tay sát nhau dưới ngực, ngón trỏ và ngón cái tạo hình kim cương.",
       "Khép cùi chỏ sát người khi hạ xuống để cô lập tối đa cơ tay sau.",
@@ -48,7 +61,10 @@
     "name": "Hít đất khóa tay sau mặt sàn (Floor Triceps Press)",
     "category": "triceps",
     "equipment": "bodyweight",
-    "targetMuscles": ["Tay sau (Triceps)", "Khuỷu tay"],
+    "targetMuscles": [
+      "Tay sau (Triceps)",
+      "Khuỷu tay"
+    ],
     "cues": [
       "Bắt đầu ở tư thế plank thấp bằng cẳng tay trên sàn.",
       "Dùng lực cơ tay sau đẩy thẳng cẳng tay nâng toàn bộ cơ thể lên.",
@@ -64,7 +80,11 @@
     "category": "pull-prehab",
     "equipment": "dumbbell",
     "fallbackId": "prone-ytw-raises",
-    "targetMuscles": ["Lưng xô (Lats)", "Trám lưng (Rhomboids)", "Vai sau"],
+    "targetMuscles": [
+      "Lưng xô (Lats)",
+      "Trám lưng (Rhomboids)",
+      "Vai sau"
+    ],
     "cues": [
       "Hạ hông về sau, giữ lưng thẳng góc 45 độ, hai tay cầm tạ đơn.",
       "Kéo tạ hướng về hông, khép chặt hai bả vai vào nhau ở đỉnh động tác.",
@@ -79,7 +99,11 @@
     "name": "Nằm sấp nâng tay chữ Y-T-W (Prone Y-T-W Raises)",
     "category": "pull-prehab",
     "equipment": "bodyweight",
-    "targetMuscles": ["Bả vai", "Cơ lưng trên", "Xoay vai (Rotator Cuff)"],
+    "targetMuscles": [
+      "Bả vai",
+      "Cơ lưng trên",
+      "Xoay vai (Rotator Cuff)"
+    ],
     "cues": [
       "Nằm sấp trên sàn, nâng hai tay tạo chữ Y (ngón cái hướng lên trần).",
       "Chuyển tay sang ngang tạo chữ T rồi gập cùi chỏ tạo chữ W.",
@@ -94,7 +118,10 @@
     "name": "Hít đất bả vai (Scapular Push-up)",
     "category": "pull-prehab",
     "equipment": "bodyweight",
-    "targetMuscles": ["Cơ răng trước (Serratus Anterior)", "Khớp vai"],
+    "targetMuscles": [
+      "Cơ răng trước (Serratus Anterior)",
+      "Khớp vai"
+    ],
     "cues": [
       "Tư thế hít đất cao, giữ thẳng hai cánh tay suốt bài tập.",
       "Chỉ chuyển động bả vai: ép hai bả vai chạm nhau khi hạ người.",
@@ -109,7 +136,10 @@
     "name": "Xoay cổ tay & Căng giãn cẳng tay (Wrist Mobility)",
     "category": "warm-up",
     "equipment": "bodyweight",
-    "targetMuscles": ["Khớp cổ tay", "Cẳng tay"],
+    "targetMuscles": [
+      "Khớp cổ tay",
+      "Cẳng tay"
+    ],
     "cues": [
       "Đan ngón tay vào nhau xoay tròn chậm rãi 15 vòng mỗi chiều.",
       "Áp lòng bàn tay xuống sàn đổi chiều ngón tay để kéo giãn nhẹ cổ tay."
@@ -123,7 +153,11 @@
     "name": "Nằm sấp nâng toàn thân (Superman Hold)",
     "category": "pull-prehab",
     "equipment": "bodyweight",
-    "targetMuscles": ["Lưng dưới", "Mông", "Cơ dựng gai sống"],
+    "targetMuscles": [
+      "Lưng dưới",
+      "Mông",
+      "Cơ dựng gai sống"
+    ],
     "cues": [
       "Nằm sấp, đồng thời nâng hai tay và hai chân rời khỏi mặt sàn.",
       "Siết cơ lưng dưới và cơ mông, giữ yên 20-30 giây hít thở đều."
@@ -138,7 +172,11 @@
     "category": "triceps",
     "equipment": "dumbbell",
     "fallbackId": "diamond-push-up",
-    "targetMuscles": ["Ngực", "Tay sau", "Khóa khớp khuỷu"],
+    "targetMuscles": [
+      "Ngực",
+      "Tay sau",
+      "Khóa khớp khuỷu"
+    ],
     "cues": [
       "Nằm ngửa trên sàn, gối co, hai tay cầm tạ đơn vuông góc sàn.",
       "Hạ tạ đến khi bắp tay chạm nhẹ mặt sàn (nghỉ 1 giây chống áp lực vai).",
@@ -154,7 +192,9 @@
     "category": "triceps",
     "equipment": "dumbbell",
     "fallbackId": "bench-less-triceps-pushup",
-    "targetMuscles": ["Đầu dài cơ tay sau (Long head Triceps)"],
+    "targetMuscles": [
+      "Đầu dài cơ tay sau (Long head Triceps)"
+    ],
     "cues": [
       "Hai tay giữ một đầu quả tạ đơn đưa qua đỉnh đầu.",
       "Cố định cùi chỏ hướng về phía trước, hạ tạ sau gáy có kiểm soát.",
@@ -170,7 +210,11 @@
     "category": "leg-prehab",
     "equipment": "dumbbell",
     "fallbackId": "single-leg-glute-bridge",
-    "targetMuscles": ["Cơ đùi trước", "Cơ mông", "Ổn định khớp gối"],
+    "targetMuscles": [
+      "Cơ đùi trước",
+      "Cơ mông",
+      "Ổn định khớp gối"
+    ],
     "cues": [
       "Hai tay cầm tạ đơn bên hông, bước lùi một chân về phía sau.",
       "Hạ gối chân sau gần sát sàn tạo góc 90 độ ở cả hai chân.",
@@ -185,7 +229,11 @@
     "name": "Nâng hông 1 chân (Single-leg Glute Bridge)",
     "category": "leg-prehab",
     "equipment": "bodyweight",
-    "targetMuscles": ["Cơ mông", "Gân kheo (Hamstrings)", "Khung chậu"],
+    "targetMuscles": [
+      "Cơ mông",
+      "Gân kheo (Hamstrings)",
+      "Khung chậu"
+    ],
     "cues": [
       "Nằm ngửa, một chân co đạp sàn, chân kia giơ thẳng lên trời.",
       "Đạp mạnh gót chân nâng hông lên cao cho đến khi đùi và thân thẳng hàng.",
@@ -201,7 +249,11 @@
     "category": "leg-prehab",
     "equipment": "dumbbell",
     "fallbackId": "bodyweight-pause-squat",
-    "targetMuscles": ["Cơ tứ đầu đùi", "Cơ mông", "Cơ lưng trên"],
+    "targetMuscles": [
+      "Cơ tứ đầu đùi",
+      "Cơ mông",
+      "Cơ lưng trên"
+    ],
     "cues": [
       "Hai tay giữ tạ đơn sát ngực, chân rộng hơn vai, mũi chân mở nhẹ.",
       "Ngồi hông xuống sâu dưới mức gối, giữ lưng thẳng ưỡn ngực.",
@@ -216,7 +268,11 @@
     "name": "Squat ngưng 2 giây (Bodyweight Pause Squat)",
     "category": "leg-prehab",
     "equipment": "bodyweight",
-    "targetMuscles": ["Cơ đùi", "Khớp gối", "Mông"],
+    "targetMuscles": [
+      "Cơ đùi",
+      "Khớp gối",
+      "Mông"
+    ],
     "cues": [
       "Squat hạ hông xuống vị trí thấp nhất đùi song song mặt sàn.",
       "Giữ yên bất động 2 giây đếm nhẩm để tăng áp lực chịu tải.",
@@ -231,7 +287,10 @@
     "name": "Nhón bắp chân 1 chân (Single-leg Calf Raise)",
     "category": "leg-prehab",
     "equipment": "bodyweight",
-    "targetMuscles": ["Bắp chân (Gastrocnemius & Soleus)", "Gân Achilles"],
+    "targetMuscles": [
+      "Bắp chân (Gastrocnemius & Soleus)",
+      "Gân Achilles"
+    ],
     "cues": [
       "Đứng trên 1 chân (tay chạm nhẹ tường giữ thăng bằng).",
       "Nhón cao gót chân lên hết biên độ, giữ đỉnh 1 giây.",
@@ -246,7 +305,11 @@
     "name": "Plank cẳng tay (Forearm Plank)",
     "category": "core-mobility",
     "equipment": "bodyweight",
-    "targetMuscles": ["Cơ bụng ngang", "Cơ lưng dưới", "Ổn định xương chậu"],
+    "targetMuscles": [
+      "Cơ bụng ngang",
+      "Cơ lưng dưới",
+      "Ổn định xương chậu"
+    ],
     "cues": [
       "Tựa cẳng tay vuông góc dưới vai, chân duỗi thẳng phía sau.",
       "Gồng chặt cơ bụng như sắp bị đấm, khóa chặt cơ mông.",
@@ -261,7 +324,10 @@
     "name": "Con bọ chết (Dead Bug)",
     "category": "core-mobility",
     "equipment": "bodyweight",
-    "targetMuscles": ["Cơ lõi sâu", "Chống ưỡn cột sống"],
+    "targetMuscles": [
+      "Cơ lõi sâu",
+      "Chống ưỡn cột sống"
+    ],
     "cues": [
       "Nằm ngửa, hai tay giơ thẳng trần nhà, gối co 90 độ.",
       "Ép chặt toàn bộ thắt lưng áp sát sàn nhà không để hở khoảng trống.",
@@ -276,7 +342,11 @@
     "name": "Giãn cơ toàn diện (World's Greatest Stretch)",
     "category": "warm-up",
     "equipment": "bodyweight",
-    "targetMuscles": ["Khớp háng", "Cột sống ngực", "Gân kheo"],
+    "targetMuscles": [
+      "Khớp háng",
+      "Cột sống ngực",
+      "Gân kheo"
+    ],
     "cues": [
       "Bước chân dài về trước ở tư thế chùng chân lùi sâu.",
       "Đặt tay cùng phía xuống sàn, hạ cùi chỏ sát mắt cá chân trong.",
@@ -291,7 +361,10 @@
     "name": "Giãn cơ gấp hông sát tường (Couch Stretch)",
     "category": "core-mobility",
     "equipment": "bodyweight",
-    "targetMuscles": ["Cơ đùi trước (Quads)", "Cơ gấp hông (Hip Flexors)"],
+    "targetMuscles": [
+      "Cơ đùi trước (Quads)",
+      "Cơ gấp hông (Hip Flexors)"
+    ],
     "cues": [
       "Đặt mu bàn chân sau tựa sát tường hoặc ghế sofa, gối chạm sàn.",
       "Chân trước bước lên tạo góc 90 độ, từ từ dựng thẳng thân người.",
@@ -306,7 +379,11 @@
     "name": "Kéo giãn cơ ngực qua khung cửa (Doorway Chest Stretch)",
     "category": "core-mobility",
     "equipment": "bodyweight",
-    "targetMuscles": ["Cơ ngực lớn", "Cơ ngực bé", "Vai trước"],
+    "targetMuscles": [
+      "Cơ ngực lớn",
+      "Cơ ngực bé",
+      "Vai trước"
+    ],
     "cues": [
       "Đặt cẳng tay lên khung cửa hoặc góc tường, cùi chỏ ngang vai.",
       "Bước chân cùng phía lên một bước, xoay nhẹ thân người hướng ra xa.",
@@ -315,5 +392,25 @@
     "youtubeId": "4B2r7k502Zg",
     "animationType": "stretch",
     "videoTip": "Không ưỡn thắt lưng, chỉ xoay nhẹ lồng ngực để cảm nhận cơ ngực được kéo mở."
+  },
+  {
+    "id": "jump-rope-warmup",
+    "name": "Nhảy dây khởi động (Jump Rope Warm-up)",
+    "category": "warm-up",
+    "equipment": "bodyweight",
+    "targetMuscles": [
+      "Bắp chuối (Calves)",
+      "Cổ chân",
+      "Tim mạch (Cardio)",
+      "Khớp vai"
+    ],
+    "cues": [
+      "Nhảy bằng nửa bàn chân trước, gối hơi chùng để hấp thụ lực tiếp đất nhẹ nhàng.",
+      "Khuỷu tay khép sát hông, quay dây bằng chuyển động tròn của cổ tay.",
+      "Nhảy nhịp điệu đều đặn, chỉ nâng chân vừa đủ để dây luồn qua (cao 2 - 3 cm)."
+    ],
+    "youtubeId": "1BZM2Vre5oc",
+    "animationType": "cardio",
+    "videoTip": "Duy trì nhịp thở đều 2 nhịp nhảy 1 nhịp thở, giữ nhịp tim ở vùng khởi động dễ chịu."
   }
 ]
